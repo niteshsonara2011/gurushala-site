@@ -5,73 +5,129 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ગુરુશાળા</title>
   <style>
+    :root {
+      --leaf: #173f25;
+      --earth: #65451f;
+      --gold: #c99b38;
+      --warm: #fffaf0;
+      --page: #f7f1df;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f1df;
-      color: #173f25;
+      font-family: "Noto Sans Gujarati", "Shruti", "Nirmala UI", "Gujarati Sangam MN", system-ui, sans-serif;
+      background: var(--page);
+      color: var(--leaf);
       text-align: center;
-      padding: 40px 20px;
+      padding: 24px 16px;
+      line-height: 1.8;
     }
 
     .card {
       max-width: 850px;
       margin: auto;
-      background: #fffaf0;
-      border: 2px solid #c99b38;
+      background: var(--warm);
+      border: 2px solid var(--gold);
       border-radius: 24px;
-      padding: 36px 24px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      padding: 32px 22px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    h1,
+    h2,
+    p {
+      margin-left: auto;
+      margin-right: auto;
     }
 
     h1 {
-      font-size: 52px;
-      margin-bottom: 10px;
-      color: #173f25;
+      font-size: clamp(2.5rem, 10vw, 4rem);
+      line-height: 1.25;
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: var(--leaf);
+      letter-spacing: 0.01em;
     }
 
     h2 {
-      font-size: 24px;
-      color: #65451f;
-      font-weight: normal;
+      font-size: clamp(1.25rem, 5vw, 1.7rem);
+      color: var(--earth);
+      font-weight: 600;
+      line-height: 1.55;
+      max-width: 720px;
+      margin-top: 0;
       margin-bottom: 24px;
     }
 
     p {
-      font-size: 20px;
-      line-height: 1.7;
+      font-size: clamp(1.08rem, 4vw, 1.28rem);
       max-width: 720px;
-      margin: 12px auto;
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    .lead {
+      font-weight: 600;
+    }
+
+    .note {
+      background: #f4ead0;
+      border-radius: 18px;
+      padding: 16px 18px;
+      margin-top: 22px;
     }
 
     .tagline {
       margin-top: 24px;
-      font-weight: bold;
+      font-weight: 700;
       color: #8a5a12;
+      letter-spacing: 0.03em;
     }
 
     .footer {
-      margin-top: 30px;
-      font-size: 16px;
+      border-top: 1px solid #ddc68f;
       color: #5c5c5c;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-top: 30px;
+      padding-top: 18px;
+    }
+
+    @media (min-width: 700px) {
+      body {
+        padding: 40px 20px;
+      }
+
+      .card {
+        padding: 42px 36px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="card">
+  <main class="card">
     <h1>ગુરુશાળા</h1>
 
     <h2>ગુરુશાળા અનુસૂચિત જાતિ મહિલા શિક્ષણ ફાઉન્ડેશન</h2>
 
-    <p>
-      જ્ઞાન, સંસ્કાર, આત્મવિશ્વાસ અને વિકાસ માટે સમર્પિત
-      એક ગામમૂળ શિક્ષણ પહેલ.
+    <p class="lead">
+      અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત
+      ગામમૂળ શિક્ષણ અને સંસ્કાર પહેલ.
     </p>
 
     <p>
-      Gurushala is a village-rooted learning initiative for women,
-      children, and community growth in Telnar / Kapadvanj, Gujarat.
+      ગુરુશાળાનો હેતુ મહિલાઓ, બાળકો અને સ્થાનિક સમુદાય માટે જ્ઞાન, વાંચન,
+      આત્મવિશ્વાસ, સંસ્કાર અને સાંસ્કૃતિક પ્રવૃત્તિઓને સરળ રીતે આગળ વધારવાનો છે.
+    </p>
+
+    <p class="note">
+      આ વેબસાઇટ ગુરુશાળાની દ્રષ્ટિ, મહિલાઓના નેતૃત્વ, શિક્ષણ પ્રવૃત્તિઓ,
+      દસ્તાવેજ તૈયારી અને ભવિષ્યના અપડેટ્સ માટે બનાવવામાં આવી છે.
     </p>
 
     <p class="tagline">
@@ -79,8 +135,8 @@
     </p>
 
     <p class="footer">
-      Early website supported through Geyvak.com
+      Copyright © Gurushala Scheduled Caste Women Education Foundation. All rights reserved.
     </p>
-  </div>
+  </main>
 </body>
 </html>
