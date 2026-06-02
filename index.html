@@ -19,12 +19,77 @@
 
     body {
       margin: 0;
-      font-family: "Noto Sans Gujarati", "Shruti", "Nirmala UI", "Gujarati Sangam MN", system-ui, sans-serif;
+      font-family: "Noto Sans Gujarati", "Noto Sans Devanagari", "Shruti", "Nirmala UI", "Gujarati Sangam MN", system-ui, sans-serif;
       background: var(--page);
       color: var(--leaf);
       text-align: center;
       padding: 24px 16px;
       line-height: 1.8;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .language-screen {
+      align-items: center;
+      background: var(--page);
+      display: none;
+      inset: 0;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+      position: fixed;
+      z-index: 10;
+    }
+
+    .language-screen.is-visible {
+      display: flex;
+    }
+
+    .language-card {
+      background: var(--warm);
+      border: 2px solid var(--gold);
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      max-width: 520px;
+      padding: 30px 20px;
+      width: 100%;
+    }
+
+    .language-card h1 {
+      font-size: clamp(2.1rem, 9vw, 3.2rem);
+      margin-bottom: 10px;
+    }
+
+    .language-card p {
+      font-size: clamp(1.05rem, 4vw, 1.2rem);
+      margin-bottom: 22px;
+    }
+
+    .language-options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .language-button {
+      background: #fffdf6;
+      border: 2px solid #ddc68f;
+      border-radius: 16px;
+      color: var(--leaf);
+      cursor: pointer;
+      font-size: clamp(1.15rem, 5vw, 1.35rem);
+      font-weight: 700;
+      padding: 14px 16px;
+      width: 100%;
+    }
+
+    .language-button:hover,
+    .language-button:focus-visible {
+      background: #f4ead0;
+      border-color: var(--gold);
+      outline: 3px solid rgba(201, 155, 56, 0.35);
+      outline-offset: 2px;
     }
 
     .card {
@@ -35,6 +100,30 @@
       border-radius: 24px;
       padding: 32px 22px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .change-language {
+      background: transparent;
+      border: 1px solid #ddc68f;
+      border-radius: 999px;
+      color: var(--earth);
+      cursor: pointer;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      padding: 7px 12px;
+    }
+
+    .change-language:hover,
+    .change-language:focus-visible {
+      background: #f4ead0;
+      outline: 3px solid rgba(201, 155, 56, 0.35);
+      outline-offset: 2px;
     }
 
     h1,
@@ -170,73 +259,89 @@
 </head>
 
 <body>
-  <main class="card">
-    <h1>ગુરુશાળા</h1>
+  <section class="language-screen" id="language-screen" aria-labelledby="language-title" aria-describedby="language-help">
+    <div class="language-card">
+      <h1 id="language-title">ગુરુશાળા</h1>
+      <p id="language-help">કૃપા કરીને ભાષા પસંદ કરો.</p>
+      <div class="language-options" role="group" aria-label="ભાષા પસંદ કરો">
+        <button class="language-button" type="button" data-language-choice="gu">ગુજરાતી</button>
+        <button class="language-button" type="button" data-language-choice="hi">हिन्दी</button>
+        <button class="language-button" type="button" data-language-choice="en">English</button>
+      </div>
+    </div>
+  </section>
 
-    <h2>ગુરુશાળા અનુસૂચિત જાતિ મહિલા શિક્ષણ ફાઉન્ડેશન</h2>
+  <main class="card" id="homepage">
+    <div class="top-actions">
+      <button class="change-language" type="button" id="change-language" data-i18n="changeLanguage">ભાષા બદલો</button>
+    </div>
 
-    <p class="lead">
+    <h1 data-i18n="title">ગુરુશાળા</h1>
+
+    <h2 data-i18n="subtitle">ગુરુશાળા અનુસૂચિત જાતિ મહિલા શિક્ષણ ફાઉન્ડેશન</h2>
+
+    <p class="lead" data-i18n="lead">
       અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત
       ગામમૂળ શિક્ષણ અને સંસ્કાર પહેલ.
     </p>
 
-    <p>
+    <p data-i18n="intro">
       ગુરુશાળાનો હેતુ મહિલાઓ, બાળકો અને સ્થાનિક સમુદાય માટે જ્ઞાન, વાંચન,
       આત્મવિશ્વાસ, સંસ્કાર અને સાંસ્કૃતિક પ્રવૃત્તિઓને સરળ રીતે આગળ વધારવાનો છે.
     </p>
 
-    <p class="note">
+    <p class="note" data-i18n="note">
       આ વેબસાઇટ ગુરુશાળાની દ્રષ્ટિ, મહિલાઓના નેતૃત્વ, શિક્ષણ પ્રવૃત્તિઓ,
       દસ્તાવેજ તૈયારી અને ભવિષ્યના અપડેટ્સ માટે બનાવવામાં આવી છે.
     </p>
 
-    <div class="sections" aria-label="ગુરુશાળાની માહિતી">
+    <div class="sections" data-i18n-aria="sectionsLabel" aria-label="ગુરુશાળાની માહિતી">
       <section class="section">
-        <h3>દ્રષ્ટિ</h3>
-        <p>
+        <h3 data-i18n="visionTitle">દ્રષ્ટિ</h3>
+        <p data-i18n="visionText">
           ગામની દીકરીઓ, બહેનો અને બાળકો માટે સરળ શિક્ષણ, સારા સંસ્કાર અને
           આત્મવિશ્વાસનું વાતાવરણ બનાવવું.
         </p>
       </section>
 
       <section class="section">
-        <h3>હેતુ</h3>
-        <p>
+        <h3 data-i18n="purposeTitle">હેતુ</h3>
+        <p data-i18n="purposeText">
           વાંચન, લખાણ, સમજણ અને જીવન ઉપયોગી જ્ઞાન દ્વારા સ્થાનિક સમુદાયને
           શાંતિથી અને સન્માન સાથે આગળ વધારવો.
         </p>
       </section>
 
       <section class="section">
-        <h3>મહિલા નેતૃત્વ</h3>
-        <p>
+        <h3 data-i18n="leadershipTitle">મહિલા નેતૃત્વ</h3>
+        <p data-i18n="leadershipText">
           ગુરુશાળા અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી
           અને સંચાલિત પહેલ છે. બહારના સહયોગીઓ માત્ર તકનીકી મદદ અને માર્ગદર્શન આપી શકે છે.
         </p>
       </section>
 
       <section class="section">
-        <h3>પ્રવૃત્તિઓ</h3>
+        <h3 data-i18n="activitiesTitle">પ્રવૃત્તિઓ</h3>
         <ul>
-          <li>બાળકો માટે વાંચન અને અભ્યાસ સહાય</li>
-          <li>મહિલાઓ માટે શીખવાની અને ચર્ચાની બેઠકો</li>
-          <li>સંસ્કાર, કલા અને સાંસ્કૃતિક કાર્યક્રમો</li>
-          <li>દસ્તાવેજ અને નોંધણી માટે જરૂરી માહિતીની તૈયારી</li>
+          <li data-i18n="activityReading">બાળકો માટે વાંચન અને અભ્યાસ સહાય</li>
+          <li data-i18n="activityWomen">મહિલાઓ માટે શીખવાની અને ચર્ચાની બેઠકો</li>
+          <li data-i18n="activityCulture">સંસ્કાર, કલા અને સાંસ્કૃતિક કાર્યક્રમો</li>
+          <li data-i18n="activityDocuments">દસ્તાવેજ અને નોંધણી માટે જરૂરી માહિતીની તૈયારી</li>
         </ul>
       </section>
 
       <section class="section section-wide">
-        <h3>સંપર્ક</h3>
-        <p>
+        <h3 data-i18n="contactTitle">સંપર્ક</h3>
+        <p data-i18n="contactText">
           ગુરુશાળાનો સંપર્ક નંબર, ઇમેઇલ અને સ્થળની માહિતી પુષ્ટિ થયા પછી અહીં ઉમેરવામાં આવશે.
         </p>
-        <p class="placeholder">
+        <p class="placeholder" data-i18n="contactPlaceholder">
           સંપર્ક: [માહિતી બાકી]
         </p>
       </section>
     </div>
 
-    <p class="tagline">
+    <p class="tagline" data-i18n="tagline">
       જ્ઞાન • સંસ્કાર • આત્મવિશ્વાસ • સેવા
     </p>
 
@@ -244,5 +349,158 @@
       Copyright © Gurushala Scheduled Caste Women Education Foundation. All rights reserved.
     </p>
   </main>
+
+  <script>
+    const languageKey = "gurushala-language";
+    const defaultLanguage = "gu";
+    const translations = {
+      gu: {
+        pageTitle: "ગુરુશાળા",
+        languageScreenTitle: "ગુરુશાળા",
+        languageHelp: "કૃપા કરીને ભાષા પસંદ કરો.",
+        languageGroupLabel: "ભાષા પસંદ કરો",
+        changeLanguage: "ભાષા બદલો",
+        title: "ગુરુશાળા",
+        subtitle: "ગુરુશાળા અનુસૂચિત જાતિ મહિલા શિક્ષણ ફાઉન્ડેશન",
+        lead: "અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત ગામમૂળ શિક્ષણ અને સંસ્કાર પહેલ.",
+        intro: "ગુરુશાળાનો હેતુ મહિલાઓ, બાળકો અને સ્થાનિક સમુદાય માટે જ્ઞાન, વાંચન, આત્મવિશ્વાસ, સંસ્કાર અને સાંસ્કૃતિક પ્રવૃત્તિઓને સરળ રીતે આગળ વધારવાનો છે.",
+        note: "આ વેબસાઇટ ગુરુશાળાની દ્રષ્ટિ, મહિલાઓના નેતૃત્વ, શિક્ષણ પ્રવૃત્તિઓ, દસ્તાવેજ તૈયારી અને ભવિષ્યના અપડેટ્સ માટે બનાવવામાં આવી છે.",
+        sectionsLabel: "ગુરુશાળાની માહિતી",
+        visionTitle: "દ્રષ્ટિ",
+        visionText: "ગામની દીકરીઓ, બહેનો અને બાળકો માટે સરળ શિક્ષણ, સારા સંસ્કાર અને આત્મવિશ્વાસનું વાતાવરણ બનાવવું.",
+        purposeTitle: "હેતુ",
+        purposeText: "વાંચન, લખાણ, સમજણ અને જીવન ઉપયોગી જ્ઞાન દ્વારા સ્થાનિક સમુદાયને શાંતિથી અને સન્માન સાથે આગળ વધારવો.",
+        leadershipTitle: "મહિલા નેતૃત્વ",
+        leadershipText: "ગુરુશાળા અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત પહેલ છે. બહારના સહયોગીઓ માત્ર તકનીકી મદદ અને માર્ગદર્શન આપી શકે છે.",
+        activitiesTitle: "પ્રવૃત્તિઓ",
+        activityReading: "બાળકો માટે વાંચન અને અભ્યાસ સહાય",
+        activityWomen: "મહિલાઓ માટે શીખવાની અને ચર્ચાની બેઠકો",
+        activityCulture: "સંસ્કાર, કલા અને સાંસ્કૃતિક કાર્યક્રમો",
+        activityDocuments: "દસ્તાવેજ અને નોંધણી માટે જરૂરી માહિતીની તૈયારી",
+        contactTitle: "સંપર્ક",
+        contactText: "ગુરુશાળાનો સંપર્ક નંબર, ઇમેઇલ અને સ્થળની માહિતી પુષ્ટિ થયા પછી અહીં ઉમેરવામાં આવશે.",
+        contactPlaceholder: "સંપર્ક: [માહિતી બાકી]",
+        tagline: "જ્ઞાન • સંસ્કાર • આત્મવિશ્વાસ • સેવા"
+      },
+      hi: {
+        pageTitle: "गुरुशाला",
+        languageScreenTitle: "गुरुशाला",
+        languageHelp: "कृपया भाषा चुनें।",
+        languageGroupLabel: "भाषा चुनें",
+        changeLanguage: "भाषा बदलें",
+        title: "गुरुशाला",
+        subtitle: "गुरुशाला अनुसूचित जाति महिला शिक्षा फाउंडेशन",
+        lead: "अनुसूचित जाति की महिलाओं के स्वामित्व, नेतृत्व और संचालन वाली गांव से जुड़ी शिक्षा और संस्कार पहल।",
+        intro: "गुरुशाला का उद्देश्य महिलाओं, बच्चों और स्थानीय समुदाय के लिए ज्ञान, पढ़ाई, आत्मविश्वास, संस्कार और सांस्कृतिक गतिविधियों को सरल तरीके से आगे बढ़ाना है।",
+        note: "यह वेबसाइट गुरुशाला की दृष्टि, महिला नेतृत्व, शिक्षा गतिविधियों, दस्तावेज तैयारी और भविष्य के अपडेट के लिए बनाई गई है।",
+        sectionsLabel: "गुरुशाला की जानकारी",
+        visionTitle: "दृष्टि",
+        visionText: "गांव की बेटियों, बहनों और बच्चों के लिए सरल शिक्षा, अच्छे संस्कार और आत्मविश्वास का वातावरण बनाना।",
+        purposeTitle: "उद्देश्य",
+        purposeText: "पढ़ना, लिखना, समझ और जीवन में काम आने वाले ज्ञान से स्थानीय समुदाय को शांति और सम्मान के साथ आगे बढ़ाना।",
+        leadershipTitle: "महिला नेतृत्व",
+        leadershipText: "गुरुशाला अनुसूचित जाति की महिलाओं के स्वामित्व, नेतृत्व और संचालन वाली पहल है। बाहरी सहयोगी केवल तकनीकी मदद और मार्गदर्शन दे सकते हैं।",
+        activitiesTitle: "गतिविधियां",
+        activityReading: "बच्चों के लिए पढ़ाई और अभ्यास में मदद",
+        activityWomen: "महिलाओं के लिए सीखने और चर्चा की बैठकें",
+        activityCulture: "संस्कार, कला और सांस्कृतिक कार्यक्रम",
+        activityDocuments: "दस्तावेज और पंजीकरण के लिए जरूरी जानकारी की तैयारी",
+        contactTitle: "संपर्क",
+        contactText: "गुरुशाला का संपर्क नंबर, ईमेल और स्थान की जानकारी पुष्टि के बाद यहां जोड़ी जाएगी।",
+        contactPlaceholder: "संपर्क: [जानकारी बाकी]",
+        tagline: "ज्ञान • संस्कार • आत्मविश्वास • सेवा"
+      },
+      en: {
+        pageTitle: "Gurushala",
+        languageScreenTitle: "Gurushala",
+        languageHelp: "Please choose a language.",
+        languageGroupLabel: "Choose a language",
+        changeLanguage: "Change language",
+        title: "Gurushala",
+        subtitle: "Gurushala Scheduled Caste Women Education Foundation",
+        lead: "A village-rooted education and values initiative owned, led, and run by Scheduled Caste women.",
+        intro: "Gurushala aims to support knowledge, reading, confidence, values, and cultural activities for women, children, and the local community in a simple way.",
+        note: "This website is made for Gurushala's vision, women's leadership, education activities, document readiness, and future updates.",
+        sectionsLabel: "Gurushala information",
+        visionTitle: "Vision",
+        visionText: "To create an environment of simple education, good values, and confidence for village daughters, sisters, and children.",
+        purposeTitle: "Purpose",
+        purposeText: "To help the local community move forward peacefully and with dignity through reading, writing, understanding, and useful life knowledge.",
+        leadershipTitle: "Women-led",
+        leadershipText: "Gurushala is an initiative owned, led, and run by Scheduled Caste women. External supporters may only provide technical help and guidance.",
+        activitiesTitle: "Activities",
+        activityReading: "Reading and study support for children",
+        activityWomen: "Learning and discussion meetings for women",
+        activityCulture: "Values, art, and cultural programs",
+        activityDocuments: "Preparing information needed for documents and registration",
+        contactTitle: "Contact",
+        contactText: "Gurushala's contact number, email, and location details will be added here after confirmation.",
+        contactPlaceholder: "Contact: [information pending]",
+        tagline: "Knowledge • Values • Confidence • Service"
+      }
+    };
+
+    const languageScreen = document.getElementById("language-screen");
+    const languageTitle = document.getElementById("language-title");
+    const languageHelp = document.getElementById("language-help");
+    const languageGroup = document.querySelector(".language-options");
+    const changeLanguageButton = document.getElementById("change-language");
+
+    function getTranslation(language) {
+      return translations[language] || translations[defaultLanguage];
+    }
+
+    function setLanguage(language) {
+      const safeLanguage = translations[language] ? language : defaultLanguage;
+      const text = getTranslation(safeLanguage);
+
+      document.documentElement.lang = safeLanguage;
+      document.title = text.pageTitle;
+      languageTitle.textContent = text.languageScreenTitle;
+      languageHelp.textContent = text.languageHelp;
+      languageGroup.setAttribute("aria-label", text.languageGroupLabel);
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        element.textContent = text[key];
+      });
+
+      document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria");
+        element.setAttribute("aria-label", text[key]);
+      });
+    }
+
+    function showLanguageScreen() {
+      languageScreen.classList.add("is-visible");
+    }
+
+    function hideLanguageScreen() {
+      languageScreen.classList.remove("is-visible");
+    }
+
+    function saveLanguage(language) {
+      localStorage.setItem(languageKey, language);
+      setLanguage(language);
+      hideLanguageScreen();
+    }
+
+    document.querySelectorAll("[data-language-choice]").forEach((button) => {
+      button.addEventListener("click", () => {
+        saveLanguage(button.getAttribute("data-language-choice"));
+      });
+    });
+
+    changeLanguageButton.addEventListener("click", () => {
+      showLanguageScreen();
+    });
+
+    const savedLanguage = localStorage.getItem(languageKey);
+    setLanguage(savedLanguage || defaultLanguage);
+
+    if (!translations[savedLanguage]) {
+      showLanguageScreen();
+    }
+  </script>
 </body>
 </html>
