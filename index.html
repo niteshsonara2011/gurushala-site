@@ -7,14 +7,21 @@
   <style>
     :root {
       --leaf: #173f25;
+      --leaf-soft: #2f5b3d;
       --earth: #65451f;
       --gold: #c99b38;
       --warm: #fffaf0;
       --page: #f7f1df;
+      --line: #e5d3a0;
+      --muted: #5c5c5c;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -22,13 +29,38 @@
       font-family: "Noto Sans Gujarati", "Noto Sans Devanagari", "Shruti", "Nirmala UI", "Gujarati Sangam MN", system-ui, sans-serif;
       background: var(--page);
       color: var(--leaf);
-      text-align: center;
-      padding: 24px 16px;
       line-height: 1.8;
+      padding: 18px 14px;
     }
 
     button {
       font: inherit;
+    }
+
+    a {
+      color: var(--leaf);
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(201, 155, 56, 0.45);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      background: var(--leaf);
+      border-radius: 999px;
+      color: #ffffff;
+      left: 12px;
+      padding: 8px 14px;
+      position: fixed;
+      top: 12px;
+      transform: translateY(-150%);
+      z-index: 20;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
     }
 
     .language-screen {
@@ -40,6 +72,7 @@
       min-height: 100vh;
       padding: 24px 16px;
       position: fixed;
+      text-align: center;
       z-index: 10;
     }
 
@@ -58,13 +91,15 @@
     }
 
     .language-card h1 {
+      color: var(--leaf);
       font-size: clamp(2.1rem, 9vw, 3.2rem);
-      margin-bottom: 10px;
+      line-height: 1.25;
+      margin: 0 0 10px;
     }
 
     .language-card p {
       font-size: clamp(1.05rem, 4vw, 1.2rem);
-      margin-bottom: 22px;
+      margin: 0 0 22px;
     }
 
     .language-options {
@@ -88,18 +123,16 @@
     .language-button:focus-visible {
       background: #f4ead0;
       border-color: var(--gold);
-      outline: 3px solid rgba(201, 155, 56, 0.35);
-      outline-offset: 2px;
     }
 
     .card {
-      max-width: 850px;
-      margin: auto;
       background: var(--warm);
       border: 2px solid var(--gold);
       border-radius: 24px;
-      padding: 32px 22px;
       box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      margin: auto;
+      max-width: 980px;
+      padding: 24px 18px 30px;
     }
 
     .top-actions {
@@ -122,8 +155,12 @@
     .change-language:hover,
     .change-language:focus-visible {
       background: #f4ead0;
-      outline: 3px solid rgba(201, 155, 56, 0.35);
-      outline-offset: 2px;
+    }
+
+    .hero {
+      margin: 0 auto;
+      max-width: 780px;
+      text-align: center;
     }
 
     h1,
@@ -136,53 +173,91 @@
     }
 
     h1 {
-      font-size: clamp(2.5rem, 10vw, 4rem);
-      line-height: 1.25;
-      margin-top: 0;
-      margin-bottom: 8px;
       color: var(--leaf);
+      font-size: clamp(2.5rem, 10vw, 4rem);
       letter-spacing: 0.01em;
+      line-height: 1.25;
+      margin: 0 0 8px;
     }
 
     h2 {
-      font-size: clamp(1.25rem, 5vw, 1.7rem);
       color: var(--earth);
+      font-size: clamp(1.25rem, 5vw, 1.7rem);
       font-weight: 600;
       line-height: 1.55;
-      max-width: 720px;
+      margin-bottom: 20px;
       margin-top: 0;
-      margin-bottom: 24px;
+      max-width: 760px;
     }
 
     h3 {
       color: var(--earth);
-      font-size: clamp(1.25rem, 5vw, 1.55rem);
+      font-size: clamp(1.24rem, 4.8vw, 1.55rem);
       line-height: 1.4;
-      margin-top: 0;
       margin-bottom: 8px;
+      margin-top: 0;
     }
 
     p {
-      font-size: clamp(1.08rem, 4vw, 1.28rem);
-      max-width: 720px;
-      margin-top: 14px;
+      font-size: clamp(1.08rem, 4vw, 1.25rem);
       margin-bottom: 14px;
+      margin-top: 14px;
+      max-width: 760px;
     }
 
     .lead {
-      font-weight: 600;
+      font-weight: 700;
+    }
+
+    .notice {
+      background: #f4ead0;
+      border-radius: 18px;
+      margin-top: 22px;
+      padding: 16px 18px;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin: 26px auto 12px;
+      max-width: 840px;
+      padding: 0;
+    }
+
+    .quick-links li {
+      list-style: none;
+      margin: 0;
+    }
+
+    .quick-links a {
+      background: #fffdf6;
+      border: 1px solid #ddc68f;
+      border-radius: 999px;
+      display: inline-block;
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.4;
+      padding: 8px 12px;
+      text-decoration: none;
+    }
+
+    .quick-links a:hover,
+    .quick-links a:focus-visible {
+      background: #f4ead0;
     }
 
     .sections {
       display: grid;
       gap: 16px;
-      margin-top: 28px;
+      margin-top: 30px;
       text-align: left;
     }
 
     .section {
       background: #fffdf6;
-      border: 1px solid #e5d3a0;
+      border: 1px solid var(--line);
       border-radius: 18px;
       padding: 18px;
     }
@@ -198,11 +273,11 @@
     }
 
     ul {
-      font-size: clamp(1.08rem, 4vw, 1.28rem);
+      font-size: clamp(1.08rem, 4vw, 1.25rem);
       line-height: 1.8;
-      max-width: 720px;
-      margin-top: 10px;
       margin-bottom: 14px;
+      margin-top: 10px;
+      max-width: 760px;
       padding-left: 1.4em;
     }
 
@@ -210,32 +285,31 @@
       margin-top: 8px;
     }
 
-    .placeholder {
-      color: #6b5b36;
-      font-weight: 600;
+    .status-list {
+      padding-left: 1.2em;
     }
 
-    .note {
-      background: #f4ead0;
-      border-radius: 18px;
-      padding: 16px 18px;
-      margin-top: 22px;
+    .placeholder {
+      color: #6b5b36;
+      font-weight: 700;
     }
 
     .tagline {
-      margin-top: 24px;
-      font-weight: 700;
       color: #8a5a12;
+      font-weight: 700;
       letter-spacing: 0.03em;
+      margin-top: 26px;
+      text-align: center;
     }
 
     .footer {
       border-top: 1px solid #ddc68f;
-      color: #5c5c5c;
+      color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.6;
       margin-top: 30px;
       padding-top: 18px;
+      text-align: center;
     }
 
     @media (min-width: 700px) {
@@ -259,6 +333,8 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#content" data-i18n="skipLink">મુખ્ય માહિતી પર જાઓ</a>
+
   <section class="language-screen" id="language-screen" aria-labelledby="language-title" aria-describedby="language-help">
     <div class="language-card">
       <h1 id="language-title">ગુરુશાળા</h1>
@@ -271,72 +347,133 @@
     </div>
   </section>
 
-  <main class="card" id="homepage">
+  <main class="card" id="content">
     <div class="top-actions">
       <button class="change-language" type="button" id="change-language" data-i18n="changeLanguage">ભાષા બદલો</button>
     </div>
 
-    <h1 data-i18n="title">ગુરુશાળા</h1>
+    <header class="hero">
+      <h1 data-i18n="title">ગુરુશાળા</h1>
 
-    <h2 data-i18n="subtitle">ગુરુશાળા અનુસૂચિત જાતિ મહિલા શિક્ષણ ફાઉન્ડેશન</h2>
+      <h2 data-i18n="subtitle">ગુરુશાળા અનુસૂચિત જાતિ મહિલા શિક્ષણ ફાઉન્ડેશન</h2>
 
-    <p class="lead" data-i18n="lead">
-      અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત
-      ગામમૂળ શિક્ષણ અને સંસ્કાર પહેલ.
-    </p>
+      <p class="lead" data-i18n="lead">
+        અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત ગામમૂળ શિક્ષણ અને સંસ્કાર પહેલ.
+      </p>
 
-    <p data-i18n="intro">
-      ગુરુશાળાનો હેતુ મહિલાઓ, બાળકો અને સ્થાનિક સમુદાય માટે જ્ઞાન, વાંચન,
-      આત્મવિશ્વાસ, સંસ્કાર અને સાંસ્કૃતિક પ્રવૃત્તિઓને સરળ રીતે આગળ વધારવાનો છે.
-    </p>
+      <p data-i18n="intro">
+        ગુરુશાળાનો હેતુ મહિલાઓ, બાળકો અને સ્થાનિક સમુદાય માટે જ્ઞાન, વાંચન, આત્મવિશ્વાસ, સંસ્કાર અને સાંસ્કૃતિક પ્રવૃત્તિઓને સરળ રીતે આગળ વધારવાનો છે.
+      </p>
 
-    <p class="note" data-i18n="note">
-      આ વેબસાઇટ ગુરુશાળાની દ્રષ્ટિ, મહિલાઓના નેતૃત્વ, શિક્ષણ પ્રવૃત્તિઓ,
-      દસ્તાવેજ તૈયારી અને ભવિષ્યના અપડેટ્સ માટે બનાવવામાં આવી છે.
-    </p>
+      <p class="notice" data-i18n="notice">
+        નોંધ: નોંધણી, સત્તાવાર સરનામું અને સંપર્ક માહિતીની પુષ્ટિ થયા પછી જ અહીં ઉમેરવામાં આવશે.
+      </p>
+    </header>
+
+    <nav aria-label="વિભાગો" data-i18n-aria="navigationLabel">
+      <ul class="quick-links">
+        <li><a href="#about" data-i18n="navAbout">ગુરુશાળા વિશે</a></li>
+        <li><a href="#vision" data-i18n="navVision">દ્રષ્ટિ</a></li>
+        <li><a href="#purpose" data-i18n="navPurpose">હેતુ</a></li>
+        <li><a href="#leadership" data-i18n="navLeadership">મહિલા નેતૃત્વ</a></li>
+        <li><a href="#activities" data-i18n="navActivities">પ્રવૃત્તિઓ</a></li>
+        <li><a href="#learning" data-i18n="navLearning">શીખવાના ક્ષેત્રો</a></li>
+        <li><a href="#documents" data-i18n="navDocuments">દસ્તાવેજ સ્થિતિ</a></li>
+        <li><a href="#community" data-i18n="navCommunity">સમુદાય ભાગીદારી</a></li>
+        <li><a href="#contact" data-i18n="navContact">સંપર્ક</a></li>
+      </ul>
+    </nav>
 
     <div class="sections" data-i18n-aria="sectionsLabel" aria-label="ગુરુશાળાની માહિતી">
-      <section class="section">
+      <section class="section section-wide" id="about">
+        <h3 data-i18n="aboutTitle">ગુરુશાળા વિશે</h3>
+        <p data-i18n="aboutTextOne">
+          ગુરુશાળા અનુસૂચિત જાતિ મહિલાઓની શિક્ષણ અને સંસ્કાર માટેની સ્થાનિક પહેલ છે. આ પહેલ ગામના બાળકો, યુવતીઓ, બહેનો અને પરિવારો માટે સરળ શીખવાનું વાતાવરણ બનાવવા માંગે છે.
+        </p>
+        <p data-i18n="aboutTextTwo">
+          ગુરુશાળામાં શીખવું માત્ર પુસ્તકી અભ્યાસ સુધી મર્યાદિત નથી. વાંચન, બોલવાની હિંમત, સ્વચ્છ વિચાર, પરંપરા, કલા અને રોજિંદા જીવનમાં કામ લાગે તેવું જ્ઞાન પણ મહત્વનું છે.
+        </p>
+      </section>
+
+      <section class="section" id="vision">
         <h3 data-i18n="visionTitle">દ્રષ્ટિ</h3>
         <p data-i18n="visionText">
-          ગામની દીકરીઓ, બહેનો અને બાળકો માટે સરળ શિક્ષણ, સારા સંસ્કાર અને
-          આત્મવિશ્વાસનું વાતાવરણ બનાવવું.
+          ગામની દીકરીઓ, બહેનો અને બાળકો માટે એવું સ્થાન બનાવવું જ્યાં તેઓ સન્માનથી શીખી શકે, પોતાના પ્રશ્નો પૂછી શકે અને આત્મવિશ્વાસ સાથે આગળ વધી શકે.
         </p>
       </section>
 
-      <section class="section">
+      <section class="section" id="purpose">
         <h3 data-i18n="purposeTitle">હેતુ</h3>
         <p data-i18n="purposeText">
-          વાંચન, લખાણ, સમજણ અને જીવન ઉપયોગી જ્ઞાન દ્વારા સ્થાનિક સમુદાયને
-          શાંતિથી અને સન્માન સાથે આગળ વધારવો.
+          વાંચન, લખાણ, સમજણ, સંસ્કાર અને જીવન ઉપયોગી જ્ઞાન દ્વારા સ્થાનિક સમુદાયને શાંતિથી, સન્માનથી અને પોતાના પ્રયત્નોથી આગળ વધારવો.
         </p>
       </section>
 
-      <section class="section">
+      <section class="section" id="leadership">
         <h3 data-i18n="leadershipTitle">મહિલા નેતૃત્વ</h3>
-        <p data-i18n="leadershipText">
-          ગુરુશાળા અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી
-          અને સંચાલિત પહેલ છે. બહારના સહયોગીઓ માત્ર તકનીકી મદદ અને માર્ગદર્શન આપી શકે છે.
+        <p data-i18n="leadershipTextOne">
+          ગુરુશાળા અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત પહેલ તરીકે રજૂ થાય છે.
+        </p>
+        <p data-i18n="leadershipTextTwo">
+          બહારના તકનીકી સહયોગીઓ વેબસાઇટ, દસ્તાવેજ વ્યવસ્થા અથવા માર્ગદર્શન માટે મદદ કરી શકે છે, પરંતુ તેઓ ગુરુશાળાના સ્થાપક, માલિક, ટ્રસ્ટી, ડિરેક્ટર અથવા જાહેર ચહેરા તરીકે રજૂ થતા નથી.
         </p>
       </section>
 
-      <section class="section">
+      <section class="section" id="activities">
         <h3 data-i18n="activitiesTitle">પ્રવૃત્તિઓ</h3>
         <ul>
-          <li data-i18n="activityReading">બાળકો માટે વાંચન અને અભ્યાસ સહાય</li>
-          <li data-i18n="activityWomen">મહિલાઓ માટે શીખવાની અને ચર્ચાની બેઠકો</li>
-          <li data-i18n="activityCulture">સંસ્કાર, કલા અને સાંસ્કૃતિક કાર્યક્રમો</li>
-          <li data-i18n="activityDocuments">દસ્તાવેજ અને નોંધણી માટે જરૂરી માહિતીની તૈયારી</li>
+          <li data-i18n="activityReading">બાળકો માટે વાંચન, લખાણ અને અભ્યાસ સહાય</li>
+          <li data-i18n="activityWomen">મહિલાઓ માટે શીખવાની અને ચર્ચાની સરળ બેઠકો</li>
+          <li data-i18n="activityCulture">સંસ્કાર, કલા, ગીત, વાર્તા અને સાંસ્કૃતિક કાર્યક્રમો</li>
+          <li data-i18n="activityConfidence">દીકરીઓ અને બહેનોમાં બોલવાની હિંમત અને આત્મવિશ્વાસ વધારવા માટે માર્ગદર્શન</li>
+          <li data-i18n="activityDocuments">દસ્તાવેજ અને નોંધણી માટે જરૂરી માહિતી વ્યવસ્થિત કરવાની તૈયારી</li>
         </ul>
       </section>
 
-      <section class="section section-wide">
+      <section class="section" id="learning">
+        <h3 data-i18n="learningTitle">શીખવાના ક્ષેત્રો</h3>
+        <ul>
+          <li data-i18n="learningLanguage">ગુજરાતી વાંચન, લેખન અને સરળ ભાષા અભિવ્યક્તિ</li>
+          <li data-i18n="learningMath">મૂળભૂત ગણિત અને રોજિંદા હિસાબ</li>
+          <li data-i18n="learningDigital">જરૂર મુજબ મૂળભૂત ડિજિટલ જાણકારી</li>
+          <li data-i18n="learningLife">સ્વચ્છતા, સમયપાલન, જવાબદારી અને જીવન કૌશલ્ય</li>
+          <li data-i18n="learningCulture">સ્થાનિક સંસ્કૃતિ, લોકજ્ઞાન, કલા અને નૈતિક મૂલ્યો</li>
+        </ul>
+      </section>
+
+      <section class="section section-wide" id="documents">
+        <h3 data-i18n="documentsTitle">દસ્તાવેજ અને નોંધણી સ્થિતિ</h3>
+        <p data-i18n="documentsText">
+          ગુરુશાળાની સત્તાવાર નોંધણી, કાનૂની દસ્તાવેજો, સરનામું અને સંબંધિત વિગતો પુષ્ટિ પછી જ જાહેર કરવામાં આવશે. હાલ આ વિભાગ દસ્તાવેજ તૈયારી અને ભવિષ્યના અપડેટ્સ માટે રાખવામાં આવ્યો છે.
+        </p>
+        <ul class="status-list">
+          <li class="placeholder" data-i18n="documentsRegistration">નોંધણી નંબર: [સત્તાવાર માહિતી બાકી]</li>
+          <li class="placeholder" data-i18n="documentsAddress">સત્તાવાર સરનામું: [સત્તાવાર માહિતી બાકી]</li>
+          <li class="placeholder" data-i18n="documentsApproval">મંજૂરી/પ્રમાણપત્ર: [સત્તાવાર માહિતી બાકી]</li>
+        </ul>
+      </section>
+
+      <section class="section" id="community">
+        <h3 data-i18n="communityTitle">સમુદાય ભાગીદારી</h3>
+        <p data-i18n="communityText">
+          ગુરુશાળા સ્થાનિક પરિવારો, વાલીઓ, બહેનો અને સમાજના જવાબદાર લોકો સાથે મળીને શાંતિપૂર્વક કામ કરવા માંગે છે. ભાગીદારીનો અર્થ છે સમય, હાજરી, સારા વિચારો અને બાળકોના શીખવામાં સહકાર.
+        </p>
+      </section>
+
+      <section class="section" id="contact">
         <h3 data-i18n="contactTitle">સંપર્ક</h3>
         <p data-i18n="contactText">
-          ગુરુશાળાનો સંપર્ક નંબર, ઇમેઇલ અને સ્થળની માહિતી પુષ્ટિ થયા પછી અહીં ઉમેરવામાં આવશે.
+          ગુરુશાળાનો સંપર્ક નંબર, ઇમેઇલ અને સ્થળની માહિતી સત્તાવાર પુષ્ટિ થયા પછી અહીં ઉમેરવામાં આવશે.
         </p>
         <p class="placeholder" data-i18n="contactPlaceholder">
           સંપર્ક: [માહિતી બાકી]
+        </p>
+      </section>
+
+      <section class="section section-wide" id="final-note">
+        <h3 data-i18n="finalNoteTitle">અંતિમ નોંધ</h3>
+        <p data-i18n="finalNoteText">
+          આ વેબસાઇટ ગુરુશાળાના પ્રારંભિક પરિચય માટે છે. વધુ માહિતી, કાર્યક્રમો અને દસ્તાવેજો સત્તાવાર રીતે તૈયાર થાય તેમ અહીં ઉમેરવામાં આવશે. દરેક માહિતી સન્માન, સત્યતા અને સમુદાયના હિતને ધ્યાનમાં રાખીને રજૂ કરવામાં આવશે.
         </p>
       </section>
     </div>
@@ -356,6 +493,7 @@
     const translations = {
       gu: {
         pageTitle: "ગુરુશાળા",
+        skipLink: "મુખ્ય માહિતી પર જાઓ",
         languageScreenTitle: "ગુરુશાળા",
         languageHelp: "કૃપા કરીને ભાષા પસંદ કરો.",
         languageGroupLabel: "ભાષા પસંદ કરો",
@@ -364,26 +502,57 @@
         subtitle: "ગુરુશાળા અનુસૂચિત જાતિ મહિલા શિક્ષણ ફાઉન્ડેશન",
         lead: "અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત ગામમૂળ શિક્ષણ અને સંસ્કાર પહેલ.",
         intro: "ગુરુશાળાનો હેતુ મહિલાઓ, બાળકો અને સ્થાનિક સમુદાય માટે જ્ઞાન, વાંચન, આત્મવિશ્વાસ, સંસ્કાર અને સાંસ્કૃતિક પ્રવૃત્તિઓને સરળ રીતે આગળ વધારવાનો છે.",
-        note: "આ વેબસાઇટ ગુરુશાળાની દ્રષ્ટિ, મહિલાઓના નેતૃત્વ, શિક્ષણ પ્રવૃત્તિઓ, દસ્તાવેજ તૈયારી અને ભવિષ્યના અપડેટ્સ માટે બનાવવામાં આવી છે.",
+        notice: "નોંધ: નોંધણી, સત્તાવાર સરનામું અને સંપર્ક માહિતીની પુષ્ટિ થયા પછી જ અહીં ઉમેરવામાં આવશે.",
+        navigationLabel: "વિભાગો",
+        navAbout: "ગુરુશાળા વિશે",
+        navVision: "દ્રષ્ટિ",
+        navPurpose: "હેતુ",
+        navLeadership: "મહિલા નેતૃત્વ",
+        navActivities: "પ્રવૃત્તિઓ",
+        navLearning: "શીખવાના ક્ષેત્રો",
+        navDocuments: "દસ્તાવેજ સ્થિતિ",
+        navCommunity: "સમુદાય ભાગીદારી",
+        navContact: "સંપર્ક",
         sectionsLabel: "ગુરુશાળાની માહિતી",
+        aboutTitle: "ગુરુશાળા વિશે",
+        aboutTextOne: "ગુરુશાળા અનુસૂચિત જાતિ મહિલાઓની શિક્ષણ અને સંસ્કાર માટેની સ્થાનિક પહેલ છે. આ પહેલ ગામના બાળકો, યુવતીઓ, બહેનો અને પરિવારો માટે સરળ શીખવાનું વાતાવરણ બનાવવા માંગે છે.",
+        aboutTextTwo: "ગુરુશાળામાં શીખવું માત્ર પુસ્તકી અભ્યાસ સુધી મર્યાદિત નથી. વાંચન, બોલવાની હિંમત, સ્વચ્છ વિચાર, પરંપરા, કલા અને રોજિંદા જીવનમાં કામ લાગે તેવું જ્ઞાન પણ મહત્વનું છે.",
         visionTitle: "દ્રષ્ટિ",
-        visionText: "ગામની દીકરીઓ, બહેનો અને બાળકો માટે સરળ શિક્ષણ, સારા સંસ્કાર અને આત્મવિશ્વાસનું વાતાવરણ બનાવવું.",
+        visionText: "ગામની દીકરીઓ, બહેનો અને બાળકો માટે એવું સ્થાન બનાવવું જ્યાં તેઓ સન્માનથી શીખી શકે, પોતાના પ્રશ્નો પૂછી શકે અને આત્મવિશ્વાસ સાથે આગળ વધી શકે.",
         purposeTitle: "હેતુ",
-        purposeText: "વાંચન, લખાણ, સમજણ અને જીવન ઉપયોગી જ્ઞાન દ્વારા સ્થાનિક સમુદાયને શાંતિથી અને સન્માન સાથે આગળ વધારવો.",
+        purposeText: "વાંચન, લખાણ, સમજણ, સંસ્કાર અને જીવન ઉપયોગી જ્ઞાન દ્વારા સ્થાનિક સમુદાયને શાંતિથી, સન્માનથી અને પોતાના પ્રયત્નોથી આગળ વધારવો.",
         leadershipTitle: "મહિલા નેતૃત્વ",
-        leadershipText: "ગુરુશાળા અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત પહેલ છે. બહારના સહયોગીઓ માત્ર તકનીકી મદદ અને માર્ગદર્શન આપી શકે છે.",
+        leadershipTextOne: "ગુરુશાળા અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી અને સંચાલિત પહેલ તરીકે રજૂ થાય છે.",
+        leadershipTextTwo: "બહારના તકનીકી સહયોગીઓ વેબસાઇટ, દસ્તાવેજ વ્યવસ્થા અથવા માર્ગદર્શન માટે મદદ કરી શકે છે, પરંતુ તેઓ ગુરુશાળાના સ્થાપક, માલિક, ટ્રસ્ટી, ડિરેક્ટર અથવા જાહેર ચહેરા તરીકે રજૂ થતા નથી.",
         activitiesTitle: "પ્રવૃત્તિઓ",
-        activityReading: "બાળકો માટે વાંચન અને અભ્યાસ સહાય",
-        activityWomen: "મહિલાઓ માટે શીખવાની અને ચર્ચાની બેઠકો",
-        activityCulture: "સંસ્કાર, કલા અને સાંસ્કૃતિક કાર્યક્રમો",
-        activityDocuments: "દસ્તાવેજ અને નોંધણી માટે જરૂરી માહિતીની તૈયારી",
+        activityReading: "બાળકો માટે વાંચન, લખાણ અને અભ્યાસ સહાય",
+        activityWomen: "મહિલાઓ માટે શીખવાની અને ચર્ચાની સરળ બેઠકો",
+        activityCulture: "સંસ્કાર, કલા, ગીત, વાર્તા અને સાંસ્કૃતિક કાર્યક્રમો",
+        activityConfidence: "દીકરીઓ અને બહેનોમાં બોલવાની હિંમત અને આત્મવિશ્વાસ વધારવા માટે માર્ગદર્શન",
+        activityDocuments: "દસ્તાવેજ અને નોંધણી માટે જરૂરી માહિતી વ્યવસ્થિત કરવાની તૈયારી",
+        learningTitle: "શીખવાના ક્ષેત્રો",
+        learningLanguage: "ગુજરાતી વાંચન, લેખન અને સરળ ભાષા અભિવ્યક્તિ",
+        learningMath: "મૂળભૂત ગણિત અને રોજિંદા હિસાબ",
+        learningDigital: "જરૂર મુજબ મૂળભૂત ડિજિટલ જાણકારી",
+        learningLife: "સ્વચ્છતા, સમયપાલન, જવાબદારી અને જીવન કૌશલ્ય",
+        learningCulture: "સ્થાનિક સંસ્કૃતિ, લોકજ્ઞાન, કલા અને નૈતિક મૂલ્યો",
+        documentsTitle: "દસ્તાવેજ અને નોંધણી સ્થિતિ",
+        documentsText: "ગુરુશાળાની સત્તાવાર નોંધણી, કાનૂની દસ્તાવેજો, સરનામું અને સંબંધિત વિગતો પુષ્ટિ પછી જ જાહેર કરવામાં આવશે. હાલ આ વિભાગ દસ્તાવેજ તૈયારી અને ભવિષ્યના અપડેટ્સ માટે રાખવામાં આવ્યો છે.",
+        documentsRegistration: "નોંધણી નંબર: [સત્તાવાર માહિતી બાકી]",
+        documentsAddress: "સત્તાવાર સરનામું: [સત્તાવાર માહિતી બાકી]",
+        documentsApproval: "મંજૂરી/પ્રમાણપત્ર: [સત્તાવાર માહિતી બાકી]",
+        communityTitle: "સમુદાય ભાગીદારી",
+        communityText: "ગુરુશાળા સ્થાનિક પરિવારો, વાલીઓ, બહેનો અને સમાજના જવાબદાર લોકો સાથે મળીને શાંતિપૂર્વક કામ કરવા માંગે છે. ભાગીદારીનો અર્થ છે સમય, હાજરી, સારા વિચારો અને બાળકોના શીખવામાં સહકાર.",
         contactTitle: "સંપર્ક",
-        contactText: "ગુરુશાળાનો સંપર્ક નંબર, ઇમેઇલ અને સ્થળની માહિતી પુષ્ટિ થયા પછી અહીં ઉમેરવામાં આવશે.",
+        contactText: "ગુરુશાળાનો સંપર્ક નંબર, ઇમેઇલ અને સ્થળની માહિતી સત્તાવાર પુષ્ટિ થયા પછી અહીં ઉમેરવામાં આવશે.",
         contactPlaceholder: "સંપર્ક: [માહિતી બાકી]",
+        finalNoteTitle: "અંતિમ નોંધ",
+        finalNoteText: "આ વેબસાઇટ ગુરુશાળાના પ્રારંભિક પરિચય માટે છે. વધુ માહિતી, કાર્યક્રમો અને દસ્તાવેજો સત્તાવાર રીતે તૈયાર થાય તેમ અહીં ઉમેરવામાં આવશે. દરેક માહિતી સન્માન, સત્યતા અને સમુદાયના હિતને ધ્યાનમાં રાખીને રજૂ કરવામાં આવશે.",
         tagline: "જ્ઞાન • સંસ્કાર • આત્મવિશ્વાસ • સેવા"
       },
       hi: {
         pageTitle: "गुरुशाला",
+        skipLink: "मुख्य जानकारी पर जाएं",
         languageScreenTitle: "गुरुशाला",
         languageHelp: "कृपया भाषा चुनें।",
         languageGroupLabel: "भाषा चुनें",
@@ -392,26 +561,57 @@
         subtitle: "गुरुशाला अनुसूचित जाति महिला शिक्षा फाउंडेशन",
         lead: "अनुसूचित जाति की महिलाओं के स्वामित्व, नेतृत्व और संचालन वाली गांव से जुड़ी शिक्षा और संस्कार पहल।",
         intro: "गुरुशाला का उद्देश्य महिलाओं, बच्चों और स्थानीय समुदाय के लिए ज्ञान, पढ़ाई, आत्मविश्वास, संस्कार और सांस्कृतिक गतिविधियों को सरल तरीके से आगे बढ़ाना है।",
-        note: "यह वेबसाइट गुरुशाला की दृष्टि, महिला नेतृत्व, शिक्षा गतिविधियों, दस्तावेज तैयारी और भविष्य के अपडेट के लिए बनाई गई है।",
+        notice: "नोट: पंजीकरण, आधिकारिक पता और संपर्क जानकारी पुष्टि के बाद ही यहां जोड़ी जाएगी।",
+        navigationLabel: "विभाग",
+        navAbout: "गुरुशाला के बारे में",
+        navVision: "दृष्टि",
+        navPurpose: "उद्देश्य",
+        navLeadership: "महिला नेतृत्व",
+        navActivities: "गतिविधियां",
+        navLearning: "सीखने के क्षेत्र",
+        navDocuments: "दस्तावेज स्थिति",
+        navCommunity: "समुदाय भागीदारी",
+        navContact: "संपर्क",
         sectionsLabel: "गुरुशाला की जानकारी",
+        aboutTitle: "गुरुशाला के बारे में",
+        aboutTextOne: "गुरुशाला अनुसूचित जाति की महिलाओं की शिक्षा और संस्कार के लिए स्थानीय पहल है। यह पहल गांव के बच्चों, युवतियों, बहनों और परिवारों के लिए सरल सीखने का वातावरण बनाना चाहती है।",
+        aboutTextTwo: "गुरुशाला में सीखना केवल किताबों तक सीमित नहीं है। पढ़ना, बोलने की हिम्मत, साफ सोच, परंपरा, कला और रोजमर्रा के जीवन में काम आने वाला ज्ञान भी महत्वपूर्ण है।",
         visionTitle: "दृष्टि",
-        visionText: "गांव की बेटियों, बहनों और बच्चों के लिए सरल शिक्षा, अच्छे संस्कार और आत्मविश्वास का वातावरण बनाना।",
+        visionText: "गांव की बेटियों, बहनों और बच्चों के लिए ऐसा स्थान बनाना जहां वे सम्मान से सीख सकें, अपने प्रश्न पूछ सकें और आत्मविश्वास के साथ आगे बढ़ सकें।",
         purposeTitle: "उद्देश्य",
-        purposeText: "पढ़ना, लिखना, समझ और जीवन में काम आने वाले ज्ञान से स्थानीय समुदाय को शांति और सम्मान के साथ आगे बढ़ाना।",
+        purposeText: "पढ़ना, लिखना, समझ, संस्कार और जीवन में काम आने वाले ज्ञान से स्थानीय समुदाय को शांति, सम्मान और अपने प्रयासों से आगे बढ़ाना।",
         leadershipTitle: "महिला नेतृत्व",
-        leadershipText: "गुरुशाला अनुसूचित जाति की महिलाओं के स्वामित्व, नेतृत्व और संचालन वाली पहल है। बाहरी सहयोगी केवल तकनीकी मदद और मार्गदर्शन दे सकते हैं।",
+        leadershipTextOne: "गुरुशाला अनुसूचित जाति की महिलाओं के स्वामित्व, नेतृत्व और संचालन वाली पहल के रूप में प्रस्तुत है।",
+        leadershipTextTwo: "बाहरी तकनीकी सहयोगी वेबसाइट, दस्तावेज व्यवस्था या मार्गदर्शन में मदद कर सकते हैं, लेकिन उन्हें गुरुशाला के संस्थापक, मालिक, ट्रस्टी, निदेशक या सार्वजनिक चेहरा नहीं बताया जाता।",
         activitiesTitle: "गतिविधियां",
-        activityReading: "बच्चों के लिए पढ़ाई और अभ्यास में मदद",
-        activityWomen: "महिलाओं के लिए सीखने और चर्चा की बैठकें",
-        activityCulture: "संस्कार, कला और सांस्कृतिक कार्यक्रम",
-        activityDocuments: "दस्तावेज और पंजीकरण के लिए जरूरी जानकारी की तैयारी",
+        activityReading: "बच्चों के लिए पढ़ना, लिखना और पढ़ाई में मदद",
+        activityWomen: "महिलाओं के लिए सीखने और चर्चा की सरल बैठकें",
+        activityCulture: "संस्कार, कला, गीत, कहानी और सांस्कृतिक कार्यक्रम",
+        activityConfidence: "बेटियों और बहनों में बोलने की हिम्मत और आत्मविश्वास बढ़ाने के लिए मार्गदर्शन",
+        activityDocuments: "दस्तावेज और पंजीकरण के लिए जरूरी जानकारी व्यवस्थित करने की तैयारी",
+        learningTitle: "सीखने के क्षेत्र",
+        learningLanguage: "गुजराती पढ़ना, लिखना और सरल भाषा अभिव्यक्ति",
+        learningMath: "मूल गणित और रोजमर्रा का हिसाब",
+        learningDigital: "जरूरत के अनुसार मूल डिजिटल जानकारी",
+        learningLife: "स्वच्छता, समय पालन, जिम्मेदारी और जीवन कौशल",
+        learningCulture: "स्थानीय संस्कृति, लोकज्ञान, कला और नैतिक मूल्य",
+        documentsTitle: "दस्तावेज और पंजीकरण स्थिति",
+        documentsText: "गुरुशाला की आधिकारिक पंजीकरण, कानूनी दस्तावेज, पता और संबंधित जानकारी पुष्टि के बाद ही सार्वजनिक की जाएगी। अभी यह विभाग दस्तावेज तैयारी और भविष्य के अपडेट के लिए रखा गया है।",
+        documentsRegistration: "पंजीकरण नंबर: [आधिकारिक जानकारी बाकी]",
+        documentsAddress: "आधिकारिक पता: [आधिकारिक जानकारी बाकी]",
+        documentsApproval: "मंजूरी/प्रमाणपत्र: [आधिकारिक जानकारी बाकी]",
+        communityTitle: "समुदाय भागीदारी",
+        communityText: "गुरुशाला स्थानीय परिवारों, अभिभावकों, बहनों और समाज के जिम्मेदार लोगों के साथ मिलकर शांतिपूर्वक काम करना चाहती है। भागीदारी का अर्थ है समय, उपस्थिति, अच्छे विचार और बच्चों के सीखने में सहयोग।",
         contactTitle: "संपर्क",
-        contactText: "गुरुशाला का संपर्क नंबर, ईमेल और स्थान की जानकारी पुष्टि के बाद यहां जोड़ी जाएगी।",
+        contactText: "गुरुशाला का संपर्क नंबर, ईमेल और स्थान की जानकारी आधिकारिक पुष्टि के बाद यहां जोड़ी जाएगी।",
         contactPlaceholder: "संपर्क: [जानकारी बाकी]",
+        finalNoteTitle: "अंतिम नोट",
+        finalNoteText: "यह वेबसाइट गुरुशाला के शुरुआती परिचय के लिए है। अधिक जानकारी, कार्यक्रम और दस्तावेज आधिकारिक रूप से तैयार होने पर यहां जोड़े जाएंगे। हर जानकारी सम्मान, सत्यता और समुदाय के हित को ध्यान में रखकर प्रस्तुत की जाएगी।",
         tagline: "ज्ञान • संस्कार • आत्मविश्वास • सेवा"
       },
       en: {
         pageTitle: "Gurushala",
+        skipLink: "Skip to main information",
         languageScreenTitle: "Gurushala",
         languageHelp: "Please choose a language.",
         languageGroupLabel: "Choose a language",
@@ -420,22 +620,52 @@
         subtitle: "Gurushala Scheduled Caste Women Education Foundation",
         lead: "A village-rooted education and values initiative owned, led, and run by Scheduled Caste women.",
         intro: "Gurushala aims to support knowledge, reading, confidence, values, and cultural activities for women, children, and the local community in a simple way.",
-        note: "This website is made for Gurushala's vision, women's leadership, education activities, document readiness, and future updates.",
+        notice: "Note: registration, official address, and contact information will be added only after confirmation.",
+        navigationLabel: "Sections",
+        navAbout: "About Gurushala",
+        navVision: "Vision",
+        navPurpose: "Purpose",
+        navLeadership: "Women-led",
+        navActivities: "Activities",
+        navLearning: "Learning areas",
+        navDocuments: "Document status",
+        navCommunity: "Community partnership",
+        navContact: "Contact",
         sectionsLabel: "Gurushala information",
+        aboutTitle: "About Gurushala",
+        aboutTextOne: "Gurushala is a local initiative for the education and values of Scheduled Caste women. It seeks to create a simple learning environment for village children, girls, women, and families.",
+        aboutTextTwo: "Learning at Gurushala is not limited to school books. Reading, courage to speak, clear thinking, tradition, art, and useful everyday knowledge are also important.",
         visionTitle: "Vision",
-        visionText: "To create an environment of simple education, good values, and confidence for village daughters, sisters, and children.",
+        visionText: "To create a place where village daughters, sisters, and children can learn with dignity, ask their questions, and move forward with confidence.",
         purposeTitle: "Purpose",
-        purposeText: "To help the local community move forward peacefully and with dignity through reading, writing, understanding, and useful life knowledge.",
+        purposeText: "To help the local community move forward peacefully, with dignity, and through its own efforts by supporting reading, writing, understanding, values, and useful life knowledge.",
         leadershipTitle: "Women-led",
-        leadershipText: "Gurushala is an initiative owned, led, and run by Scheduled Caste women. External supporters may only provide technical help and guidance.",
+        leadershipTextOne: "Gurushala is presented as an initiative owned, led, and run by Scheduled Caste women.",
+        leadershipTextTwo: "External technical supporters may help with the website, document systems, or guidance, but they are not presented as founders, owners, trustees, directors, or the public face of Gurushala.",
         activitiesTitle: "Activities",
-        activityReading: "Reading and study support for children",
-        activityWomen: "Learning and discussion meetings for women",
-        activityCulture: "Values, art, and cultural programs",
-        activityDocuments: "Preparing information needed for documents and registration",
+        activityReading: "Reading, writing, and study support for children",
+        activityWomen: "Simple learning and discussion meetings for women",
+        activityCulture: "Values, art, songs, stories, and cultural programs",
+        activityConfidence: "Guidance to build courage to speak and confidence among girls and women",
+        activityDocuments: "Preparing and organizing information needed for documents and registration",
+        learningTitle: "Learning areas",
+        learningLanguage: "Gujarati reading, writing, and simple language expression",
+        learningMath: "Basic maths and everyday calculation",
+        learningDigital: "Basic digital awareness when needed",
+        learningLife: "Cleanliness, punctuality, responsibility, and life skills",
+        learningCulture: "Local culture, folk knowledge, art, and moral values",
+        documentsTitle: "Document and registration status",
+        documentsText: "Gurushala's official registration, legal documents, address, and related details will be shared publicly only after confirmation. For now, this section is kept for document readiness and future updates.",
+        documentsRegistration: "Registration number: [official information pending]",
+        documentsAddress: "Official address: [official information pending]",
+        documentsApproval: "Approval/certificate: [official information pending]",
+        communityTitle: "Community partnership",
+        communityText: "Gurushala wishes to work peacefully with local families, parents, women, and responsible community members. Partnership means time, presence, good ideas, and support for children's learning.",
         contactTitle: "Contact",
-        contactText: "Gurushala's contact number, email, and location details will be added here after confirmation.",
+        contactText: "Gurushala's contact number, email, and location details will be added here after official confirmation.",
         contactPlaceholder: "Contact: [information pending]",
+        finalNoteTitle: "Final note",
+        finalNoteText: "This website is an early introduction to Gurushala. More information, programs, and documents will be added when they are officially ready. Every detail will be presented with dignity, truthfulness, and the community's interest in mind.",
         tagline: "Knowledge • Values • Confidence • Service"
       }
     };
