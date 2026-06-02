@@ -39,7 +39,9 @@
 
     h1,
     h2,
-    p {
+    h3,
+    p,
+    ul {
       margin-left: auto;
       margin-right: auto;
     }
@@ -63,6 +65,14 @@
       margin-bottom: 24px;
     }
 
+    h3 {
+      color: var(--earth);
+      font-size: clamp(1.25rem, 5vw, 1.55rem);
+      line-height: 1.4;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
     p {
       font-size: clamp(1.08rem, 4vw, 1.28rem);
       max-width: 720px;
@@ -71,6 +81,48 @@
     }
 
     .lead {
+      font-weight: 600;
+    }
+
+    .sections {
+      display: grid;
+      gap: 16px;
+      margin-top: 28px;
+      text-align: left;
+    }
+
+    .section {
+      background: #fffdf6;
+      border: 1px solid #e5d3a0;
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .section p,
+    .section ul {
+      max-width: none;
+    }
+
+    .section p:last-child,
+    .section ul:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      font-size: clamp(1.08rem, 4vw, 1.28rem);
+      line-height: 1.8;
+      max-width: 720px;
+      margin-top: 10px;
+      margin-bottom: 14px;
+      padding-left: 1.4em;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    .placeholder {
+      color: #6b5b36;
       font-weight: 600;
     }
 
@@ -105,6 +157,14 @@
       .card {
         padding: 42px 36px;
       }
+
+      .sections {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-wide {
+        grid-column: 1 / -1;
+      }
     }
   </style>
 </head>
@@ -129,6 +189,52 @@
       આ વેબસાઇટ ગુરુશાળાની દ્રષ્ટિ, મહિલાઓના નેતૃત્વ, શિક્ષણ પ્રવૃત્તિઓ,
       દસ્તાવેજ તૈયારી અને ભવિષ્યના અપડેટ્સ માટે બનાવવામાં આવી છે.
     </p>
+
+    <div class="sections" aria-label="ગુરુશાળાની માહિતી">
+      <section class="section">
+        <h3>દ્રષ્ટિ</h3>
+        <p>
+          ગામની દીકરીઓ, બહેનો અને બાળકો માટે સરળ શિક્ષણ, સારા સંસ્કાર અને
+          આત્મવિશ્વાસનું વાતાવરણ બનાવવું.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>હેતુ</h3>
+        <p>
+          વાંચન, લખાણ, સમજણ અને જીવન ઉપયોગી જ્ઞાન દ્વારા સ્થાનિક સમુદાયને
+          શાંતિથી અને સન્માન સાથે આગળ વધારવો.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>મહિલા નેતૃત્વ</h3>
+        <p>
+          ગુરુશાળા અનુસૂચિત જાતિની મહિલાઓ દ્વારા માલિકી ધરાવતી, નેતૃત્વ પામતી
+          અને સંચાલિત પહેલ છે. બહારના સહયોગીઓ માત્ર તકનીકી મદદ અને માર્ગદર્શન આપી શકે છે.
+        </p>
+      </section>
+
+      <section class="section">
+        <h3>પ્રવૃત્તિઓ</h3>
+        <ul>
+          <li>બાળકો માટે વાંચન અને અભ્યાસ સહાય</li>
+          <li>મહિલાઓ માટે શીખવાની અને ચર્ચાની બેઠકો</li>
+          <li>સંસ્કાર, કલા અને સાંસ્કૃતિક કાર્યક્રમો</li>
+          <li>દસ્તાવેજ અને નોંધણી માટે જરૂરી માહિતીની તૈયારી</li>
+        </ul>
+      </section>
+
+      <section class="section section-wide">
+        <h3>સંપર્ક</h3>
+        <p>
+          ગુરુશાળાનો સંપર્ક નંબર, ઇમેઇલ અને સ્થળની માહિતી પુષ્ટિ થયા પછી અહીં ઉમેરવામાં આવશે.
+        </p>
+        <p class="placeholder">
+          સંપર્ક: [માહિતી બાકી]
+        </p>
+      </section>
+    </div>
 
     <p class="tagline">
       જ્ઞાન • સંસ્કાર • આત્મવિશ્વાસ • સેવા
