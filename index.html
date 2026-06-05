@@ -3,155 +3,414 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ગુરુશાળા | Under Maintenance</title>
+  <title>વાલ્મીકી ગુરુશાળા ટ્રસ્ટ | Gurushala</title>
+  <meta name="description" content="વેદમાં મૂળ, પરંપરાથી પોષિત અને ટેકનોલોજીથી સર્વાંગી વિકાસ તરફ આગળ વધતી ગુરુશાળા." />
+  <meta name="theme-color" content="#061421" />
   <style>
     :root {
-      --leaf: #173f25;
-      --earth: #65451f;
-      --gold: #c99b38;
-      --warm: #fffaf0;
-      --page: #f7f1df;
-      --line: #e5d3a0;
-      --muted: #5c5c5c;
+      --bg: #061421;
+      --bg2: #0a1f2f;
+      --card: rgba(7, 24, 38, 0.82);
+      --gold: #d9ad4f;
+      --gold2: #f4d889;
+      --teal: #17bfd1;
+      --green: #1bb878;
+      --cream: #fff5d8;
+      --muted: #b9c7cf;
+      --line: rgba(217, 173, 79, 0.32);
+      --shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      align-items: center;
-      background: radial-gradient(circle at top, #fffaf0 0%, var(--page) 58%, #efe2bd 100%);
-      color: var(--leaf);
-      display: flex;
-      font-family: "Noto Sans Gujarati", "Noto Sans Devanagari", "Shruti", "Nirmala UI", system-ui, sans-serif;
-      justify-content: center;
-      line-height: 1.8;
       margin: 0;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(217,173,79,0.18), transparent 38%),
+        radial-gradient(circle at 18% 16%, rgba(23,191,209,0.12), transparent 28%),
+        radial-gradient(circle at 82% 18%, rgba(27,184,120,0.10), transparent 30%),
+        linear-gradient(135deg, #030912 0%, var(--bg) 48%, #02060d 100%);
+      color: var(--cream);
+      font-family: "Noto Sans Gujarati", "Noto Serif Gujarati", "Shruti", "Nirmala UI", system-ui, sans-serif;
+      line-height: 1.75;
       min-height: 100vh;
-      padding: 24px 16px;
-      text-align: center;
+      overflow-x: hidden;
     }
 
-    main {
-      background: var(--warm);
-      border: 2px solid var(--gold);
-      border-radius: 28px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
-      max-width: 760px;
-      padding: 34px 22px;
-      width: 100%;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(217,173,79,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(217,173,79,0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at 50% 35%, black, transparent 75%);
     }
 
-    .status {
-      background: #f4ead0;
+    a { color: inherit; text-decoration: none; }
+
+    .site-shell { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(4, 12, 22, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 15px 0;
+    }
+
+    .brand {
+      align-items: center;
+      display: flex;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle, rgba(217,173,79,0.18), rgba(23,191,209,0.06));
+      box-shadow: 0 0 22px rgba(217,173,79,0.22);
+    }
+
+    .brand-mark svg { width: 32px; height: 32px; }
+
+    .brand span { display: block; line-height: 1.25; }
+    .brand small { color: var(--muted); display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+    .links a { color: var(--muted); font-size: 0.95rem; font-weight: 700; }
+    .links a:hover { color: var(--gold2); }
+
+    .hero {
+      display: grid;
+      gap: 38px;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      padding: 70px 0 48px;
+    }
+
+    .eyebrow {
       border: 1px solid var(--line);
       border-radius: 999px;
-      color: var(--earth);
-      display: inline-block;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      margin-bottom: 18px;
-      padding: 7px 14px;
-      text-transform: uppercase;
+      color: var(--gold2);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      padding: 8px 16px;
+      background: rgba(217,173,79,0.08);
+      margin-bottom: 22px;
     }
 
     h1 {
-      color: var(--leaf);
-      font-size: clamp(2.6rem, 10vw, 4.2rem);
-      line-height: 1.25;
-      margin: 0 0 8px;
-    }
-
-    h2 {
-      color: var(--earth);
-      font-size: clamp(1.2rem, 5vw, 1.6rem);
-      font-weight: 600;
-      line-height: 1.55;
-      margin: 0 auto 24px;
-      max-width: 640px;
-    }
-
-    .message-grid {
-      display: grid;
-      gap: 14px;
-      margin: 24px auto;
-      max-width: 650px;
-      text-align: left;
-    }
-
-    .message {
-      background: #fffdf6;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 16px 18px;
-    }
-
-    .message strong {
-      color: var(--earth);
-      display: block;
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-
-    p {
-      font-size: clamp(1.05rem, 4vw, 1.22rem);
+      font-size: clamp(3rem, 8vw, 6.2rem);
+      line-height: 1.05;
       margin: 0;
+      color: var(--gold2);
+      text-shadow: 0 0 26px rgba(217,173,79,0.22);
     }
 
-    .tagline {
-      color: #8a5a12;
-      font-weight: 700;
+    .subtitle {
+      color: #ffffff;
+      font-size: clamp(1.22rem, 3vw, 2rem);
+      font-weight: 800;
+      margin: 16px 0 14px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      max-width: 680px;
+      margin: 0 0 26px;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .button {
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      padding: 11px 20px;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold), #8f641b);
+      color: #061421;
+      box-shadow: 0 10px 30px rgba(217,173,79,0.18);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--gold2);
+    }
+
+    .mandala-card {
+      background: radial-gradient(circle, rgba(217,173,79,0.12), rgba(7,24,38,0.72) 60%, rgba(3,9,18,0.92));
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mandala-card::after {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(from 0deg, transparent, rgba(217,173,79,0.12), transparent, rgba(23,191,209,0.10), transparent);
+      animation: spin 28s linear infinite;
+      opacity: .8;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .mandala-wrap { position: relative; z-index: 1; display: grid; place-items: center; }
+    .mandala-svg { width: min(100%, 520px); height: auto; filter: drop-shadow(0 0 22px rgba(217,173,79,0.28)); }
+
+    .section { padding: 44px 0; }
+
+    .section-title { margin: 0 0 20px; font-size: clamp(2rem, 4vw, 3rem); color: var(--gold2); }
+    .section-note { color: var(--muted); margin: 0 0 26px; max-width: 820px; font-size: 1.08rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 14px 44px rgba(0,0,0,0.22);
+    }
+
+    .card h3 { margin: 0 0 10px; color: var(--gold2); font-size: 1.25rem; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: var(--teal);
+      margin-bottom: 14px;
+      background: rgba(23,191,209,0.08);
+      font-weight: 900;
+      font-size: 1.35rem;
+    }
+
+    .root-map {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
       margin-top: 22px;
+    }
+
+    .root-item {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      background: rgba(255,255,255,0.035);
       text-align: center;
     }
 
-    footer {
-      border-top: 1px solid #ddc68f;
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-top: 26px;
-      padding-top: 16px;
+    .root-item strong { color: var(--gold2); display: block; font-size: 1.1rem; }
+    .root-item span { color: var(--muted); display: block; font-size: 0.95rem; margin-top: 5px; }
+
+    .banner {
+      background: linear-gradient(135deg, rgba(217,173,79,0.16), rgba(23,191,209,0.08));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1.4fr .6fr;
+      gap: 22px;
+      align-items: center;
     }
 
-    @media (min-width: 720px) {
-      main {
-        padding: 44px 42px;
-      }
+    .banner h2 { margin: 0 0 8px; color: var(--gold2); font-size: clamp(1.8rem, 3vw, 2.6rem); }
+    .banner p { color: var(--muted); margin: 0; }
+
+    footer {
+      border-top: 1px solid var(--line);
+      margin-top: 44px;
+      padding: 28px 0 36px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer strong { color: var(--gold2); }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding-top: 42px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .root-map { grid-template-columns: 1fr 1fr; }
+      .banner { grid-template-columns: 1fr; }
+      .links { display: none; }
+    }
+
+    @media (max-width: 560px) {
+      .grid, .root-map { grid-template-columns: 1fr; }
+      .mandala-card { padding: 10px; border-radius: 24px; }
+      .hero-actions .button { width: 100%; text-align: center; }
     }
   </style>
 </head>
 <body>
-  <main aria-labelledby="site-title">
-    <div class="status">Under Maintenance</div>
+  <header>
+    <div class="site-shell nav">
+      <a class="brand" href="#top" aria-label="ગુરુશાળા મુખ્ય પાનું">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 100 100" role="img">
+            <circle cx="50" cy="50" r="43" fill="none" stroke="#d9ad4f" stroke-width="4" />
+            <path d="M50 18 C62 34 62 49 50 61 C38 49 38 34 50 18Z" fill="#d9ad4f" />
+            <path d="M22 66 C36 58 45 62 50 78 C36 76 26 73 22 66Z" fill="#1bb878" />
+            <path d="M78 66 C64 58 55 62 50 78 C64 76 74 73 78 66Z" fill="#17bfd1" />
+          </svg>
+        </span>
+        <span>વાલ્મીકી ગુરુશાળા ટ્રસ્ટ<small>Veda · Parampara · Technology</small></span>
+      </a>
+      <nav class="links" aria-label="મુખ્ય જોડાણો">
+        <a href="#vision">દૃષ્ટિ</a>
+        <a href="#model">મૂલ વિચાર</a>
+        <a href="#work">કાર્યક્ષેત્ર</a>
+        <a href="#board">બોર્ડ</a>
+      </nav>
+    </div>
+  </header>
 
-    <h1 id="site-title">ગુરુશાળા</h1>
-
-    <h2>ગુરુશાળા અનુસૂચિત જાતિ મહિલા શિક્ષણ ફાઉન્ડેશન</h2>
-
-    <section class="message-grid" aria-label="Maintenance messages">
-      <div class="message" lang="gu">
-        <strong>ગુજરાતી</strong>
-        <p>વેબસાઇટ હાલ સુધારણા હેઠળ છે. નવી માહિતી અને સુધારેલી રચના સાથે ગુરુશાળા ટૂંક સમયમાં ફરી ખુલશે.</p>
+  <main id="top" class="site-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">વેદમાં મૂળ · પરંપરાથી પોષિત · ટેકનોલોજીથી વિકાસ</div>
+        <h1 id="hero-title">ગુરુશાળા</h1>
+        <p class="subtitle">વાલ્મીકી ગુરુશાળા ટ્રસ્ટ</p>
+        <p class="lead">જ્યાં જ્ઞાન માત્ર અભ્યાસ નથી, પરંતુ આત્મવિશ્વાસ, સંસ્કાર, ડિજિટલ સમજ, સામાજિક જવાબદારી અને જીવનોપયોગી કૌશલ્ય તરફનો જીવંત માર્ગ બને છે.</p>
+        <div class="hero-actions">
+          <a class="button" href="#vision">અમારી દૃષ્ટિ જુઓ</a>
+          <a class="button secondary" href="#board">બોર્ડ સાથે જોડાવા માટે</a>
+        </div>
       </div>
 
-      <div class="message" lang="hi">
-        <strong>हिन्दी</strong>
-        <p>वेबसाइट अभी सुधार कार्य के लिए बंद है। नई जानकारी और बेहतर संरचना के साथ गुरushala जल्द फिर उपलब्ध होगी।</p>
-      </div>
-
-      <div class="message" lang="en">
-        <strong>English</strong>
-        <p>The website is currently under maintenance. Gurushala will be back soon with updated information and a clearer structure.</p>
+      <div class="mandala-card" aria-label="ગુરુશાળા મંડલ ચિહ્ન">
+        <div class="mandala-wrap">
+          <svg class="mandala-svg" viewBox="0 0 600 600" role="img" aria-labelledby="logo-title logo-desc">
+            <title id="logo-title">વાલ્મીકી ગુરુશાળા ટ્રસ્ટ મંડલ લોગો</title>
+            <desc id="logo-desc">વેદના મૂળ, પરંપરાનો થડ અને ટેકનોલોજી, અર્થતંત્ર તથા સામાજિક કર્તવ્યની શાખાઓ દર્શાવતું જ્ઞાનવૃક્ષ.</desc>
+            <defs>
+              <radialGradient id="goldGlow" cx="50%" cy="50%" r="55%">
+                <stop offset="0%" stop-color="#fff5d8" stop-opacity="1" />
+                <stop offset="34%" stop-color="#d9ad4f" stop-opacity="0.85" />
+                <stop offset="100%" stop-color="#d9ad4f" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="leafGrad" x1="0" x2="1">
+                <stop offset="0" stop-color="#1bb878" />
+                <stop offset="1" stop-color="#17bfd1" />
+              </linearGradient>
+            </defs>
+            <circle cx="300" cy="300" r="260" fill="none" stroke="#d9ad4f" stroke-width="2" opacity=".75" />
+            <circle cx="300" cy="300" r="216" fill="none" stroke="#17bfd1" stroke-width="1" opacity=".45" stroke-dasharray="8 10" />
+            <circle cx="300" cy="300" r="166" fill="rgba(217,173,79,.06)" stroke="#d9ad4f" stroke-width="2" />
+            <g opacity=".9">
+              <path d="M300 56 L326 118 L392 98 L375 166 L438 194 L372 224 L394 290 L330 268 L300 330 L270 268 L206 290 L228 224 L162 194 L225 166 L208 98 L274 118Z" fill="none" stroke="#d9ad4f" stroke-width="2" opacity=".55" />
+              <path d="M300 84 L318 140 L376 132 L346 184 L398 214 L340 230 L348 288 L300 256 L252 288 L260 230 L202 214 L254 184 L224 132 L282 140Z" fill="none" stroke="#17bfd1" stroke-width="1.5" opacity=".48" />
+            </g>
+            <ellipse cx="300" cy="490" rx="156" ry="25" fill="url(#goldGlow)" opacity=".65" />
+            <path d="M120 415 C200 380 260 382 300 438 C340 382 400 380 480 415 C390 422 333 450 300 500 C267 450 210 422 120 415Z" fill="none" stroke="#f4d889" stroke-width="7" stroke-linecap="round" />
+            <path d="M124 400 C210 360 264 370 300 424 C336 370 390 360 476 400" fill="none" stroke="#d9ad4f" stroke-width="4" opacity=".78" />
+            <path d="M300 408 C292 448 278 482 242 535 M300 408 C306 455 330 484 374 535 M300 408 C300 458 300 492 300 548 M300 408 C272 452 228 478 172 514 M300 408 C328 452 372 478 428 514" fill="none" stroke="#d9ad4f" stroke-width="3" opacity=".72" />
+            <path d="M300 393 C300 318 300 246 300 166" fill="none" stroke="#f4d889" stroke-width="8" stroke-linecap="round" />
+            <path d="M300 210 C250 240 220 282 198 332 M300 210 C350 240 380 282 402 332 M300 250 C252 260 214 282 170 318 M300 250 C348 260 386 282 430 318" fill="none" stroke="#d9ad4f" stroke-width="3" opacity=".72" />
+            <path d="M300 122 C326 158 330 194 300 226 C270 194 274 158 300 122Z" fill="#f4d889" />
+            <path d="M300 144 C314 168 316 188 300 207 C284 188 286 168 300 144Z" fill="#ff7a1a" />
+            <g fill="url(#leafGrad)" opacity=".96">
+              <path d="M235 235 C208 218 200 198 213 176 C240 192 246 212 235 235Z" />
+              <path d="M365 235 C392 218 400 198 387 176 C360 192 354 212 365 235Z" />
+              <path d="M204 298 C170 290 154 271 160 244 C194 250 211 270 204 298Z" />
+              <path d="M396 298 C430 290 446 271 440 244 C406 250 389 270 396 298Z" />
+              <path d="M248 312 C220 318 198 308 186 282 C218 278 239 287 248 312Z" />
+              <path d="M352 312 C380 318 402 308 414 282 C382 278 361 287 352 312Z" />
+              <path d="M267 183 C242 170 235 150 247 128 C272 143 280 162 267 183Z" />
+              <path d="M333 183 C358 170 365 150 353 128 C328 143 320 162 333 183Z" />
+            </g>
+            <g fill="#d9ad4f" font-family="Noto Sans Gujarati, sans-serif" font-weight="900" text-anchor="middle">
+              <text x="300" y="78" font-size="22">ટેકનોલોજી</text>
+              <text x="110" y="305" font-size="20">વૈશ્વિક પ્રભાવ</text>
+              <text x="490" y="305" font-size="20">અર્થતંત્ર</text>
+              <text x="300" y="565" font-size="22">વેદ · પરંપરા</text>
+            </g>
+          </svg>
+        </div>
       </div>
     </section>
 
-    <p class="tagline">જ્ઞાન • સંસ્કાર • આત્મવિશ્વાસ • સેવા</p>
+    <section id="vision" class="section">
+      <h2 class="section-title">અમારી દૃષ્ટિ</h2>
+      <p class="section-note">ગુરુશાળાનો માર્ગ જ્ઞાનને જીવન સાથે જોડવાનો છે — ગામથી ડિજિટલ વિશ્વ સુધી, પરંપરાથી નવીનતા સુધી, અને વ્યક્તિગત વિકાસથી લોકકલ્યાણ સુધી.</p>
+      <div class="grid">
+        <article class="card"><div class="icon">૧</div><h3>જ્ઞાન</h3><p>બાળકો, યુવતીઓ અને સમાજ માટે વાંચન, વિચાર, આત્મવિશ્વાસ અને સમજણનું મજબૂત આધારસ્થાન.</p></article>
+        <article class="card"><div class="icon">૨</div><h3>સંસ્કાર</h3><p>ભારતીય જ્ઞાનપરંપરા, ભાષા, વાણી, વિનમ્રતા અને માનવીય મૂલ્યો સાથે શીખવાની દિશા.</p></article>
+        <article class="card"><div class="icon">૩</div><h3>ટેકનોલોજી</h3><p>ડિજિટલ સાક્ષરતા, ઓનલાઇન શિક્ષણ, AI સમજ, દસ્તાવેજીકરણ અને આધુનિક કૌશલ્ય તરફ માર્ગદર્શન.</p></article>
+        <article class="card"><div class="icon">૪</div><h3>સેવા</h3><p>સમાજ પ્રત્યે જવાબદારી, સહયોગ, મહિલાઓનું નેતૃત્વ અને આવનારી પેઢી માટે સકારાત્મક કાર્ય.</p></article>
+      </div>
+    </section>
 
-    <footer>
-      Copyright © Gurushala Scheduled Caste Women Education Foundation. All rights reserved.
-    </footer>
+    <section id="model" class="section">
+      <h2 class="section-title">ગુરુશાળાનું જ્ઞાનવૃક્ષ</h2>
+      <p class="section-note">આ વિચારમાં મૂળ વેદ અને પરંપરામાં છે. બહારની શાખાઓ ટેકનોલોજી, અર્થતંત્ર અને સામાજિક કર્તવ્ય દ્વારા સમાજને ઉપયોગી પરિણામ આપે છે.</p>
+      <div class="root-map">
+        <div class="root-item"><strong>વેદ</strong><span>મૂળ</span></div>
+        <div class="root-item"><strong>પરંપરા</strong><span>થડ</span></div>
+        <div class="root-item"><strong>ટેકનોલોજી</strong><span>શાખા</span></div>
+        <div class="root-item"><strong>અર્થતંત્ર અને કર્તવ્ય</strong><span>શાખા</span></div>
+        <div class="root-item"><strong>લોકકલ્યાણ</strong><span>ફળ</span></div>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <h2 class="section-title">પ્રાથમિક કાર્યક્ષેત્ર</h2>
+      <div class="grid">
+        <article class="card"><h3>મહિલા નેતૃત્વ</h3><p>ગામ અને સમાજની મહિલાઓ માટે સંચાલન, જવાબદારી અને નેતૃત્વની વ્યવહારુ રચના.</p></article>
+        <article class="card"><h3>ડિજિટલ સાક્ષરતા</h3><p>મોબાઇલ, ઇન્ટરનેટ, ડિજિટલ ફોર્મ, ઓનલાઇન સેવાઓ અને સુરક્ષિત ટેકનોલોજી ઉપયોગ.</p></article>
+        <article class="card"><h3>શૈક્ષણિક માર્ગદર્શન</h3><p>અભ્યાસ, વાંચન, ભાષા, કૌશલ્ય, કારકિર્દી અને જીવન ઉપયોગી સમજણ માટે સહાય.</p></article>
+        <article class="card"><h3>સાંસ્કૃતિક જ્ઞાન</h3><p>વેદ, કથા, લોકસંસ્કૃતિ, ભાષા અને પરંપરાને આધુનિક અભિવ્યક્તિ સાથે જીવંત રાખવી.</p></article>
+      </div>
+    </section>
+
+    <section id="board" class="section">
+      <div class="banner">
+        <div>
+          <h2>બોર્ડ અને સહયોગ માટે આમંત્રણ</h2>
+          <p>ગુરુશાળા એ વ્યક્તિગત માલિકી નહીં, પરંતુ સમાજ, શિક્ષણ અને સેવા માટેનું સામૂહિક સંકલ્પ છે. ગામની મહિલાઓ, શિક્ષકો, માર્ગદર્શકો, ટેક સહયોગીઓ અને સમાજસેવકોને વિચારપૂર્વક જોડાવા આમંત્રણ છે.</p>
+        </div>
+        <a class="button" href="mailto:niteshsonara2011@gmail.com?subject=Gurushala%20Board%20Discussion">સંપર્ક કરો</a>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="site-shell">
+      <p><strong>વાલ્મીકી ગુરુશાળા ટ્રસ્ટ</strong></p>
+      <p>જ્ઞાનથી જાગૃતિ · સંસ્કારથી સંસ્કૃતિ · સેવાથી સમૃદ્ધિ · ધર્મથી વિશ્વમંગલ</p>
+      <p>Copyright © Gurushala. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
