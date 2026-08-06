@@ -5,6 +5,9 @@ metaDescription: "ગુરુશાળા: શીખવા, સર્જવા,
 skip: "મુખ્ય સામગ્રી પર જાઓ",
 emblemLabel: "ગુરુશાળાનું વર્તુળાકાર ચિહ્ન: તેજસ્વી વૃક્ષ, ખુલ્લું પુસ્તક અને વહેતી નદી.",
 brandHomeLabel: "ગુરુશાળા મુખ્ય પાનું",
+languageLabel: "ભાષા પસંદ કરો",
+primaryNavLabel: "મુખ્ય નેવિગેશન",
+mobileNavLabel: "મોબાઇલ નેવિગેશન",
 tagline: "શીખવા અને જોડાયેલા રહેવાનું જીવંત સ્થાન",
 welcome: "સ્વાગત",
 welcomeTitle: "તમે જેવા છો, તેવા જ આવો.",
@@ -75,6 +78,9 @@ metaDescription: "Gurushala is a living place to learn, create, contribute and b
 skip: "Skip to main content",
 emblemLabel: "Gurushala circular emblem with a luminous tree, an open book and a flowing river.",
 brandHomeLabel: "Gurushala home",
+languageLabel: "Choose language",
+primaryNavLabel: "Primary navigation",
+mobileNavLabel: "Mobile navigation",
 tagline: "A living place for learning and belonging",
 welcome: "Welcome",
 welcomeTitle: "Come as you are.",
@@ -145,6 +151,9 @@ metaDescription: "गुरुशाला सीखने, सृजन कर�
 skip: "मुख्य सामग्री पर जाएँ",
 emblemLabel: "गुरुशाला का गोल प्रतीक: प्रकाशमान वृक्ष, खुली पुस्तक और बहती नदी।",
 brandHomeLabel: "गुरुशाला मुख्य पृष्ठ",
+languageLabel: "भाषा चुनें",
+primaryNavLabel: "मुख्य नेविगेशन",
+mobileNavLabel: "मोबाइल नेविगेशन",
 tagline: "सीखने और अपनापन पाने का जीवंत स्थान",
 welcome: "स्वागत",
 welcomeTitle: "आप जैसे हैं, वैसे ही आइए।",
@@ -186,7 +195,7 @@ learnText: "तीन घंटे का व्यावहारिक सत�
 pilotGroup: "लक्षित समूह", pilotGroupText: "12 महिलाएँ, अधिकतम 15 प्रतिभागी।",
 pilotFormat: "प्रारूप", pilotFormatText: "एक दिन में आयोजित तीन घंटे का व्यावहारिक सत्र।",
 pilotTopics: "मुख्य विषय", pilotTopicsText: "फोन, सुरक्षा, डिजिटल भुगतान और उपयोगी AI।",
-constructionEyebrow: "निर्माण यात्रा",
+constructionEyebrow: "निर्मાણ यात्रा",
 constructionTitle: "गुरुशाला को एक-एक चरण में विकसित होते देखें।",
 constructionText: "भूमि दस्तावेज़, तकनीकी योजनाएँ, बजट, स्वीकृतियाँ, तस्वीरें और चरणबद्ध प्रगति केवल सत्यापन के बाद प्रकाशित की जाएँगी।",
 constructionStep1: "भूमि और जल की नींव", constructionStep1Text: "स्थल माप, नींव और भूमिगत जल-संग्रह की योजना।",
@@ -204,7 +213,7 @@ joinText: "समय, पाठ, अनुवाद, फोटोग्राफ
 chipVolunteer: "स्वयंसेवक", chipMentor: "मार्गदर्शक", chipTeacher: "शिक्षक", chipResearcher: "शोधकर्ता",
 chipArtist: "कलाकार", chipTranslator: "अनुवादक", chipTechnology: "तकनीकी सहयोगी", chipPartner: "समुदाय भागीदार",
 contactUs: "संपर्क करें",
-footerText: "अनुसूचित जाति की महिलाओं के नेतृत्व वाली शिक्षा और सांस्कृतिक पहल, जो सभी का सम्मान के साथ स्वागत करती है।",
+footerText: "अनुसूચિત जाति की महिलाओं के नेतृत्व वाली शिक्षा और सांस्कृतिक पहल, जो सभी का सम्मान के साथ स्वागत करती है।",
 footerPrinciplesTitle: "मूल सिद्धांत", footerPrinciples: "शिक्षा • रचनात्मकता • गरिमा • प्रकृति • समुदाय",
 copyright: "कॉपीराइट © गुरुशाला Scheduled Caste Women Education Foundation. सर्वाधिकार सुरक्षित।",
 legalText: "कानूनी, पंजीकरण, दान और शासन संबंधी जानकारी प्रकाशन से पहले आधिकारिक रूप से स्वीकृत और सत्यापित होनी चाहिए।"
@@ -227,6 +236,13 @@ if (Object.prototype.hasOwnProperty.call(selected, key)) {
 element.setAttribute("aria-label", selected[key]);
 }
 });
+document.querySelectorAll(".langs, .lang-panel").forEach((element) => {
+element.setAttribute("aria-label", selected.languageLabel);
+});
+const primaryNavigation = document.querySelector("nav");
+if (primaryNavigation) primaryNavigation.setAttribute("aria-label", selected.primaryNavLabel);
+const mobileNavigationLabel = document.querySelector(".mobile");
+if (mobileNavigationLabel) mobileNavigationLabel.setAttribute("aria-label", selected.mobileNavLabel);
 document.querySelectorAll("[data-lang]").forEach((button) => {
 const active = button.dataset.lang === lang;
 button.classList.toggle("active", active);
@@ -250,6 +266,5 @@ menuButton.setAttribute("aria-expanded", "false");
 });
 });
 const storedLanguage = localStorage.getItem("gurushala-language");
-const browserLanguage = (navigator.language || "").toLowerCase();
-const initialLanguage = storedLanguage || (browserLanguage.startsWith("hi") ? "hi" : browserLanguage.startsWith("en") ? "en" : "gu");
+const initialLanguage = storedLanguage || "gu";
 applyLanguage(initialLanguage);
