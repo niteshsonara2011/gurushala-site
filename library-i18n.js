@@ -1,7 +1,7 @@
 const libraryShared={
-  gu:{home:'મુખ્ય પાનું',projects:'પ્રકલ્પો',library:'જ્ઞાનાલય',pilot:'ડિજિટલ સાથી',join:'જોડાઓ',languageLabel:'ભાષા પસંદ કરો',skip:'મુખ્ય સામગ્રી પર જાઓ',footer:'અનુસૂચિત જાતિની મહિલાઓની માલિકી, નેતૃત્વ અને સંચાલન હેઠળની શિક્ષણ અને સાંસ્કૃતિક પહેલ, જે દરેકને સન્માનથી આવકારે છે.',principles:'શીખણ • સર્જનાત્મકતા • ગૌરવ • પ્રકૃતિ • સમુદાય'},
-  en:{home:'Home',projects:'Projects',library:'Library',pilot:'Digital Saheli',join:'Join',languageLabel:'Choose language',skip:'Skip to main content',footer:'An education and cultural initiative owned, led and run by Scheduled Caste women, welcoming everyone with dignity.',principles:'Learning • Creativity • Dignity • Nature • Community'},
-  hi:{home:'मुख्य पृष्ठ',projects:'परियोजनाएँ',library:'ज्ञानालय',pilot:'डिजिटल सहेली',join:'जुड़ें',languageLabel:'भाषा चुनें',skip:'मुख्य सामग्री पर जाएँ',footer:'अनुसूचित जाति की महिलाओं के स्वामित्व, नेतृत्व और संचालन वाली शिक्षा और सांस्कृतिक पहल, जो सभी का सम्मान के साथ स्वागत करती है।',principles:'शिक्षा • रचनात्मकता • गरिमा • प्रकृति • समुदाय'}
+  gu:{home:'મુખ્ય પાનું',projects:'પ્રકલ્પો',library:'જ્ઞાનાલય',pilot:'ડિજિટલ સાથી',join:'જોડાઓ',languageLabel:'ભાષા પસંદ કરો',primaryNavLabel:'મુખ્ય નેવિગેશન',skip:'મુખ્ય સામગ્રી પર જાઓ',footer:'અનુસૂચિત જાતિની મહિલાઓની માલિકી, નેતૃત્વ અને સંચાલન હેઠળની શિક્ષણ અને સાંસ્કૃતિક પહેલ, જે દરેકને સન્માનથી આવકારે છે.',principles:'શીખણ • સર્જનાત્મકતા • ગૌરવ • પ્રકૃતિ • સમુદાય'},
+  en:{home:'Home',projects:'Projects',library:'Library',pilot:'Digital Saheli',join:'Join',languageLabel:'Choose language',primaryNavLabel:'Primary navigation',skip:'Skip to main content',footer:'An education and cultural initiative owned, led and run by Scheduled Caste women, welcoming everyone with dignity.',principles:'Learning • Creativity • Dignity • Nature • Community'},
+  hi:{home:'मुख्य पृष्ठ',projects:'परियोजनाएँ',library:'ज्ञानालय',pilot:'डिजिटल सहेली',join:'जुड़ें',languageLabel:'भाषा चुनें',primaryNavLabel:'मुख्य नेविगेशन',skip:'मुख्य सामग्री पर जाएँ',footer:'अनुसूचित जाति की महिलाओं के स्वामित्व, नेतृत्व और संचालन वाली शिक्षा और सांस्कृतिक पहल, जो सभी का सम्मान के साथ स्वागत करती है।',principles:'शिक्षा • रचनात्मकता • गरिमा • प्रकृति • समुदाय'}
 };
 const libraryPages={
   library:{
@@ -15,14 +15,15 @@ const libraryPages={
     hi:{title:'मातृवर्तुल अंक 01 | गुरुशाला',description:'गुरुशाला मातृवर्तुल अंक 01 का 12-पृष्ठ रंगीन दृश्य प्रूफ।',eyebrow:'मातृवर्तुल • अंक 01',hero:'The Mothers Return',lead:'यह 12-पृष्ठ दृश्य प्रूफ मीरा की यात्रा को डिजिटल शोर से भीतर के अभ्यास, जीए जाने वाले गुणों और छोटे समुदाय तक ले जाता है।',visualNote:'मूल कॉमिक पृष्ठ मुख्यतः अंग्रेज़ी में हैं। रीडर का संदर्भ और नेविगेशन गुजराती, अंग्रेज़ी और हिंदी में बदला जा सकता है।',mapTitle:'कहानी का नक्शा',m1:'पृष्ठ 1–2: शोर और बा की रोज़मर्रा की समझ',m2:'पृष्ठ 3: पुराना फोलियो और मातृवर्तुल',m3:'पृष्ठ 4 और 7: आठ माताएँ जीए जाने वाले गुणों के रूप में',m4:'पृष्ठ 5–6 और 9: श्वास, सीमाएँ, प्रतिक्रिया और दैनिक अभ्यास',m5:'पृष्ठ 8: Nine Nights Within',m6:'पृष्ठ 10–11: छोटा वृत्त और साथ जी जाने वाली समझ',m7:'पृष्ठ 12: The City of Raktabija की झलक',readerTitle:'सभी 12 पृष्ठ पढ़ें',readerText:'किसी भी पृष्ठ को बड़ा देखने के लिए चुनें। तीर कुंजियों से आगे-पीछे जा सकते हैं।',backLibrary:'ज्ञानालय पर वापस जाएँ',nextLabel:'आगे क्या?',nextTitle:'The City of Raktabija',nextText:'अंतिम पृष्ठ डिजिटल अफ़वाहों, बढ़ते आक्रोश और अपुष्ट आवाज़ों की नई कहानी-दुनिया की ओर संकेत करता है।',p1:'पृष्ठ 1 • The Notification Storm',p2:'पृष्ठ 2 • Breakfast Wisdom',p3:'पृष्ठ 3 • The Folio',p4:'पृष्ठ 4 • The Ashta Matrika',p5:'पृष्ठ 5 • The First Practice',p6:'पृष्ठ 6 • The Age of Noise',p7:'पृष्ठ 7 • The Eight Mothers',p8:'पृष्ठ 8 • Nine Nights Within',p9:'पृष्ठ 9 • From Story to Practice',p10:'पृष्ठ 10 • The Small Circle',p11:'पृष्ठ 11 • The Mothers Return',p12:'पृष्ठ 12 • The City of Raktabija'}
   }
 };
-function readLanguage(){try{const x=localStorage.getItem('gurushala-language');return ['gu','en','hi'].includes(x)?x:'gu'}catch(e){return 'gu'}}
-function saveLanguage(lang){try{localStorage.setItem('gurushala-language',lang)}catch(e){}}
+function readLanguage(){try{const chosen=localStorage.getItem('gurushala-language-chosen')==='1';const x=chosen?localStorage.getItem('gurushala-language'):null;return ['gu','en','hi'].includes(x)?x:'gu'}catch(e){return 'gu'}}
+function saveLanguage(lang){try{localStorage.setItem('gurushala-language',lang);localStorage.setItem('gurushala-language-chosen','1')}catch(e){}}
 function applyLibraryLanguage(lang,persist=false){
   const page=document.body.dataset.page;const copy={...libraryShared[lang],...(libraryPages[page]?.[lang]||{})};
   document.documentElement.lang=lang;document.title=copy.title||document.title;
   const meta=document.getElementById('metaDescription');if(meta&&copy.description)meta.setAttribute('content',copy.description);
   document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(copy[k]!==undefined)el.textContent=copy[k]});
   document.querySelectorAll('.langs').forEach(el=>el.setAttribute('aria-label',copy.languageLabel));
+  document.querySelectorAll('.nav').forEach(el=>el.setAttribute('aria-label',copy.primaryNavLabel));
   document.querySelectorAll('[data-lang]').forEach(btn=>{const active=btn.dataset.lang===lang;btn.classList.toggle('active',active);btn.setAttribute('aria-pressed',String(active))});
   if(persist)saveLanguage(lang);
 }
