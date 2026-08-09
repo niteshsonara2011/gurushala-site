@@ -37,4 +37,8 @@
 
   const stored=userChoseLanguage?safeGet('gurushala-language'):null;
   applyLanguage(stored&&translations[stored]?stored:'gu',false);
+
+  document.querySelectorAll('[data-i18n="navProjects"]').forEach(link=>link.setAttribute('href','projects.html'));
+  const explore=document.querySelector('[data-i18n="exploreWork"]');
+  if(explore) explore.setAttribute('href','projects.html');
 })();
