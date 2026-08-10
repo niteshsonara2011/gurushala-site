@@ -47,6 +47,11 @@
   const stored=userChoseLanguage?safeGet('gurushala-language'):null;
   applyLanguage(stored&&translations[stored]?stored:'gu',false);
 
+  /* Match the approved full-logo hierarchy: symbol, wordmark, action words, root line. */
+  const tagline=document.querySelector('.welcome .tagline');
+  const rootLine=document.querySelector('.welcome .quiet');
+  if(tagline&&rootLine)tagline.insertAdjacentElement('afterend',rootLine);
+
   document.querySelectorAll('[data-i18n="navProjects"]').forEach(link=>link.setAttribute('href','projects.html'));
   const explore=document.querySelector('[data-i18n="exploreWork"]');
   if(explore) explore.setAttribute('href','projects.html');
