@@ -1,0 +1,5 @@
+.checklist{display:grid;gap:.7rem}
+@media(max-width:759px){
+  .nav{display:flex;order:4;width:100%;overflow-x:auto;gap:.25rem;padding:.15rem 0 .55rem;scrollbar-width:thin}
+  .nav a{white-space:nowrap;background:#fff;border:1px solid var(--line)}
+}
