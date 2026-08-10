@@ -1,10 +1,93 @@
-/* QA remediation layer: accessibility, narrow phones, and the current Gurushala identity. */
-:root{--gold:#8a6500;--muted:#5f6f68;--earth:#6f593a}
-a:focus-visible,button:focus-visible{outline:3px solid #8a6500;outline-offset:3px}
-.emblem img,.hero-logo img{display:block;width:100%;height:auto}
-.brand img{width:44px;height:44px;border-radius:50%;object-fit:contain}
-.tagline{color:var(--indigo)}
-@supports ((-webkit-background-clip:text) or (background-clip:text)){.tagline{color:transparent}}
-.centered{justify-content:center}.centered-copy{margin-inline:auto}.welcome-title{font-size:clamp(2.1rem,6vw,4.2rem)}
-.construction-label{color:#f1d991}.table-scroll{overflow-x:auto}
-@media(max-width:759px){.head{flex-wrap:wrap;padding:.55rem 0;gap:.5rem}.brand{margin-right:auto}.menu{margin-left:auto}.lang-panel{order:3;width:100%;justify-content:center}.mobile{grid-template-columns:1fr}.mobile a{text-align:center}}
+/* Professional brand layer: calm hierarchy, accessible contrast, compact identity and narrow-phone resilience. */
+:root{
+  --indigo:#0B5D43;
+  --deep:#063F30;
+  --gold:#8A6500;
+  --gold-bright:#C79A34;
+  --muted:#5B6862;
+  --earth:#6A5840;
+  --ink:#24362F;
+  --paper:#FFFDFA;
+  --pearl:#F7F3EA;
+  --line:rgba(11,93,67,.14);
+}
+body{background:linear-gradient(180deg,#FBF8F2 0%,#F7F3EA 100%);}
+a:focus-visible,button:focus-visible{outline:3px solid #8A6500;outline-offset:3px}
+header{background:rgba(251,248,242,.96);box-shadow:0 1px 0 rgba(11,93,67,.06)}
+.brand{font-family:Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:-.02em}
+.brand img{width:40px;height:40px;border-radius:0;object-fit:contain}
+.menu,.lang-panel button,.langs button{border-radius:9px}
+nav a{border-radius:8px}
+
+/* The former 100vh logo splash was the main visual problem. Keep the identity present, never dominant. */
+.welcome{
+  min-height:auto;
+  display:block;
+  padding:clamp(3rem,6vw,5.25rem) 1rem clamp(2.75rem,5vw,4rem);
+  background:#FBF8F2;
+  border-bottom:1px solid var(--line);
+}
+.welcome-inner{width:min(940px,100%);margin:auto}
+.emblem{width:112px;margin:0 auto 1rem}
+.emblem img,.emblem svg,.hero-logo img,.hero-logo svg{display:block;width:100%;height:auto}
+.wordmark{
+  margin:0;
+  color:var(--indigo);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(3rem,7vw,5.3rem);
+  font-weight:600;
+  letter-spacing:-.055em;
+  line-height:.95;
+}
+.tagline{
+  display:block;
+  margin:.95rem auto 0;
+  color:var(--indigo)!important;
+  background:none!important;
+  -webkit-text-fill-color:currentColor;
+  font-size:clamp(.75rem,1.5vw,.92rem);
+  font-weight:750;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.quiet{
+  display:block;
+  margin:.45rem auto 0;
+  color:var(--earth);
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.20em;
+  text-transform:uppercase;
+}
+.quiet:before,.quiet:after{display:none}
+.langs{margin:1.55rem 0 1.1rem}
+.langs button{padding:.48rem .72rem;background:#FFFDF9}
+.welcome .eyebrow{margin:.4rem 0 .7rem;color:var(--earth)}
+.centered{justify-content:center}.centered-copy{margin-inline:auto}
+.welcome-title{font-size:clamp(1.9rem,4.2vw,3.15rem);font-weight:500;letter-spacing:-.035em}
+.welcome .lead{max-width:620px;margin-inline:auto;color:var(--muted);font-size:1.06rem}
+.enter,.button{border-radius:10px}
+.enter{min-height:46px;padding:.68rem 1.05rem;margin-top:.65rem;background:var(--indigo)}
+
+/* Do not repeat a giant logo immediately below the masthead. */
+.hero{background:#FFFDF9;border-bottom:1px solid rgba(11,93,67,.08)}
+.hero-grid{grid-template-columns:1fr!important;max-width:900px;margin:auto}
+.hero-logo{display:none!important}
+.hero h1{max-width:14ch}
+.status{background:#FBF8F2;border-radius:12px}
+.card{border-radius:16px;box-shadow:0 10px 30px rgba(36,54,47,.035)}
+.band{border-radius:18px}
+.chip,.pill{border-radius:8px}
+.construction-label{color:#F1D991}.table-scroll{overflow-x:auto}
+
+@media(max-width:759px){
+  .head{flex-wrap:wrap;padding:.55rem 0;gap:.5rem}
+  .brand{margin-right:auto}.menu{margin-left:auto}
+  .lang-panel{order:3;width:100%;justify-content:center}
+  .mobile{grid-template-columns:1fr}.mobile a{text-align:center}
+  .welcome{padding-top:2.6rem}
+  .emblem{width:92px}
+  .wordmark{font-size:clamp(2.8rem,15vw,4rem)}
+  .tagline{letter-spacing:.10em;line-height:1.5}
+  .quiet{letter-spacing:.13em;line-height:1.5}
+}
