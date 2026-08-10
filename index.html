@@ -2,7 +2,7 @@
 <html lang="gu">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#1F5B3D">
   <meta id="metaDescription" name="description" content="ગુરુશાળા: શીખવા, સર્જવા, યોગદાન આપવા અને જોડાયેલા રહેવાનું જીવંત સ્થાન.">
   <title>ગુરુશાળા | શીખવા અને જોડાયેલા રહેવાનું જીવંત સ્થાન</title>
@@ -10,159 +10,201 @@
   <link rel="stylesheet" href="home-v3.css">
 </head>
 <body>
-  <a class="skip" href="#home" data-i18n="skip">મુખ્ય સામગ્રી પર જાઓ</a>
+  <a class="skip" href="#main" data-i18n="skip">મુખ્ય સામગ્રી પર જાઓ</a>
 
-  <header>
-    <div class="shell head">
-      <a class="brand" href="#home" data-i18n-aria-label="brandHomeLabel">
+  <header class="site-header">
+    <div class="shell header-row">
+      <a class="brand" href="#main" data-i18n-aria-label="brandHomeLabel">
         <img src="gurushala-mark.svg" alt="">
         <span>Gurushala</span>
       </a>
+
       <nav class="desktop-nav" data-i18n-aria-label="primaryNavLabel">
         <a href="#about" data-i18n="navAbout">અમારી વાત</a>
         <a href="projects.html" data-i18n="navProjects">પ્રકલ્પો</a>
-        <a href="#learn" data-i18n="navLearn">શીખો</a>
+        <a href="library.html" data-i18n="navLearn">શીખો</a>
         <a href="#construction" data-i18n="navConstruction">નિર્માણ</a>
         <a href="#transparency" data-i18n="navTransparency">પારદર્શિતા</a>
         <a href="#join" data-i18n="navJoin">જોડાઓ</a>
       </nav>
-      <div class="lang-panel" data-i18n-aria-label="languageLabel">
-        <button class="active" data-lang="gu" type="button">ગુજરાતી</button>
-        <button data-lang="en" type="button">EN</button>
-        <button data-lang="hi" type="button">हिं</button>
+
+      <div class="header-actions">
+        <div class="lang-panel" data-i18n-aria-label="languageLabel">
+          <button class="active" data-lang="gu" type="button">ગુ</button>
+          <button data-lang="en" type="button">EN</button>
+          <button data-lang="hi" type="button">हि</button>
+        </div>
+        <button class="menu" type="button" aria-expanded="false" aria-controls="mobile-navigation" data-i18n="menu">મેનુ</button>
       </div>
-      <button class="menu" type="button" aria-expanded="false" aria-controls="mobile-navigation" data-i18n="menu">મેનુ</button>
     </div>
+
     <nav class="shell mobile" id="mobile-navigation" data-i18n-aria-label="mobileNavLabel">
       <a href="#about" data-i18n="navAbout">અમારી વાત</a>
       <a href="projects.html" data-i18n="navProjects">પ્રકલ્પો</a>
-      <a href="#learn" data-i18n="navLearn">શીખો</a>
+      <a href="library.html" data-i18n="navLearn">શીખો</a>
       <a href="#construction" data-i18n="navConstruction">નિર્માણ</a>
       <a href="#transparency" data-i18n="navTransparency">પારદર્શિતા</a>
       <a href="#join" data-i18n="navJoin">જોડાઓ</a>
     </nav>
   </header>
 
-  <div class="brand-strip" aria-label="Gurushala motto">
-    <div class="shell">
-      <strong data-i18n="tagline">શીખો • વિકસો • સર્જો • સેવા કરો</strong>
-      <span data-i18n="quiet">જ્યાં સંભાવનાઓ મૂળ પકડે છે</span>
-    </div>
-  </div>
-
-  <main id="home">
+  <main id="main">
     <section class="hero">
-      <div class="shell hero-grid">
+      <div class="shell hero-layout">
         <div class="hero-copy">
           <span class="eyebrow" data-i18n="heroEyebrow">જીવંત શીખણ સમુદાય</span>
           <h1 data-i18n="heroTitle">સાથે શીખવા, સર્જવા અને સન્માનપૂર્ણ જીવન ઘડવાનું સ્થાન.</h1>
           <p class="lead" data-i18n="heroLead">ગુરુશાળા જ્ઞાન, સર્જનાત્મકતા, વ્યવહારુ કૌશલ્ય, સમુદાય અને પ્રકૃતિને એક જ જીવંત જગ્યામાં લાવે છે. અહીં જોડાવા માટે સંપત્તિ, દરજ્જો કે ખાસ લાયકાત જરૂરી નથી.</p>
           <div class="actions">
             <a class="button primary" href="projects.html" data-i18n="exploreWork">કાર્ય જુઓ</a>
-            <a class="button" href="#join" data-i18n="offerSkills">તમારું કૌશલ્ય આપો</a>
+            <a class="button secondary" href="#about" data-i18n="navAbout">અમારી વાત</a>
           </div>
           <div class="status"><strong data-i18n="currentStage">હાલનો તબક્કો:</strong> <span data-i18n="currentStageText">પાયાની રચના, દસ્તાવેજીકરણ અને મહિલાઓ માટેની પ્રથમ ડિજિટલ સાથી પાયલોટની તૈયારી.</span></div>
         </div>
-        <div class="hero-logo-wrap">
-          <img class="hero-logo" src="gurushala-logo-full.svg" alt="Gurushala">
-        </div>
+
+        <aside class="identity-panel" aria-label="Gurushala identity">
+          <div class="identity-top">
+            <img src="gurushala-mark.svg" alt="">
+            <div>
+              <strong>Gurushala</strong>
+              <span data-i18n="quiet">જ્યાં સંભાવનાઓ મૂળ પકડે છે</span>
+            </div>
+          </div>
+          <div class="identity-rule"></div>
+          <p class="identity-motto" data-i18n="tagline">શીખો • વિકસો • સર્જો • સેવા કરો</p>
+          <div class="principles-grid" aria-hidden="true">
+            <span style="--accent:#A8D5B7"></span>
+            <span style="--accent:#F2B426"></span>
+            <span style="--accent:#E88DB3"></span>
+            <span style="--accent:#4EA6A6"></span>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="content" id="about">
+    <section class="section" id="about">
       <div class="shell">
         <div class="section-head">
           <span class="eyebrow" data-i18n="whyEyebrow">ગુરુશાળા કેમ</span>
           <h2 data-i18n="whyTitle">જ્યારે માણસ શીખી શકે, યોગદાન આપી શકે અને તેને માન મળે, ત્યારે ગૌરવ વિકસે છે.</h2>
-          <p data-i18n="whyText">ગુરુશાળા અનુસૂચિત જાતિની મહિલાઓની માલિકી, નેતૃત્વ અને સંચાલન હેઠળ ઘડાતી પહેલ છે અને દરેકને સન્માનથી આવકારે છે.</p>
+          <p data-i18n="whyText">ગુરુશાળા અનુસૂચિત જાતિની મહિલાઓની માલિકી, નેતૃત્વ અને સંચાલન હેઠળ ઘડાતી પહેલ છે અને દરેક વય, જાતિ, લિંગ, લૈંગિકતા, ધર્મ, શિક્ષણ કે આર્થિક સ્થિતિના લોકોને સન્માનથી આવકારે છે.</p>
         </div>
-        <div class="grid three">
-          <article class="card"><span class="number">01</span><h3 data-i18n="valueLearning">શીખણ</h3><p data-i18n="valueLearningText">સરળ ભાષામાં ઉપયોગી અને પહોંચે તેવું જ્ઞાન.</p></article>
-          <article class="card"><span class="number">02</span><h3 data-i18n="valueCreativity">સર્જનાત્મકતા</h3><p data-i18n="valueCreativityText">કલા, રંગભૂમિ, લેખન, હસ્તકલા અને સાંસ્કૃતિક સ્મૃતિને જીવંત જ્ઞાન તરીકે માન.</p></article>
-          <article class="card"><span class="number">03</span><h3 data-i18n="valueWork">કામ</h3><p data-i18n="valueWorkText">વ્યવહારુ કૌશલ્ય અને સન્માનપૂર્ણ રોજગાર તરફના માર્ગ.</p></article>
-          <article class="card"><span class="number">04</span><h3 data-i18n="valueCommunity">સમુદાય</h3><p data-i18n="valueCommunityText">લોકો માટે નહીં, લોકો સાથે મળીને રચાતું કાર્ય.</p></article>
-          <article class="card"><span class="number">05</span><h3 data-i18n="valueNature">પ્રકૃતિ</h3><p data-i18n="valueNatureText">વૃક્ષ, પાણી અને ઋતુઓને સજાવટ નહીં પરંતુ શિક્ષક તરીકે જોવું.</p></article>
-          <article class="card"><span class="number">06</span><h3 data-i18n="valuePurpose">હેતુ</h3><p data-i18n="valuePurposeText">દરેક વ્યક્તિ પોતે શું આપી શકે તે શોધવાની જગ્યા.</p></article>
+
+        <div class="values-grid">
+          <article class="value-card"><span class="index">01</span><h3 data-i18n="valueLearning">શીખણ</h3><p data-i18n="valueLearningText">સરળ ભાષામાં ઉપયોગી અને પહોંચે તેવું જ્ઞાન.</p></article>
+          <article class="value-card"><span class="index">02</span><h3 data-i18n="valueCreativity">સર્જનાત્મકતા</h3><p data-i18n="valueCreativityText">કલા, રંગભૂમિ, લેખન, હસ્તકલા અને સાંસ્કૃતિક સ્મૃતિને જીવંત જ્ઞાન તરીકે માન.</p></article>
+          <article class="value-card"><span class="index">03</span><h3 data-i18n="valueWork">કામ</h3><p data-i18n="valueWorkText">વ્યવહારુ કૌશલ્ય અને સન્માનપૂર્ણ રોજગાર તરફના માર્ગ.</p></article>
+          <article class="value-card"><span class="index">04</span><h3 data-i18n="valueCommunity">સમુદાય</h3><p data-i18n="valueCommunityText">લોકો માટે નહીં, લોકો સાથે મળીને રચાતું કાર્ય.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="content" id="projects">
+    <section class="section soft-section" id="projects">
       <div class="shell">
-        <div class="section-head">
-          <span class="eyebrow" data-i18n="projectsEyebrow">હાલનું કાર્ય</span>
-          <h2 data-i18n="projectsTitle">નાની શરૂઆત, સ્પષ્ટ સ્થિતિ સાથે.</h2>
+        <div class="section-head split-head">
+          <div>
+            <span class="eyebrow" data-i18n="projectsEyebrow">હાલનું કાર્ય</span>
+            <h2 data-i18n="projectsTitle">નાની શરૂઆત, સ્પષ્ટ સ્થિતિ સાથે.</h2>
+          </div>
           <p data-i18n="projectsText">વિચારને વિચાર, આયોજનને આયોજન અને પૂર્ણ થયેલા કાર્યને જ પુરાવા સાથે પ્રગતિ કહેવાશે.</p>
         </div>
-        <div class="grid two">
-          <article class="card project-card"><span class="pill prep" data-i18n="statusPreparing">તૈયારીમાં</span><h3 data-i18n="projectDigitalTitle">ડિજિટલ સાથી પાયલોટ</h3><p data-i18n="projectDigitalText">10–15 મહિલાઓ માટે ગુજરાતી વર્કશોપ: સ્માર્ટફોન આત્મવિશ્વાસ, ઑનલાઇન સલામતી, ડિજિટલ ચુકવણી અને ઉપયોગી AI.</p><a href="digital-saheli.html" class="button" data-i18n="exploreWork">કાર્ય જુઓ</a></article>
-          <article class="card project-card"><span class="pill build" data-i18n="statusBuilding">રચનામાં</span><h3 data-i18n="projectLibraryTitle">ગુરુશાળા જ્ઞાનાલય</h3><p data-i18n="projectLibraryText">પુસ્તકો, સંશોધન, સામયિકો, વાર્તાઓ અને વ્યવહારુ માર્ગદર્શિકાઓ.</p><a href="library.html" class="button" data-i18n="exploreWork">કાર્ય જુઓ</a></article>
-          <article class="card project-card"><span class="pill plan" data-i18n="statusPlanned">આયોજિત</span><h3 data-i18n="projectLivelihoodTitle">મહિલા જીવનોપાર્જન સ્ટુડિયો</h3><p data-i18n="projectLivelihoodText">હસ્તકલા, ડિજિટલ સેવા, ઉત્પાદન વિકાસ અને સ્થાનિક ઉદ્યોગ માટેનો ભાવિ માર્ગ.</p></article>
-          <article class="card project-card"><span class="pill plan" data-i18n="statusPlanned">આયોજિત</span><h3 data-i18n="projectCentreTitle">સીડિંગ સેન્ટર</h3><p data-i18n="projectCentreText">શીખણ, સર્જન, મળાપ, પ્રકૃતિ અને સમુદાય કાર્ય માટેનું ભૌતિક સ્થાન.</p></article>
+
+        <div class="program-grid">
+          <a class="program-card teal" href="digital-saheli.html">
+            <span class="pill prep" data-i18n="statusPreparing">તૈયારીમાં</span>
+            <h3 data-i18n="projectDigitalTitle">ડિજિટલ સાથી પાયલોટ</h3>
+            <p data-i18n="projectDigitalText">10–15 મહિલાઓ માટે ગુજરાતી વર્કશોપ: સ્માર્ટફોન આત્મવિશ્વાસ, ઑનલાઇન સલામતી, ડિજિટલ ચુકવણી અને ઉપયોગી AI.</p>
+            <span class="card-arrow">→</span>
+          </a>
+
+          <a class="program-card gold" href="library.html">
+            <span class="pill build" data-i18n="statusBuilding">રચનામાં</span>
+            <h3 data-i18n="projectLibraryTitle">ગુરુશાળા જ્ઞાનાલય</h3>
+            <p data-i18n="projectLibraryText">પુસ્તકો, સંશોધન, સામયિકો, વાર્તાઓ અને વ્યવહારુ માર્ગદર્શિકાઓ.</p>
+            <span class="card-arrow">→</span>
+          </a>
+
+          <div class="program-card pink">
+            <span class="pill plan" data-i18n="statusPlanned">આયોજિત</span>
+            <h3 data-i18n="projectLivelihoodTitle">મહિલા જીવનોપાર્જન સ્ટુડિયો</h3>
+            <p data-i18n="projectLivelihoodText">હસ્તકલા, ડિજિટલ સેવા, ઉત્પાદન વિકાસ અને સ્થાનિક ઉદ્યોગ માટેનો ભાવિ માર્ગ.</p>
+          </div>
+
+          <div class="program-card green">
+            <span class="pill plan" data-i18n="statusPlanned">આયોજિત</span>
+            <h3 data-i18n="projectCentreTitle">સીડિંગ સેન્ટર</h3>
+            <p data-i18n="projectCentreText">શીખણ, સર્જન, મળાપ, પ્રકૃતિ અને સમુદાય કાર્ય માટેનું ભૌતિક સ્થાન.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="content" id="learn">
-      <div class="shell band">
-        <span class="eyebrow" data-i18n="learnEyebrow">પ્રથમ પ્રસ્તાવિત પાયલોટ</span>
-        <h2 data-i18n="learnTitle">ડિજિટલ સાથી: આત્મવિશ્વાસથી ડિજિટલ દુનિયામાં પ્રવેશ.</h2>
-        <p class="lead" data-i18n="learnText">ત્રણ કલાકનું પ્રાયોગિક શીખણ સત્ર, જેમાં ભાગ લેનાર મહિલાઓ પોતાના ફોનથી સલામતી, ગોપનીયતા, ચુકવણી અને AIનો જવાબદાર ઉપયોગ શીખશે.</p>
-        <div class="grid three">
-          <article class="card"><span class="number">12</span><h3 data-i18n="pilotGroup">લક્ષિત જૂથ</h3><p data-i18n="pilotGroupText">12 મહિલાઓ, મહત્તમ 15 ભાગ લેનાર.</p></article>
-          <article class="card"><span class="number">3h</span><h3 data-i18n="pilotFormat">રચના</h3><p data-i18n="pilotFormatText">એક દિવસનું, ત્રણ કલાકનું પ્રાયોગિક સત્ર.</p></article>
-          <article class="card"><span class="number">4</span><h3 data-i18n="pilotTopics">મુખ્ય વિષયો</h3><p data-i18n="pilotTopicsText">ફોન, સલામતી, ડિજિટલ ચુકવણી અને ઉપયોગી AI.</p></article>
+    <section class="section" id="learn">
+      <div class="shell spotlight">
+        <div>
+          <span class="eyebrow" data-i18n="learnEyebrow">પ્રથમ પ્રસ્તાવિત પાયલોટ</span>
+          <h2 data-i18n="learnTitle">ડિજિટલ સાથી: આત્મવિશ્વાસથી ડિજિટલ દુનિયામાં પ્રવેશ.</h2>
+          <p data-i18n="learnText">ત્રણ કલાકનું પ્રાયોગિક શીખણ સત્ર, જેમાં ભાગ લેનાર મહિલાઓ પોતાના ફોનથી સલામતી, ગોપનીયતા, ચુકવણી અને AIનો જવાબદાર ઉપયોગ શીખશે.</p>
+          <a class="text-link" href="digital-saheli.html">Digital Saheli →</a>
+        </div>
+        <div class="facts">
+          <div><strong data-i18n="pilotGroup">લક્ષિત જૂથ</strong><span data-i18n="pilotGroupText">12 મહિલાઓ, મહત્તમ 15 ભાગ લેનાર.</span></div>
+          <div><strong data-i18n="pilotFormat">રચના</strong><span data-i18n="pilotFormatText">એક દિવસનું, ત્રણ કલાકનું પ્રાયોગિક સત્ર.</span></div>
+          <div><strong data-i18n="pilotTopics">મુખ્ય વિષયો</strong><span data-i18n="pilotTopicsText">ફોન, સલામતી, ડિજિટલ ચુકવણી અને ઉપયોગી AI.</span></div>
         </div>
       </div>
     </section>
 
-    <section class="content" id="construction">
-      <div class="shell band dark">
-        <div class="section-head">
-          <span class="eyebrow" data-i18n="constructionEyebrow">નિર્માણ યાત્રા</span>
+    <section class="section dark-section" id="construction">
+      <div class="shell two-column">
+        <div>
+          <span class="eyebrow light" data-i18n="constructionEyebrow">નિર્માણ યાત્રા</span>
           <h2 data-i18n="constructionTitle">ગુરુશાળાને એક એક પગથિયે વિકસતા જુઓ.</h2>
           <p data-i18n="constructionText">જમીનના દસ્તાવેજો, ટેકનિકલ યોજના, બજેટ, મંજૂરી, ફોટોગ્રાફ અને તબક્કાવાર પ્રગતિ માત્ર ચકાસણી પછી જ જાહેર થશે.</p>
         </div>
         <div class="timeline">
-          <div class="step"><span class="dot">1</span><div><h3 data-i18n="constructionStep1">જમીન અને પાણીનો પાયો</h3><p data-i18n="constructionStep1Text">સાઇટ માપણી, પાયા અને ભૂગર્ભ જળ સંગ્રહનું આયોજન.</p></div></div>
-          <div class="step"><span class="dot">2</span><div><h3 data-i18n="constructionStep2">મજબૂત માળખું</h3><p data-i18n="constructionStep2Text">મુખ્ય કૉલમ, કાયમી માળખું અને આવશ્યક સેવાઓ.</p></div></div>
-          <div class="step"><span class="dot">3</span><div><h3 data-i18n="constructionStep3">શીખણ અને સમુદાય જગ્યા</h3><p data-i18n="constructionStep3Text">લવચીક રૂમ, રસોડું અને સરળતાથી પહોંચે તેવી સુવિધાઓ.</p></div></div>
+          <div class="step"><span>1</span><div><strong data-i18n="constructionStep1">જમીન અને પાણીનો પાયો</strong><p data-i18n="constructionStep1Text">સાઇટ માપણી, પાયા અને ભૂગર્ભ જળ સંગ્રહનું આયોજન.</p></div></div>
+          <div class="step"><span>2</span><div><strong data-i18n="constructionStep2">મજબૂત માળખું</strong><p data-i18n="constructionStep2Text">મુખ્ય કૉલમ, કાયમી માળખું અને આવશ્યક સેવાઓ.</p></div></div>
+          <div class="step"><span>3</span><div><strong data-i18n="constructionStep3">શીખણ અને સમુદાય જગ્યા</strong><p data-i18n="constructionStep3Text">લવચીક રૂમ, રસોડું અને સરળતાથી પહોંચે તેવી સુવિધાઓ.</p></div></div>
         </div>
       </div>
     </section>
 
-    <section class="content" id="transparency">
-      <div class="shell">
-        <div class="section-head"><span class="eyebrow" data-i18n="transparencyEyebrow">પારદર્શિતા</span><h2 data-i18n="transparencyTitle">વિશ્વાસ તપાસી શકાય એવો હોવો જોઈએ.</h2><p data-i18n="transparencyText">જવાબદારી, નાણાં, પ્રગતિ, સલામતી અને ભૂલો વિશેની માહિતી સરળ ભાષામાં સમજાય તેવી હોવી જોઈએ.</p></div>
-        <div class="table-scroll"><table><thead><tr><th data-i18n="tableRecord">રેકોર્ડ</th><th data-i18n="tableStatus">સ્થિતિ</th><th data-i18n="tableNext">આગલું પગલું</th></tr></thead><tbody>
-          <tr><td data-i18n="recordTrust">ટ્રસ્ટ નોંધણી પુરાવો</td><td data-i18n="recordNotPublished">હજુ જાહેર નથી</td><td data-i18n="recordConfirm">અંતિમ કાનૂની રેકોર્ડ ચકાસવો</td></tr>
-          <tr><td data-i18n="recordGovernance">શાસન અને ટ્રસ્ટી માહિતી</td><td data-i18n="recordDraft">મસૌદો</td><td data-i18n="recordApprove">જાહેર શબ્દરચના મંજૂર કરવી</td></tr>
-          <tr><td data-i18n="recordFinance">પ્રકલ્પ ખર્ચ</td><td data-i18n="recordNoLedger">હજુ જાહેર ખાતાવહી નથી</td><td data-i18n="recordLedger">નાણાં એકત્ર કરતાં પહેલાં ખાતાવહી બનાવવી</td></tr>
-          <tr><td data-i18n="recordSafety">સુરક્ષા નીતિઓ</td><td data-i18n="statusPreparing">તૈયારીમાં</td><td data-i18n="recordSafetyNext">બાળકો સાથેનું કાર્ય શરૂ કરતાં પહેલાં મંજૂરી</td></tr>
-        </tbody></table></div>
+    <section class="section" id="transparency">
+      <div class="shell two-column transparency-layout">
+        <div>
+          <span class="eyebrow" data-i18n="transparencyEyebrow">પારદર્શિતા</span>
+          <h2 data-i18n="transparencyTitle">વિશ્વાસ તપાસી શકાય એવો હોવો જોઈએ.</h2>
+          <p data-i18n="transparencyText">જવાબદારી, નાણાં, પ્રગતિ, સલામતી અને ભૂલો વિશેની માહિતી સરળ ભાષામાં સમજાય તેવી હોવી જોઈએ.</p>
+        </div>
+        <div class="record-list">
+          <div><strong data-i18n="recordTrust">ટ્રસ્ટ નોંધણી પુરાવો</strong><span data-i18n="recordNotPublished">હજુ જાહેર નથી</span></div>
+          <div><strong data-i18n="recordGovernance">શાસન અને ટ્રસ્ટી માહિતી</strong><span data-i18n="recordDraft">મસૌદો</span></div>
+          <div><strong data-i18n="recordFinance">પ્રકલ્પ ખર્ચ</strong><span data-i18n="recordNoLedger">હજુ જાહેર ખાતાવહી નથી</span></div>
+          <div><strong data-i18n="recordSafety">સુરક્ષા નીતિઓ</strong><span data-i18n="statusPreparing">તૈયારીમાં</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="content" id="join">
-      <div class="shell band">
-        <span class="eyebrow" data-i18n="joinEyebrow">સાથે રચો</span>
-        <h2 data-i18n="joinTitle">યોગદાન આપવા માટે પૈસા હોવા જરૂરી નથી.</h2>
-        <p data-i18n="joinText">સમય, પાઠ, અનુવાદ, ફોટોગ્રાફ, સંશોધન, ડિઝાઇન, ટેકનોલોજી, સંપર્ક અથવા સારો પ્રશ્ન પણ મૂલ્યવાન યોગદાન બની શકે છે.</p>
-        <div class="chips"><span class="chip" data-i18n="chipVolunteer">સ્વયંસેવક</span><span class="chip" data-i18n="chipMentor">માર્ગદર્શક</span><span class="chip" data-i18n="chipTeacher">શિક્ષક</span><span class="chip" data-i18n="chipResearcher">સંશોધક</span><span class="chip" data-i18n="chipArtist">કલાકાર</span><span class="chip" data-i18n="chipTranslator">અનુવાદક</span><span class="chip" data-i18n="chipTechnology">ટેકનોલોજી સહયોગી</span><span class="chip" data-i18n="chipPartner">સમુદાય ભાગીદાર</span></div>
-        <div class="actions"><a class="button primary" href="mailto:info@geyvak.com?subject=Gurushala%20Contribution" data-i18n="contactUs">અમારો સંપર્ક કરો</a></div>
+    <section class="section soft-section" id="join">
+      <div class="shell join-panel">
+        <div>
+          <span class="eyebrow" data-i18n="joinEyebrow">સાથે રચો</span>
+          <h2 data-i18n="joinTitle">યોગદાન આપવા માટે પૈસા હોવા જરૂરી નથી.</h2>
+          <p data-i18n="joinText">સમય, પાઠ, અનુવાદ, ફોટોગ્રાફ, સંશોધન, ડિઝાઇન, ટેકનોલોજી, સંપર્ક અથવા સારો પ્રશ્ન પણ મૂલ્યવાન યોગદાન બની શકે છે.</p>
+        </div>
+        <div class="join-action"><a class="button primary" href="mailto:info@geyvak.com?subject=Gurushala%20Contribution" data-i18n="contactUs">અમારો સંપર્ક કરો</a></div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="shell foot">
-      <div><a class="brand" href="#home"><img src="gurushala-mark.svg" alt=""><span>Gurushala</span></a><p data-i18n="footerText">અનુસૂચિત જાતિની મહિલાઓની માલિકી, નેતૃત્વ અને સંચાલન હેઠળની શિક્ષણ અને સાંસ્કૃતિક પહેલ, જે દરેકને સન્માનથી આવકારે છે.</p></div>
-      <div><strong data-i18n="footerPrinciplesTitle">મૂલ તત્વો</strong><p data-i18n="footerPrinciples">શીખણ • સર્જનાત્મકતા • ગૌરવ • પ્રકૃતિ • સમુદાય</p></div>
+    <div class="shell footer-row">
+      <a class="brand footer-brand" href="#main"><img src="gurushala-mark.svg" alt=""><span>Gurushala</span></a>
+      <p data-i18n="footerText">અનુસૂચિત જાતિની મહિલાઓની માલિકી, નેતૃત્વ અને સંચાલન હેઠળની શિક્ષણ અને સાંસ્કૃતિક પહેલ, જે દરેકને સન્માનથી આવકારે છે.</p>
     </div>
-    <div class="shell legal"><span data-i18n="copyright">કૉપિરાઇટ © ગુરુશાળા Scheduled Caste Women Education Foundation. સર્વ હકો સુરક્ષિત.</span><br><span data-i18n="legalText">કાનૂની, નોંધણી, દાન અને શાસન સંબંધિત માહિતી જાહેર કરતાં પહેલાં સત્તાવાર મંજૂરી અને ચકાસણી જરૂરી છે.</span></div>
   </footer>
 
   <script src="i18n.js"></script>
-  <script src="qa-fixes.js"></script>
 </body>
 </html>
