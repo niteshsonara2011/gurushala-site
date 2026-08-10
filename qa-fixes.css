@@ -1,8 +1,10 @@
-/* QA remediation layer: accessibility, narrow phones, and maintainable image-based emblem. */
-:root{--gold:#7a5f2c;--muted:#606c6c;--earth:#705d49}
-a:focus-visible,button:focus-visible{outline:3px solid #7a5f2c;outline-offset:3px}
+/* QA remediation layer: accessibility, narrow phones, and the current Gurushala identity. */
+:root{--gold:#8a6500;--muted:#5f6f68;--earth:#6f593a}
+a:focus-visible,button:focus-visible{outline:3px solid #8a6500;outline-offset:3px}
 .emblem img,.hero-logo img{display:block;width:100%;height:auto}
-.brand img{width:44px;height:44px;border-radius:50%}
+.brand img{width:44px;height:44px;border-radius:50%;object-fit:contain}
+.tagline{color:var(--indigo)}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){.tagline{color:transparent}}
 .centered{justify-content:center}.centered-copy{margin-inline:auto}.welcome-title{font-size:clamp(2.1rem,6vw,4.2rem)}
-.construction-label{color:#e6d3aa}.table-scroll{overflow-x:auto}
+.construction-label{color:#f1d991}.table-scroll{overflow-x:auto}
 @media(max-width:759px){.head{flex-wrap:wrap;padding:.55rem 0;gap:.5rem}.brand{margin-right:auto}.menu{margin-left:auto}.lang-panel{order:3;width:100%;justify-content:center}.mobile{grid-template-columns:1fr}.mobile a{text-align:center}}
