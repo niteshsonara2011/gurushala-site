@@ -1,5 +1,19 @@
 .checklist{display:grid;gap:.7rem}
+
+/* Exact uploaded Gurushala master logo. Never stretch or recreate it. */
+.brand{gap:0!important}
+.brand span{display:none!important}
+header .brand img{display:block!important;height:58px!important;width:auto!important;max-width:108px!important;object-fit:contain!important;object-position:left center!important;border-radius:0!important}
+footer .brand img{display:block!important;height:auto!important;width:124px!important;max-width:124px!important;object-fit:contain!important;border-radius:0!important}
+
 @media(max-width:759px){
+  .head{min-height:72px;flex-wrap:wrap;padding:.35rem 0}
+  header .brand img{height:52px!important;width:auto!important;max-width:94px!important}
   .nav{display:flex;order:4;width:100%;overflow-x:auto;gap:.25rem;padding:.15rem 0 .55rem;scrollbar-width:thin}
   .nav a{white-space:nowrap;background:#fff;border:1px solid var(--line)}
+}
+
+@media(max-width:390px){
+  header .brand img{height:46px!important;max-width:82px!important}
+  footer .brand img{width:108px!important;max-width:108px!important}
 }
