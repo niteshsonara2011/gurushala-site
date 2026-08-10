@@ -1,0 +1,23 @@
+/* Safari/mobile visual correction. Keeps the original Gurushala artwork unchanged. */
+.brand-logo{width:112px;height:auto;max-height:68px;object-fit:contain;object-position:left center}
+.footer-logo{width:150px;height:auto;object-fit:contain}
+@media(max-width:759px){
+  .header-row{height:76px;gap:.55rem}
+  .brand{flex:0 0 auto}
+  .brand-logo{width:104px;height:auto;max-height:64px}
+  .header-actions{margin-left:auto;gap:.28rem}
+  .lang-panel{gap:.18rem}
+  .lang-panel button,.menu{min-height:38px;padding:.42rem .5rem;font-size:.78rem}
+  .hero-grid{padding:2.9rem 0 3.25rem;gap:1.5rem}
+  h1{font-size:clamp(2.05rem,8.2vw,2.35rem);line-height:1.12;letter-spacing:-.025em}
+  .eyebrow{font-size:.69rem;letter-spacing:.105em;margin-bottom:.8rem}
+  .hero-lead{font-size:.98rem;line-height:1.72;margin-top:1rem}
+  .hero-actions{margin-top:1.3rem}
+  .hero-actions .button{min-height:48px;font-size:.92rem}
+  .stage-card{padding:1.2rem;margin-top:.1rem}
+}
+@media(max-width:390px){
+  .brand-logo{width:92px;max-height:58px}
+  .lang-panel button,.menu{padding:.36rem .42rem;font-size:.73rem}
+  h1{font-size:2rem}
+}
