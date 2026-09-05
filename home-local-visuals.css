@@ -1,11 +1,6 @@
-/* Local Gurushala visual pack. One sprite supplies all homepage photography. */
-.hero-photo,.visual.education,.visual.technology,.visual.knowledge,.visual.culture,.visual.women,.visual.ai,.visual.library,.visual.janakatmaja{background-image:url('assets/gurushala-visual-sprite.jpg')!important;background-repeat:no-repeat!important;background-size:300% 300%!important}
-.hero-photo{background-position:0 0!important}
-.visual.women{background-position:50% 0!important}
-.visual.ai{background-position:100% 0!important}
-.visual.education{background-position:0 50%!important}
-.visual.technology{background-position:50% 50%!important}
-.visual.knowledge{background-position:100% 50%!important}
-.visual.culture{background-position:0 100%!important}
-.visual.library{background-position:50% 100%!important}
-.visual.janakatmaja{background-position:100% 100%!important}
+/* Reliable Gujarat-rooted visual fallback using Wikimedia Commons sources. */
+.hero-photo,.visual.education,.visual.technology,.visual.knowledge,.visual.culture,.visual.women,.visual.ai,.visual.library,.visual.janakatmaja{background-repeat:no-repeat!important;background-size:cover!important;background-color:#efe9df!important}
+.hero-photo,.visual.women,.visual.ai,.visual.education,.visual.technology{background-image:linear-gradient(180deg,rgba(21,63,45,.02),rgba(21,63,45,.12)),url('https://commons.wikimedia.org/wiki/Special:Redirect/file/SHG_-_Lakhpati_Kisan.jpg')!important;background-position:center!important}
+.visual.knowledge,.visual.library{background-image:url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Chimanlal_Mangaldas_Granthalay_library_Gujarati_Sahitya_Parishad.jpg')!important;background-position:center!important}
+.visual.culture,.visual.janakatmaja{background-image:linear-gradient(180deg,rgba(75,34,15,.02),rgba(75,34,15,.14)),url('https://commons.wikimedia.org/wiki/Special:Redirect/file/Dancing_garba_by_the_sea.jpg')!important;background-position:center!important}
+@media(max-width:820px){.hero-photo{background-position:center 38%!important}}
