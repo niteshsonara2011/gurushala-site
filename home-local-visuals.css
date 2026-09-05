@@ -1,0 +1,11 @@
+/* Local Gurushala visual pack. One sprite supplies all homepage photography. */
+.hero-photo,.visual.education,.visual.technology,.visual.knowledge,.visual.culture,.visual.women,.visual.ai,.visual.library,.visual.janakatmaja{background-image:url('assets/gurushala-visual-sprite.jpg')!important;background-repeat:no-repeat!important;background-size:300% 300%!important}
+.hero-photo{background-position:0 0!important}
+.visual.women{background-position:50% 0!important}
+.visual.ai{background-position:100% 0!important}
+.visual.education{background-position:0 50%!important}
+.visual.technology{background-position:50% 50%!important}
+.visual.knowledge{background-position:100% 50%!important}
+.visual.culture{background-position:0 100%!important}
+.visual.library{background-position:50% 100%!important}
+.visual.janakatmaja{background-position:100% 100%!important}
