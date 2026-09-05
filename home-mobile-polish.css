@@ -1,11 +1,11 @@
 /* Gurushala mobile + brand-board polish. Master palette follows the approved identity board. */
 
 /* Approved Gurushala logo uploaded 5 Sep 2026. */
-.brand{display:flex;align-items:center;flex:0 0 auto;width:168px;height:86px;background:url('assets/1A7F7193-854F-4CEB-BDF8-CCA9719ABA00.png') left center/contain no-repeat}
+.brand{display:flex;align-items:center;flex:0 0 auto;width:168px;height:86px;background:url('assets/gurushala-master-logo.png') left center/contain no-repeat}
 .brand-logo{opacity:0;width:168px;height:86px;display:block}
 .footer-logo{opacity:0;width:170px;height:128px}
 .footer-grid{position:relative}
-.footer-grid:before{content:'';display:block;width:170px;height:128px;background:url('assets/1A7F7193-854F-4CEB-BDF8-CCA9719ABA00.png') left center/contain no-repeat}
+.footer-grid:before{content:'';display:block;width:170px;height:128px;background:url('assets/gurushala-master-logo.png') left center/contain no-repeat}
 .footer-grid .footer-logo{display:none}
 
 /* Brand board: forest is the root; the other colours become visible branches. */
