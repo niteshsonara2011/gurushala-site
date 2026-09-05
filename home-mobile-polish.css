@@ -1,11 +1,11 @@
 /* Gurushala mobile + brand-board polish. Master palette follows the approved identity board. */
 
-/* Always render the vector master logo. The previous raster asset was visually disappearing on mobile. */
-.brand{display:flex;align-items:center;flex:0 0 auto;width:150px;height:74px;background:url('gurushala-logo-full.svg') left center/contain no-repeat}
-.brand-logo{opacity:0;width:150px;height:74px;display:block}
-.footer-logo{opacity:0;width:150px;height:118px}
+/* Approved Gurushala logo uploaded 5 Sep 2026. */
+.brand{display:flex;align-items:center;flex:0 0 auto;width:168px;height:86px;background:url('assets/1A7F7193-854F-4CEB-BDF8-CCA9719ABA00.png') left center/contain no-repeat}
+.brand-logo{opacity:0;width:168px;height:86px;display:block}
+.footer-logo{opacity:0;width:170px;height:128px}
 .footer-grid{position:relative}
-.footer-grid:before{content:'';display:block;width:150px;height:126px;background:url('gurushala-logo-full.svg') left center/contain no-repeat}
+.footer-grid:before{content:'';display:block;width:170px;height:128px;background:url('assets/1A7F7193-854F-4CEB-BDF8-CCA9719ABA00.png') left center/contain no-repeat}
 .footer-grid .footer-logo{display:none}
 
 /* Brand board: forest is the root; the other colours become visible branches. */
@@ -40,9 +40,9 @@ body{background:var(--soft)}
 footer{background:linear-gradient(90deg,#F2E8D6,#FAFAFA,#EDF7F4);border-top:4px solid var(--gold)}
 
 @media(max-width:759px){
-  .header-row{height:94px;gap:.45rem}
-  .brand{width:126px;height:86px;background-size:contain}
-  .brand-logo{width:126px;height:86px}
+  .header-row{height:96px;gap:.45rem}
+  .brand{width:146px;height:88px;background-size:contain}
+  .brand-logo{width:146px;height:88px}
   .header-actions{margin-left:auto;gap:.24rem}
   .lang-panel{gap:.14rem}
   .lang-panel button,.menu{min-height:38px;padding:.42rem .46rem;font-size:.77rem}
@@ -55,8 +55,8 @@ footer{background:linear-gradient(90deg,#F2E8D6,#FAFAFA,#EDF7F4);border-top:4px 
   .stage-card{padding:1.2rem;margin-top:.1rem;border-radius:10px}
 }
 @media(max-width:390px){
-  .brand{width:112px;height:80px}
-  .brand-logo{width:112px;height:80px}
+  .brand{width:132px;height:82px}
+  .brand-logo{width:132px;height:82px}
   .lang-panel button,.menu{padding:.36rem .4rem;font-size:.72rem}
   h1{font-size:2rem}
 }
