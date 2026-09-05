@@ -1,23 +1,62 @@
-/* Safari/mobile visual correction. Keeps the original Gurushala artwork unchanged. */
-.brand-logo{width:112px;height:auto;max-height:68px;object-fit:contain;object-position:left center}
-.footer-logo{width:150px;height:auto;object-fit:contain}
+/* Gurushala mobile + brand-board polish. Master palette follows the approved identity board. */
+
+/* Always render the vector master logo. The previous raster asset was visually disappearing on mobile. */
+.brand{display:flex;align-items:center;flex:0 0 auto;width:150px;height:74px;background:url('gurushala-logo-full.svg') left center/contain no-repeat}
+.brand-logo{opacity:0;width:150px;height:74px;display:block}
+.footer-logo{opacity:0;width:150px;height:118px}
+.footer-grid{position:relative}
+.footer-grid:before{content:'';display:block;width:150px;height:126px;background:url('gurushala-logo-full.svg') left center/contain no-repeat}
+.footer-grid .footer-logo{display:none}
+
+/* Brand board: forest is the root; the other colours become visible branches. */
+:root{--lavender:#B8A7E0;--sky:#7EC8F1;--peach:#FFD8B5;--soft:#FAFAFA}
+body{background:var(--soft)}
+.site-header{background:rgba(250,250,250,.97);border-bottom:3px solid transparent;border-image:linear-gradient(90deg,var(--green),var(--terracotta),var(--gold),var(--teal),var(--pink),var(--lavender)) 1}
+.hero{position:relative;background:linear-gradient(135deg,#FAFAFA 0%,#FFF9ED 45%,#F2E8D6 100%);overflow:hidden}
+.hero:before,.hero:after{content:'';position:absolute;border-radius:999px;pointer-events:none;opacity:.16}
+.hero:before{width:310px;height:310px;right:-130px;top:-120px;background:linear-gradient(135deg,var(--pink),var(--terracotta),var(--gold))}
+.hero:after{width:250px;height:250px;left:-130px;bottom:-150px;background:linear-gradient(135deg,var(--teal),var(--sky),var(--leaf))}
+.hero-grid{position:relative;z-index:1}
+.eyebrow{color:#9A5A12}.eyebrow:before{background:linear-gradient(90deg,var(--terracotta),var(--gold))}
+.button.primary{background:linear-gradient(135deg,var(--green),#267A53);border-color:var(--green);box-shadow:0 8px 22px rgba(31,91,61,.14)}
+.button.secondary{background:#fff;border-color:var(--teal)}
+.stage-card{border-top:5px solid transparent;border-image:linear-gradient(90deg,var(--gold),var(--terracotta),var(--pink),var(--teal)) 1;box-shadow:0 12px 30px rgba(31,91,61,.08)}
+
+/* Colour has meaning: education/gold, trust/teal, women/pink, nature/mint, arts/lavender, campaigns/terracotta. */
+.values-grid .value-card:nth-child(1){border-top:4px solid var(--gold);background:linear-gradient(180deg,#FFF9E8,#fff 42%)}
+.values-grid .value-card:nth-child(2){border-top:4px solid var(--pink);background:linear-gradient(180deg,#FFF0F6,#fff 42%)}
+.values-grid .value-card:nth-child(3){border-top:4px solid var(--terracotta);background:linear-gradient(180deg,#FFF1EA,#fff 42%)}
+.values-grid .value-card:nth-child(4){border-top:4px solid var(--teal);background:linear-gradient(180deg,#EDF9F9,#fff 42%)}
+.projects-section{background:linear-gradient(180deg,#F8F2E8,#FAFAFA)}
+.project-card{border-radius:12px;box-shadow:0 8px 24px rgba(31,91,61,.055);transition:transform .18s ease,box-shadow .18s ease}
+.project-card:hover{box-shadow:0 12px 30px rgba(31,91,61,.10)}
+.project-card.accent-teal{border-top-color:var(--teal);background:linear-gradient(180deg,#EDF9F9,#fff 38%)}
+.project-card.accent-gold{border-top-color:var(--gold);background:linear-gradient(180deg,#FFF9E8,#fff 38%)}
+.project-card.accent-pink{border-top-color:var(--pink);background:linear-gradient(180deg,#FFF0F6,#fff 38%)}
+.project-card.accent-green{border-top-color:var(--leaf);background:linear-gradient(180deg,#EFF8F1,#fff 38%)}
+.trust-section{background:linear-gradient(135deg,#173F2D 0%,#1F5B3D 68%,#276B61 100%);border-top:5px solid var(--gold)}
+.join-section{background:linear-gradient(135deg,#FFF7E5,#F7EEF6 52%,#EDF8F8)}
+.join-panel{border-radius:14px;border-top:5px solid transparent;border-image:linear-gradient(90deg,var(--terracotta),var(--gold),var(--pink),var(--teal),var(--lavender)) 1}
+footer{background:linear-gradient(90deg,#F2E8D6,#FAFAFA,#EDF7F4);border-top:4px solid var(--gold)}
+
 @media(max-width:759px){
-  .header-row{height:76px;gap:.55rem}
-  .brand{flex:0 0 auto}
-  .brand-logo{width:104px;height:auto;max-height:64px}
-  .header-actions{margin-left:auto;gap:.28rem}
-  .lang-panel{gap:.18rem}
-  .lang-panel button,.menu{min-height:38px;padding:.42rem .5rem;font-size:.78rem}
-  .hero-grid{padding:2.9rem 0 3.25rem;gap:1.5rem}
+  .header-row{height:94px;gap:.45rem}
+  .brand{width:126px;height:86px;background-size:contain}
+  .brand-logo{width:126px;height:86px}
+  .header-actions{margin-left:auto;gap:.24rem}
+  .lang-panel{gap:.14rem}
+  .lang-panel button,.menu{min-height:38px;padding:.42rem .46rem;font-size:.77rem}
+  .hero-grid{padding:2.75rem 0 3.25rem;gap:1.5rem}
   h1{font-size:clamp(2.05rem,8.2vw,2.35rem);line-height:1.12;letter-spacing:-.025em}
   .eyebrow{font-size:.69rem;letter-spacing:.105em;margin-bottom:.8rem}
   .hero-lead{font-size:.98rem;line-height:1.72;margin-top:1rem}
   .hero-actions{margin-top:1.3rem}
   .hero-actions .button{min-height:48px;font-size:.92rem}
-  .stage-card{padding:1.2rem;margin-top:.1rem}
+  .stage-card{padding:1.2rem;margin-top:.1rem;border-radius:10px}
 }
 @media(max-width:390px){
-  .brand-logo{width:92px;max-height:58px}
-  .lang-panel button,.menu{padding:.36rem .42rem;font-size:.73rem}
+  .brand{width:112px;height:80px}
+  .brand-logo{width:112px;height:80px}
+  .lang-panel button,.menu{padding:.36rem .4rem;font-size:.72rem}
   h1{font-size:2rem}
 }
