@@ -1,6 +1,6 @@
-/* Gurushala launch QA fixes — 7 Sep 2026 */
-.hero-photo{background-color:#e8eee9!important;background-image:linear-gradient(135deg,rgba(31,91,61,.14),rgba(31,91,61,.03)),url('assets/gurushala-hero-atmanirbhar.webp')!important;background-position:center!important;background-size:cover!important;min-height:430px}
-.hero-photo:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(21,63,45,.18));pointer-events:none}
+/* Gurushala launch QA fixes — 8 Sep 2026 */
+.hero-photo{background-color:#e8eee9!important;background-image:linear-gradient(135deg,rgba(31,91,61,.10),rgba(31,91,61,.02)),url('https://raw.githubusercontent.com/niteshsonara2011/gurushala-site/main/assets/gurushala-hero-atmanirbhar.webp?v=20260908')!important;background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important;min-height:430px}
+.hero-photo:before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 62%,rgba(21,63,45,.16));pointer-events:none}
 
 /* Homepage V3 hero language: roots + present skills + future self-reliance. */
 .hero .kicker .lang-copy,.hero .display .lang-copy,.hero .lead .lang-copy,.hero-photo>span .lang-copy{display:none!important}
