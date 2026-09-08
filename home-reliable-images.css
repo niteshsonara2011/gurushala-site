@@ -1,22 +1,41 @@
-/* Gurushala launch image layer: local assets only */
-.hero-photo{background-color:#e3ebe6!important;background-image:linear-gradient(180deg,rgba(21,63,45,.02),rgba(21,63,45,.08)),url('assets/gurushala-hero-atmanirbhar.webp')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+/* Gurushala launch image layer: local assets only, no external dependencies */
+.hero-photo{
+  background-color:#e3ebe6!important;
+  background-image:linear-gradient(180deg,rgba(21,63,45,.02),rgba(21,63,45,.08)),url('assets/gurushala-hero-atmanirbhar.webp')!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
 
-.work-card .visual,.initiative-card .visual{background-color:#e8ece7!important;background-image:url('assets/gurushala-visual-sprite.jpg')!important;background-repeat:no-repeat!important;background-size:300% 300%!important}
+.work-card .visual{
+  background-color:#f1eee7!important;
+  background-image:url('assets/gurushala-work-visuals.svg')!important;
+  background-repeat:no-repeat!important;
+  background-size:400% 100%!important;
+}
+.work-card:nth-child(1) .visual{background-position:0% 0!important}
+.work-card:nth-child(2) .visual{background-position:33.333% 0!important}
+.work-card:nth-child(3) .visual{background-position:66.667% 0!important}
+.work-card:nth-child(4) .visual{background-position:100% 0!important}
 
-/* Sprite: top row = community learning, middle row = education/digital/library, bottom row = culture */
-.work-card:nth-child(1) .visual{background-position:0% 50%!important}
-.work-card:nth-child(2) .visual{background-position:50% 50%!important}
-.work-card:nth-child(3) .visual{background-position:100% 50%!important}
-.work-card:nth-child(4) .visual{background-position:50% 100%!important}
+.initiative-card .visual{
+  background-color:#f1eee7!important;
+  background-image:url('assets/gurushala-initiative-visuals.svg')!important;
+  background-repeat:no-repeat!important;
+  background-size:400% 100%!important;
+}
+.initiative-card:nth-child(1) .visual{background-position:0% 0!important}
+.initiative-card:nth-child(2) .visual{background-position:33.333% 0!important}
+.initiative-card:nth-child(3) .visual{background-position:66.667% 0!important}
+.initiative-card:nth-child(4) .visual{background-position:100% 0!important}
 
-.initiative-card:nth-child(1) .visual{background-position:0% 0%!important}
-.initiative-card:nth-child(2) .visual{background-position:50% 50%!important}
-.initiative-card:nth-child(3) .visual{background-position:100% 50%!important}
-.initiative-card:nth-child(4) .visual{background-position:50% 100%!important}
-
-.initiatives-section .section-head::before{background:linear-gradient(90deg,rgba(21,63,45,.92) 0%,rgba(21,63,45,.78) 48%,rgba(21,63,45,.24) 100%),url('assets/gurushala-hero-atmanirbhar.webp') center/cover no-repeat!important}
+.initiatives-section .section-head::before{
+  background:linear-gradient(90deg,rgba(21,63,45,.92) 0%,rgba(21,63,45,.78) 48%,rgba(21,63,45,.24) 100%),url('assets/gurushala-hero-atmanirbhar.webp') center/cover no-repeat!important;
+}
 
 @media(max-width:620px){
   .hero-photo{min-height:290px!important;background-position:center!important}
-  .initiatives-section .section-head::before{background:linear-gradient(180deg,rgba(21,63,45,.36) 0%,rgba(21,63,45,.92) 72%),url('assets/gurushala-hero-atmanirbhar.webp') center/cover no-repeat!important}
+  .initiatives-section .section-head::before{
+    background:linear-gradient(180deg,rgba(21,63,45,.36) 0%,rgba(21,63,45,.92) 72%),url('assets/gurushala-hero-atmanirbhar.webp') center/cover no-repeat!important;
+  }
 }
