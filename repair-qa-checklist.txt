@@ -1,0 +1,8 @@
+1. Hero image renders, no blank block.
+2. Hero kicker does not overlap heading.
+3. Education, Technology, Knowledge, Culture are sharp photographs.
+4. Digital Saheli, AI, Library, Janakatmaja are sharp photographs.
+5. Ushaniruddha status, title, body and CTA do not overlap on 390px mobile.
+6. Gurushala Publication identity remains on cover.
+7. No soft-launch footer wording.
+8. Gujarati, Hindi and English switch cleanly.
