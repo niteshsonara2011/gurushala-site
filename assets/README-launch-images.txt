@@ -1,0 +1,1 @@
+Homepage photography source of truth: local repository assets only. Hero, program imagery, and Ushaniruddha cover must never depend on third-party redirects or placeholder illustrations.
