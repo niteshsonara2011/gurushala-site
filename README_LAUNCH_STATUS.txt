@@ -1,0 +1,1 @@
+Repair branch only. Main remains untouched until QA. Final promotion requires photographic assets and mobile spotlight validation.
