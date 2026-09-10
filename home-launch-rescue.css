@@ -1,0 +1,82 @@
+/* Final launch rescue. Imported last. One source of truth for imagery and mobile stability. */
+
+/* Hero: restore clean kicker geometry and prevent pseudo-text collisions. */
+.hero .kicker{display:flex!important;align-items:center!important;gap:9px!important;min-width:0!important}
+.hero .kicker .lang-copy{display:none!important}
+.hero .kicker::before{content:''!important;display:block!important;width:34px!important;height:2px!important;flex:0 0 34px!important;background:linear-gradient(90deg,#CC6E4A,#F2B426)!important}
+.hero .kicker::after{display:block!important;width:auto!important;height:auto!important;background:none!important;flex:1 1 auto!important;font:inherit!important;line-height:1.35!important;letter-spacing:.17em!important;color:#714516!important}
+html[lang='gu'] .hero .kicker::after{content:'જ્ઞાન • ગૌરવ • સમુદાય • ભવિષ્ય'!important}
+html[lang='en'] .hero .kicker::after{content:'KNOWLEDGE • DIGNITY • COMMUNITY • FUTURE'!important}
+html[lang='hi'] .hero .kicker::after{content:'ज्ञान • गरिमा • समुदाय • भविष्य'!important}
+.hero .display::before,.hero .lead::before,.hero-photo>span::before{position:static!important;width:auto!important;height:auto!important;background:none!important}
+
+/* Card photo geometry. This file deliberately overrides every earlier sprite rule. */
+.work-card .visual,.initiative-card .visual{background-repeat:no-repeat!important;background-size:400% 200%!important;aspect-ratio:4/3!important;min-height:0!important;background-color:#e9eee9!important}
+.visual.education{background-position:0% 0%!important}
+.visual.technology{background-position:33.333% 0%!important}
+.visual.knowledge{background-position:66.667% 0%!important}
+.visual.culture{background-position:100% 0%!important}
+.visual.women{background-position:0% 100%!important}
+.visual.ai{background-position:33.333% 100%!important}
+.visual.library{background-position:66.667% 100%!important}
+.visual.janakatmaja{background-position:100% 100%!important}
+
+/* Ushaniruddha: neutralise inherited Utkanteshwar replacement hacks and make widths deterministic. */
+.spotlight-panel{align-items:start!important}
+.spotlight-copy{display:flex!important;flex-direction:column!important;align-items:stretch!important;width:100%!important;min-width:0!important}
+.spotlight-copy>.overline{order:1!important;margin:0 0 8px!important}
+.spotlight-copy>.status{order:2!important;position:static!important;inset:auto!important;transform:none!important;float:none!important;display:block!important;width:max-content!important;max-width:100%!important;margin:0 0 12px!important;padding:0!important;background:none!important;border:0!important;border-radius:0!important;font-size:0!important;line-height:1.25!important;white-space:normal!important;color:#A65632!important}
+.spotlight-copy>.status::before{content:none!important;display:none!important;width:0!important;height:0!important;background:none!important}
+.spotlight-copy>.status::after{display:block!important;font-family:Poppins,system-ui,sans-serif!important;font-size:.72rem!important;font-weight:700!important;letter-spacing:.08em!important;text-transform:uppercase!important;line-height:1.35!important}
+html[lang='gu'] .spotlight-copy>.status::after{content:'આવતું પુસ્તક • નવેમ્બર ૨૦૨૬'!important}
+html[lang='en'] .spotlight-copy>.status::after{content:'Upcoming book • November 2026'!important}
+html[lang='hi'] .spotlight-copy>.status::after{content:'आगामी पुस्तक • नवंबर 2026'!important}
+.spotlight-copy>h2{order:3!important;display:block!important;position:static!important;width:100%!important;max-width:none!important;margin:0 0 12px!important;padding:0!important;font-size:0!important;line-height:1.08!important;overflow-wrap:normal!important;word-break:normal!important}
+.spotlight-copy>h2::before{content:none!important;display:none!important}
+.spotlight-copy>h2::after{display:block!important;width:100%!important;color:#1d2d24!important;font-family:'Playfair Display',Georgia,serif!important;font-size:clamp(1.65rem,3vw,2.7rem)!important;font-weight:600!important;line-height:1.06!important;letter-spacing:-.025em!important;overflow-wrap:break-word!important;word-break:normal!important}
+html[lang='gu'] .spotlight-copy>h2::after{content:'ઉષાનિરુદ્ધ: ઉષાથી અનિરુદ્ધ સુધીની યાત્રા'!important;font-family:'Noto Sans Gujarati',sans-serif!important;letter-spacing:0!important}
+html[lang='en'] .spotlight-copy>h2::after{content:'Ushaniruddha: Journey of Usha to Aniruddha'!important}
+html[lang='hi'] .spotlight-copy>h2::after{content:'उषानिरुद्ध: उषा से अनिरुद्ध तक की यात्रा'!important;font-family:'Noto Sans Devanagari',sans-serif!important;letter-spacing:0!important}
+.spotlight-copy>p{order:4!important;display:block!important;width:100%!important;max-width:none!important;margin:0 0 14px!important;padding:0!important;font-size:0!important;line-height:1.55!important;color:#535a55!important}
+.spotlight-copy>p::before{content:none!important;display:none!important}
+.spotlight-copy>p::after{display:block!important;width:100%!important;font-family:Poppins,system-ui,sans-serif!important;font-size:.9rem!important;font-weight:400!important;line-height:1.6!important;color:#535a55!important;white-space:normal!important}
+html[lang='gu'] .spotlight-copy>p::after{content:'પ્રેમ, ભક્તિ, સાહસ અને ભાગ્યની ઉષા અને અનિરુદ્ધની કથાને ચિત્રીત સ્વરૂપમાં રજૂ કરતું ગુરુશાળાનું પ્રથમ પુસ્તક.'!important;font-family:'Noto Sans Gujarati',sans-serif!important}
+html[lang='en'] .spotlight-copy>p::after{content:'Gurushala’s first illustrated book, retelling the story of Usha and Aniruddha through love, devotion, courage and destiny.'!important}
+html[lang='hi'] .spotlight-copy>p::after{content:'गुरुशाला की पहली चित्रित पुस्तक, उषा और अनिरुद्ध की कथा को प्रेम, भक्ति, साहस और नियति के माध्यम से प्रस्तुत करती है।'!important;font-family:'Noto Sans Devanagari',sans-serif!important}
+.spotlight-copy>.card-link{order:5!important;display:block!important;width:max-content!important;max-width:100%!important;margin:0!important;font-size:0!important;line-height:1.35!important}
+.spotlight-copy>.card-link::before{content:none!important;display:none!important}
+.spotlight-copy>.card-link::after{display:block!important;color:#0f4c88!important;font-family:Poppins,system-ui,sans-serif!important;font-size:.88rem!important;font-weight:700!important}
+html[lang='gu'] .spotlight-copy>.card-link::after{content:'પુસ્તક જુઓ →'!important;font-family:'Noto Sans Gujarati',sans-serif!important}
+html[lang='en'] .spotlight-copy>.card-link::after{content:'View Book →'!important}
+html[lang='hi'] .spotlight-copy>.card-link::after{content:'पुस्तक देखें →'!important;font-family:'Noto Sans Devanagari',sans-serif!important}
+
+/* Launch footer is no longer a soft-launch notice. */
+.footer-bottom>span{font-size:0!important}
+.footer-bottom>span::after{content:'Gurushala · Valmiki Gurushala Trust · Gujarat, Bharat'!important;font-size:.78rem!important;letter-spacing:.02em!important}
+
+@media(max-width:900px){
+  .work-card .visual,.initiative-card .visual{aspect-ratio:4/3!important}
+  .spotlight-panel{grid-template-columns:180px minmax(0,1fr)!important;gap:18px!important;padding-right:0!important}
+  .knowledge-list{grid-column:1/-1!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;margin-top:8px!important}
+}
+@media(max-width:620px){
+  .hero .kicker::after{font-size:.66rem!important;letter-spacing:.11em!important}
+  .hero-photo{min-height:300px!important;background-position:center!important}
+  .work-card,.initiative-card{grid-template-columns:minmax(0,38%) minmax(0,62%)!important;grid-template-rows:auto!important}
+  .work-card .visual,.initiative-card .visual{order:1!important;width:100%!important;height:100%!important;min-height:190px!important;aspect-ratio:auto!important}
+  .work-card .card-copy,.initiative-card .card-copy{order:2!important;min-width:0!important}
+  .spotlight-panel{grid-template-columns:108px minmax(0,1fr)!important;gap:14px!important;padding:18px 0!important;align-items:start!important}
+  .book-cover{width:108px!important;max-width:108px!important;justify-self:start!important;align-self:start!important}
+  .spotlight-copy{grid-column:2!important;min-width:0!important;width:100%!important;align-items:stretch!important}
+  .spotlight-copy>.status{margin-bottom:9px!important}
+  .spotlight-copy>.status::after{font-size:.66rem!important;letter-spacing:.05em!important}
+  .spotlight-copy>h2::after{font-size:1.28rem!important;line-height:1.12!important}
+  .spotlight-copy>p::after{font-size:.80rem!important;line-height:1.5!important}
+  .knowledge-list{grid-column:1/-1!important;grid-template-columns:1fr!important;margin-top:10px!important}
+  .footer-bottom>span::after{font-size:.7rem!important}
+}
+@media(max-width:400px){
+  .spotlight-panel{grid-template-columns:1fr!important}
+  .book-cover{width:150px!important;max-width:150px!important;justify-self:center!important}
+  .spotlight-copy{grid-column:1!important}
+}
