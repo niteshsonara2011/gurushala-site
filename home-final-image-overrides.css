@@ -1,0 +1,4 @@
+/* Final high-priority visual mapping. The images referenced here replace all older low-resolution and external rules. */
+.hero-photo{background-position:center!important;background-size:cover!important;background-repeat:no-repeat!important}
+.work-card .visual,.initiative-card .visual{background-repeat:no-repeat!important;background-size:400% 200%!important;background-color:#e8eee9!important}
+.visual.education{background-position:0 0!important}.visual.technology{background-position:33.333% 0!important}.visual.knowledge{background-position:66.667% 0!important}.visual.culture{background-position:100% 0!important}.visual.women{background-position:0 100%!important}.visual.ai{background-position:33.333% 100%!important}.visual.library{background-position:66.667% 100%!important}.visual.janakatmaja{background-position:100% 100%!important}
