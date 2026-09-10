@@ -1,0 +1,1 @@
+Final launch assets will replace the temporary low-resolution image strip and hero. This file is temporary and will be removed before promotion.
