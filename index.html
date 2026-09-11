@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#1F5B3D">
   <meta name="description" content="Gurushala is a community knowledge institution bringing together education, technology, culture, livelihood learning and lived knowledge.">
   <title>Gurushala | Knowledge belongs to everyone</title>
-  <link rel="icon" href="assets/gurushala-master-logo.png" type="image/png">
-  <link rel="stylesheet" href="home-v5.css">
+  <link rel="icon" href="gurushala-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="home-v5.css?v=20260911">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -15,7 +15,7 @@
 <header class="site-header">
   <div class="shell header-row">
     <a class="brand" href="#main" aria-label="Gurushala home">
-      <img src="assets/gurushala-master-logo.png" alt="Gurushala">
+      <img src="assets/gurushala-logo-web.png?v=20260911" alt="Gurushala" width="480" height="360" decoding="async">
     </a>
 
     <nav class="desktop-nav" aria-label="Primary navigation">
@@ -152,7 +152,7 @@
 
 <footer class="site-footer">
   <div class="shell footer-grid">
-    <div><img class="footer-logo" src="assets/gurushala-master-logo.png" alt="Gurushala"><p><strong>Valmiki Gurushala Trust</strong><br><span class="lang-copy gu">જ્ઞાન • ગૌરવ • સમુદાય • સંસ્કૃતિ</span><span class="lang-copy en">Knowledge • Dignity • Community • Culture</span><span class="lang-copy hi">ज्ञान • गरिमा • समुदाय • संस्कृति</span><br>Gandhinagar, Gujarat, Bharat</p></div>
+    <div><img class="footer-logo" src="assets/gurushala-logo-web.png?v=20260911" alt="Gurushala" width="480" height="360" loading="lazy" decoding="async"><p><strong>Valmiki Gurushala Trust</strong><br><span class="lang-copy gu">જ્ઞાન • ગૌરવ • સમુદાય • સંસ્કૃતિ</span><span class="lang-copy en">Knowledge • Dignity • Community • Culture</span><span class="lang-copy hi">ज्ञान • गरिमा • समुदाय • संस्कृति</span><br>Gandhinagar, Gujarat, Bharat</p></div>
     <nav class="footer-links" aria-label="Footer navigation"><a href="#about">About</a><a href="#work">Programs</a><a href="library.html">Learn</a><a href="#knowledge">Knowledge</a><a href="#culture">Culture</a><a href="#initiatives">Impact</a><a href="#transparency">Transparency</a><a href="#join">Get Involved</a><a href="mailto:info@gurushala.org">Contact</a></nav>
   </div>
   <div class="shell footer-bottom"><div class="legal-links"><a href="privacy.html">Privacy</a><a href="accessibility.html">Accessibility</a><a href="terms.html">Terms</a><a href="safeguarding.html">Safeguarding</a><a href="complaints.html">Complaints</a></div><span>Public soft launch · Some sections are still being built · gurushala.org</span></div>
@@ -162,9 +162,12 @@
 (function(){
   const root=document.documentElement;
   const buttons=[...document.querySelectorAll('[data-lang]')];
-  const setLang=(lang)=>{root.lang=lang;buttons.forEach(b=>{const active=b.dataset.lang===lang;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});localStorage.setItem('gurushala-lang',lang);};
+  const safeGet=(key)=>{try{return localStorage.getItem(key)}catch(error){return null}};
+  const safeSet=(key,value)=>{try{localStorage.setItem(key,value)}catch(error){}};
+  const setLang=(lang)=>{root.lang=lang;buttons.forEach(b=>{const active=b.dataset.lang===lang;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});safeSet('gurushala-language',lang);safeSet('gurushala-language-chosen','1');safeSet('gurushala-lang',lang);};
   buttons.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-  setLang(localStorage.getItem('gurushala-lang')||'gu');
+  const saved=safeGet('gurushala-language')||safeGet('gurushala-lang');
+  setLang(['gu','hi','en'].includes(saved)?saved:'gu');
   const menu=document.querySelector('.menu');
   const nav=document.getElementById('mobile-navigation');
   if(menu&&nav){menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.hidden=open;});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.hidden=true;menu.setAttribute('aria-expanded','false');}));}
