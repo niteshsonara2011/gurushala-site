@@ -54,7 +54,7 @@ html[lang='gu'] .lang-block.gu,html[lang='en'] .lang-block.en,html[lang='hi'] .l
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:10px 20px;border:1px solid var(--green);border-radius:5px;text-decoration:none;font-weight:600;font-size:.9rem}
 .button.primary{background:var(--green);color:#fff}.button.secondary{background:#fff;color:var(--green)}
-.hero-photo{position:relative;min-height:500px;background:linear-gradient(180deg,rgba(21,63,45,.02),rgba(21,63,45,.14)),url('assets/gurushala-hero-atmanirbhar.webp') center/cover no-repeat;background-color:#e7eee9}
+.hero-photo{position:relative;min-height:500px;background-color:#e7eee9;background-image:linear-gradient(180deg,rgba(21,63,45,.02),rgba(21,63,45,.14)),url('https://raw.githubusercontent.com/niteshsonara2011/gurushala-site/main/assets/gurushala-hero-atmanirbhar.webp?v=20260912');background-position:center;background-size:cover;background-repeat:no-repeat}
 .hero-photo>span{position:absolute;right:18px;bottom:16px;max-width:250px;text-align:right;color:#fff;font-size:.74rem;font-weight:600;text-shadow:0 1px 5px rgba(0,0,0,.55)}
 
 .manifesto{background:linear-gradient(90deg,#f8f0e4,#f4e8d8);border-block:1px solid rgba(204,110,74,.14)}
@@ -79,7 +79,7 @@ html[lang='gu'] .work-card h3,html[lang='hi'] .work-card h3{font-family:inherit}
 
 .knowledge-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.8fr);gap:18px}
 .publication-card{background:#fff;border:1px solid rgba(139,86,51,.2);display:grid;grid-template-columns:180px 1fr;gap:24px;padding:24px}
-.book-cover{aspect-ratio:3/4;background:linear-gradient(180deg,#13263b,#071628);color:#f6e6bd;border:1px solid rgba(242,180,38,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px}.book-cover small{font-size:.6rem;letter-spacing:.12em}.book-cover strong{margin:14px 0;font-family:Georgia,serif;font-size:1.25rem;line-height:1.08}.book-cover span{font-size:.66rem;line-height:1.45}
+.book-cover{aspect-ratio:3/4;background:linear-gradient(180deg,#13263b,#071628);color:#f6e6bd;border:1px solid rgba(242,180,38,.4);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;overflow:hidden}.book-cover small{font-size:.6rem;letter-spacing:.12em}.book-cover strong{margin:14px 0;max-width:100%;font-family:Georgia,serif;font-size:clamp(.76rem,1.25vw,1rem);line-height:1.08;letter-spacing:.01em;white-space:nowrap}.book-cover span{font-size:.66rem;line-height:1.45}
 .publication-copy{display:flex;flex-direction:column;align-items:flex-start}.publication-copy h2{margin:8px 0 10px;font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.03;color:#213128}.publication-copy p{margin:0;color:#616d66;font-size:.9rem;line-height:1.62}.publication-meta{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);width:100%;font-size:.78rem;line-height:1.6;color:#4d5c54}
 .place-card{background:linear-gradient(145deg,#173f2d,#1f5b3d);color:#fff;padding:26px;display:flex;flex-direction:column;justify-content:center}.place-card .overline{color:#d5e8da}.place-card h2{margin:8px 0 14px;color:#fff;font-size:2rem;line-height:1.08}.place-card p{margin:0 0 14px;color:rgba(255,255,255,.84);font-size:.82rem;line-height:1.55}.registration{font-size:.76rem!important;color:#fff!important}.light-button{background:#fff;color:var(--green);border-color:#fff;align-self:flex-start}
 
@@ -95,14 +95,14 @@ html[lang='gu'] .work-card h3,html[lang='hi'] .work-card h3{font-family:inherit}
 
 @media(max-width:760px){
   .shell{width:min(var(--max),calc(100% - 28px))}.header-row{min-height:72px}.brand img{width:112px}.langs button,.menu{font-size:.72rem;padding:6px 7px}
-  .hero-grid{grid-template-columns:1fr;min-height:0}.hero-copy{padding:40px 0 34px}.hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}.hero-photo{min-height:320px}.hero-photo>span{right:14px;bottom:12px}
+  .hero-grid{grid-template-columns:1fr;min-height:0}.hero-copy{padding:40px 0 34px}.hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}.hero-photo{min-height:320px;background-position:center 42%}.hero-photo>span{right:14px;bottom:12px}
   .manifesto-grid{grid-template-columns:1fr}.principles{grid-template-columns:repeat(2,1fr)}
   .section{padding:42px 0}.section-head{grid-template-columns:1fr}.section-head .see-all{justify-self:start}.section-note{grid-column:auto;grid-row:auto}.work-grid,.initiative-grid{grid-template-columns:1fr}.work-card,.initiative-card{min-height:0}
-  .knowledge-grid{grid-template-columns:1fr}.publication-card{grid-template-columns:120px 1fr;gap:16px;padding:18px}.book-cover{padding:10px}.book-cover strong{font-size:1rem}.publication-copy h2{font-size:1.6rem}
+  .knowledge-grid{grid-template-columns:1fr}.publication-card{grid-template-columns:120px 1fr;gap:16px;padding:18px}.book-cover{padding:10px}.book-cover strong{font-size:.78rem}.publication-copy h2{font-size:1.6rem}
   .join-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer-links{grid-template-columns:repeat(2,1fr)}.footer-bottom{align-items:flex-start;flex-direction:column}
 }
 
 @media(max-width:430px){
   .header-row{gap:7px}.brand img{width:96px}.langs{gap:1px}.langs button,.menu{min-height:34px;padding:5px 6px;font-size:.68rem}
-  .hero-photo{min-height:275px}.principles{grid-template-columns:1fr 1fr}.publication-card{grid-template-columns:1fr}.book-cover{width:138px}.footer-links{grid-template-columns:1fr 1fr}
+  .hero-photo{min-height:275px}.principles{grid-template-columns:1fr 1fr}.publication-card{grid-template-columns:1fr}.book-cover{width:156px;max-width:100%}.book-cover strong{font-size:.8rem}.footer-links{grid-template-columns:1fr 1fr}
 }
