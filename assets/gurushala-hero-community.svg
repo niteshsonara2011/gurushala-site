@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Gurushala community learning</title>
+  <desc id="desc">An inclusive intergenerational community learning scene with books, digital learning, conversation and a growing tree.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef5ef"/>
+      <stop offset="0.5" stop-color="#f8f1e5"/>
+      <stop offset="1" stop-color="#edf6f3"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dfeadf"/>
+      <stop offset="1" stop-color="#c9dccf"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#153f2d" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="1050" cy="115" r="150" fill="#f2b426" opacity="0.10"/>
+  <circle cx="150" cy="150" r="170" fill="#4ea6a6" opacity="0.10"/>
+
+  <path d="M0 620 Q300 560 600 620 T1200 620 V800 H0 Z" fill="url(#floor)"/>
+
+  <g opacity="0.55">
+    <path d="M130 180 C260 70 390 75 500 155" fill="none" stroke="#c9d9cf" stroke-width="3"/>
+    <path d="M700 145 C835 65 980 82 1080 190" fill="none" stroke="#d9c8a6" stroke-width="3"/>
+  </g>
+
+  <!-- central knowledge tree -->
+  <g transform="translate(600 245)">
+    <path d="M0 245 C-12 175 -8 120 0 50 C18 105 30 165 24 245 Z" fill="#7a553b"/>
+    <path d="M6 150 C-62 122 -108 80 -130 36" fill="none" stroke="#7a553b" stroke-width="16" stroke-linecap="round"/>
+    <path d="M16 134 C72 104 106 66 132 24" fill="none" stroke="#7a553b" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="-118" cy="20" r="58" fill="#2d6a4f"/>
+    <circle cx="-52" cy="-2" r="70" fill="#3b7a5d"/>
+    <circle cx="18" cy="10" r="74" fill="#1f5b3d"/>
+    <circle cx="88" cy="-10" r="62" fill="#4c8769"/>
+    <circle cx="134" cy="34" r="48" fill="#6fa080"/>
+    <circle cx="-146" cy="72" r="46" fill="#8ab596"/>
+    <circle cx="-72" cy="60" r="64" fill="#5f9274"/>
+    <circle cx="54" cy="64" r="67" fill="#3f785d"/>
+    <circle cx="132" cy="86" r="44" fill="#7ba989"/>
+    <circle cx="-92" cy="8" r="10" fill="#f2b426"/>
+    <circle cx="48" cy="-16" r="10" fill="#cc6e4a"/>
+    <circle cx="108" cy="46" r="9" fill="#4ea6a6"/>
+    <circle cx="-28" cy="54" r="8" fill="#e88db3"/>
+  </g>
+
+  <!-- learning table -->
+  <g filter="url(#shadow)">
+    <rect x="380" y="545" width="440" height="44" rx="22" fill="#f6efe2"/>
+    <rect x="415" y="580" width="24" height="118" rx="12" fill="#b69067"/>
+    <rect x="761" y="580" width="24" height="118" rx="12" fill="#b69067"/>
+  </g>
+
+  <!-- left adult learner -->
+  <g transform="translate(420 400)">
+    <circle cx="0" cy="0" r="42" fill="#a96f54"/>
+    <path d="M-38 -6 C-22 -54 28 -58 46 -15 C30 -34 -20 -42 -38 -6 Z" fill="#2b2a27"/>
+    <path d="M-58 78 C-52 32 52 30 60 80 L50 146 H-48 Z" fill="#cc6e4a"/>
+    <path d="M-44 98 L-100 138" stroke="#a96f54" stroke-width="22" stroke-linecap="round"/>
+    <path d="M48 98 L102 126" stroke="#a96f54" stroke-width="22" stroke-linecap="round"/>
+    <rect x="68" y="110" width="92" height="58" rx="5" fill="#173f2d"/>
+    <rect x="76" y="117" width="76" height="43" rx="3" fill="#dceee5"/>
+  </g>
+
+  <!-- central younger learner -->
+  <g transform="translate(600 430)">
+    <circle cx="0" cy="0" r="38" fill="#8f5f48"/>
+    <path d="M-35 -9 C-18 -48 23 -52 38 -14 C14 -28 -11 -31 -35 -9 Z" fill="#322c2a"/>
+    <path d="M-54 72 C-48 35 48 32 55 72 L46 128 H-46 Z" fill="#4ea6a6"/>
+    <path d="M-35 98 L-82 136" stroke="#8f5f48" stroke-width="20" stroke-linecap="round"/>
+    <path d="M38 98 L84 136" stroke="#8f5f48" stroke-width="20" stroke-linecap="round"/>
+    <rect x="-82" y="122" width="164" height="18" rx="9" fill="#f2b426"/>
+    <rect x="-72" y="96" width="144" height="28" rx="4" fill="#fff9ed" stroke="#d9c8a6"/>
+  </g>
+
+  <!-- right elder / mentor -->
+  <g transform="translate(780 405)">
+    <circle cx="0" cy="0" r="42" fill="#b47c5e"/>
+    <path d="M-39 -4 C-28 -44 22 -54 45 -12 C20 -24 -15 -28 -39 -4 Z" fill="#6f625b"/>
+    <path d="M-58 80 C-52 35 53 34 59 82 L48 146 H-48 Z" fill="#2d6a4f"/>
+    <path d="M-42 98 L-98 128" stroke="#b47c5e" stroke-width="22" stroke-linecap="round"/>
+    <path d="M48 100 L95 145" stroke="#b47c5e" stroke-width="22" stroke-linecap="round"/>
+    <path d="M-120 128 L-62 115 L-48 166 L-107 176 Z" fill="#f6efe2" stroke="#b69067" stroke-width="3"/>
+    <line x1="-105" y1="142" x2="-69" y2="133" stroke="#8f765d" stroke-width="3"/>
+    <line x1="-102" y1="152" x2="-67" y2="143" stroke="#8f765d" stroke-width="3"/>
+  </g>
+
+  <!-- foreground learning objects -->
+  <g>
+    <rect x="510" y="520" width="72" height="16" rx="3" fill="#e88db3"/>
+    <rect x="516" y="504" width="76" height="16" rx="3" fill="#f2b426"/>
+    <rect x="522" y="488" width="70" height="16" rx="3" fill="#4ea6a6"/>
+    <circle cx="690" cy="525" r="14" fill="#cc6e4a" opacity="0.9"/>
+    <path d="M688 512 C678 494 686 482 698 472 C702 488 700 500 688 512 Z" fill="#3f785d"/>
+  </g>
+
+  <!-- soft foreground plants -->
+  <g opacity="0.85">
+    <path d="M95 690 C115 620 145 590 190 565 C168 620 146 665 95 690 Z" fill="#7ba989"/>
+    <path d="M1120 690 C1090 620 1065 600 1010 572 C1030 628 1065 668 1120 690 Z" fill="#7ba989"/>
+  </g>
+</svg>
