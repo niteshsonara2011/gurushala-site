@@ -54,7 +54,8 @@ html[lang='gu'] .lang-block.gu,html[lang='en'] .lang-block.en,html[lang='hi'] .l
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:10px 20px;border:1px solid var(--green);border-radius:5px;text-decoration:none;font-weight:600;font-size:.9rem}
 .button.primary{background:var(--green);color:#fff}.button.secondary{background:#fff;color:var(--green)}
-.hero-photo{position:relative;min-height:500px;background-color:#e7eee9;background-image:url('assets/gurushala-hero-community.svg?v=20260912b');background-position:center;background-size:cover;background-repeat:no-repeat}
+/* Permanent hero: full-resolution user-supplied JPEG. The SVG remains only as a fail-safe until the JPEG asset is present. */
+.hero-photo{position:relative;min-height:500px;background-color:#e7eee9;background-image:url('assets/gurushala-hero-photo.jpg?v=20260912-hires'),url('assets/gurushala-hero-community.svg?v=20260912b');background-position:center,center;background-size:cover,cover;background-repeat:no-repeat,no-repeat}
 .hero-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,63,45,0) 58%,rgba(21,63,45,.18));pointer-events:none}
 .hero-photo>span{position:absolute;right:18px;bottom:16px;z-index:1;max-width:250px;text-align:right;color:#fff;font-size:.74rem;font-weight:600;text-shadow:0 1px 5px rgba(0,0,0,.55)}
 
@@ -96,7 +97,7 @@ html[lang='gu'] .work-card h3,html[lang='hi'] .work-card h3{font-family:inherit}
 
 @media(max-width:760px){
   .shell{width:min(var(--max),calc(100% - 28px))}.header-row{min-height:72px}.brand img{width:112px}.langs button,.menu{font-size:.72rem;padding:6px 7px}
-  .hero-grid{grid-template-columns:1fr;min-height:0}.hero-copy{padding:40px 0 34px}.hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}.hero-photo{min-height:320px;background-position:center 45%}.hero-photo>span{right:14px;bottom:12px}
+  .hero-grid{grid-template-columns:1fr;min-height:0}.hero-copy{padding:40px 0 34px}.hero h1{font-size:clamp(2.4rem,10vw,3.5rem)}.hero-photo{min-height:320px;background-position:center 47%,center 45%}.hero-photo>span{right:14px;bottom:12px}
   .manifesto-grid{grid-template-columns:1fr}.principles{grid-template-columns:repeat(2,1fr)}
   .section{padding:42px 0}.section-head{grid-template-columns:1fr}.section-head .see-all{justify-self:start}.section-note{grid-column:auto;grid-row:auto}.work-grid,.initiative-grid{grid-template-columns:1fr}.work-card,.initiative-card{min-height:0}
   .knowledge-grid{grid-template-columns:1fr}.publication-card{grid-template-columns:120px 1fr;gap:16px;padding:18px}.book-cover{padding:10px}.book-cover strong{font-size:.78rem}.publication-copy h2{font-size:1.6rem}
