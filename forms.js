@@ -42,6 +42,12 @@
       interests[0].setCustomValidity(valid?'':messages[root.lang]||messages.en);
     };
     interests.forEach(box=>box.addEventListener('change',validate));
-    form.addEventListener('submit',validate);
+    form.addEventListener('submit',event=>{
+      validate();
+      if(!interests.some(box=>box.checked)){
+        event.preventDefault();
+        interests[0].reportValidity();
+      }
+    });
   });
 })();
