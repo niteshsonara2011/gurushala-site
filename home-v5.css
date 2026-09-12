@@ -70,7 +70,8 @@ html[lang='gu'] .manifesto blockquote,html[lang='hi'] .manifesto blockquote{font
 .overline{display:block;color:#5b675f;font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .section-head h2{margin:5px 0 0;color:#1d2d24;font-size:clamp(2rem,3.2vw,3.15rem);line-height:1.02}.section-note{margin:0;color:#69756e;font-size:.84rem;line-height:1.55}.see-all{font-size:.82rem;color:#0f4c88;text-decoration:none;font-weight:600;white-space:nowrap}
 
-.work-grid,.initiative-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.initiative-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .work-card,.initiative-card{display:flex;flex-direction:column;min-height:230px;background:#fff;border:1px solid var(--line);text-decoration:none;padding:20px;box-shadow:0 4px 16px rgba(21,63,45,.04)}
 .work-card h3,.initiative-card h3{margin:9px 0 8px;color:#1f3027;font-family:'Playfair Display',Georgia,serif;font-size:1.28rem;line-height:1.18}
 html[lang='gu'] .work-card h3,html[lang='hi'] .work-card h3{font-family:inherit}
