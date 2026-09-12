@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" role="img" aria-labelledby="title desc">
+<title id="title">Gurushala</title><desc id="desc">Open book, growing human tree, colourful leaves and golden arc with the words Gurushala, Learn Grow Create Serve, Where Potential Takes Root.</desc>
+<defs>
+  <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFD43B"/><stop offset=".55" stop-color="#F2B426"/><stop offset="1" stop-color="#D88B1B"/></linearGradient>
+  <linearGradient id="gGreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F7A50"/><stop offset="1" stop-color="#174F38"/></linearGradient>
+</defs>
+<g transform="translate(180 18)">
+  <path d="M46 300A224 224 0 0 1 494 300" fill="none" stroke="url(#gGold)" stroke-width="12" stroke-linecap="round"/>
+  <g fill="none" stroke="#1F5B3D" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M270 374V185" stroke-width="14"/><path d="M270 285c-42-48-76-75-118-89" stroke-width="14"/><path d="M270 285c42-48 76-75 118-89" stroke-width="14"/>
+  </g>
+  <g fill="url(#gGreen)"><circle cx="270" cy="164" r="25"/><circle cx="160" cy="212" r="19"/><circle cx="380" cy="212" r="19"/><path d="M257 193c-18 38-29 78-30 121l43 28 43-28c-1-43-12-83-30-121l-13 35z"/><path d="M248 226c-30 45-64 74-108 91l21 28c42-16 78-46 111-88z"/><path d="M292 226c30 45 64 74 108 91l-21 28c-42-16-78-46-111-88z"/></g>
+  <g>
+    <path d="M264 50c32 26 38 59 16 99-40-12-53-42-37-86 6-8 13-12 21-13z" fill="#1F5B3D"/>
+    <path d="M185 83c31 8 49 29 50 62-34 2-55-14-65-48 4-7 9-11 15-14z" fill="#1A94A6"/>
+    <path d="M352 80c31 4 50 22 54 53-30 8-54-4-69-36 3-8 8-13 15-17z" fill="#79B82A"/>
+    <path d="M103 130c32-8 59 2 80 31-22 26-50 29-84 8-5-13-4-26 4-39z" fill="#E45A34"/>
+    <path d="M431 126c33 6 55 25 63 58-28 19-55 15-81-13 0-17 6-32 18-45z" fill="#F7A91B"/>
+    <path d="M71 208c31-12 59-5 84 19-18 29-46 37-82 22-8-14-9-28-2-41z" fill="#D43E7B"/>
+    <path d="M462 206c31-12 59-5 84 19-18 29-46 37-82 22-8-14-9-28-2-41z" fill="#B54097"/>
+    <path d="M97 274c27-9 50-3 69 17-16 24-39 30-69 17-7-12-7-23 0-34z" fill="#FF6F51"/>
+    <path d="M437 272c27-9 50-3 69 17-16 24-39 30-69 17-7-12-7-23 0-34z" fill="#FF9B1A"/>
+  </g>
+  <path d="M270 300c26 43 29 87 0 131-29-44-26-88 0-131z" fill="url(#gGold)"/>
+  <g fill="url(#gGreen)"><path d="M270 354c-72-39-149-44-230-16 57 15 102 38 135 70 35-13 67-10 95 9z"/><path d="M270 354c72-39 149-44 230-16-57 15-102 38-135 70-35-13-67-10-95 9z"/><path d="M270 398c-79-35-165-36-258-3 63 10 118 35 163 72 31-11 62-8 95 10z"/><path d="M270 398c79-35 165-36 258-3-63 10-118 35-163 72-31-11-62-8-95 10z"/></g>
+  <path d="M22 448c95-24 178-9 248 36 70-45 153-60 248-36" fill="none" stroke="url(#gGold)" stroke-width="11" stroke-linecap="round"/>
+</g>
+<text x="450" y="565" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="124" font-weight="700" fill="#174F38">Gurushala</text>
+<text x="450" y="626" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="4"><tspan fill="#1F5B3D">LEARN</tspan><tspan fill="#D88B1B"> • GROW</tspan><tspan fill="#D43E7B"> • CREATE</tspan><tspan fill="#1A94A6"> • SERVE</tspan></text>
+<path d="M152 668h122M626 668h122" stroke="#D9A72C" stroke-width="4"/><text x="450" y="678" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="24" letter-spacing="7" fill="#174F38">WHERE POTENTIAL TAKES ROOT</text>
+</svg>

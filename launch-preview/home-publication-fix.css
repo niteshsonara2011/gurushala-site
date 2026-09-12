@@ -1,0 +1,5 @@
+/* Gurushala publication identity lock — 8 Sep 2026 */
+.book-cover{position:relative!important;isolation:isolate!important}
+.book-cover::before{content:'GURUSHALA PUBLICATION';position:absolute;z-index:4;left:10%;right:10%;top:3.5%;padding:5px 7px;text-align:center;background:rgba(7,22,40,.94);border:1px solid rgba(216,161,59,.7);color:#e8bd62;font:700 .54rem/1.15 Inter,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.18)}
+.book-cover::after{content:'NOVEMBER 2026';position:absolute;z-index:4;left:12%;right:12%;bottom:3.5%;padding:5px 7px;text-align:center;background:rgba(7,22,40,.94);border:1px solid rgba(216,161,59,.65);color:#f1d28d;font:700 .5rem/1.15 Inter,system-ui,sans-serif;letter-spacing:.1em;border-radius:999px}
+@media(max-width:620px){.book-cover::before{font-size:.42rem;letter-spacing:.07em;left:7%;right:7%;padding:4px 5px}.book-cover::after{font-size:.4rem;letter-spacing:.06em;left:8%;right:8%;padding:4px 5px}}

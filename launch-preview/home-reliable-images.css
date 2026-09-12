@@ -1,0 +1,44 @@
+/* Gurushala photographic launch image layer: local repository assets only */
+.hero-photo{
+  background-color:#e3ebe6!important;
+  background-image:linear-gradient(180deg,rgba(21,63,45,.02),rgba(21,63,45,.08)),url('assets/gurushala-hero-atmanirbhar.webp')!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+
+/* Four real Gurushala photographs are packed into one local strip.
+   Each card centres one quarter of the strip. No external URLs, no SVG placeholders. */
+.work-card .visual,
+.initiative-card .visual{
+  background-color:#e7ebe6!important;
+  background-image:url('assets/gurushala-photo-strip.webp')!important;
+  background-repeat:no-repeat!important;
+  background-size:auto 145%!important;
+  background-position-y:center!important;
+}
+
+.work-card:nth-child(1) .visual,
+.initiative-card:nth-child(1) .visual{background-position-x:12.5%!important}
+.work-card:nth-child(2) .visual,
+.initiative-card:nth-child(2) .visual{background-position-x:37.5%!important}
+.work-card:nth-child(3) .visual,
+.initiative-card:nth-child(3) .visual{background-position-x:62.5%!important}
+.work-card:nth-child(4) .visual,
+.initiative-card:nth-child(4) .visual{background-position-x:87.5%!important}
+
+.initiatives-section .section-head::before{
+  background:linear-gradient(90deg,rgba(21,63,45,.92) 0%,rgba(21,63,45,.78) 48%,rgba(21,63,45,.24) 100%),url('assets/gurushala-hero-atmanirbhar.webp') center/cover no-repeat!important;
+}
+
+@media(min-width:900px){
+  .work-card .visual,.initiative-card .visual{background-size:auto 170%!important}
+}
+
+@media(max-width:620px){
+  .hero-photo{min-height:290px!important;background-position:center!important}
+  .work-card .visual,.initiative-card .visual{background-size:auto 160%!important}
+  .initiatives-section .section-head::before{
+    background:linear-gradient(180deg,rgba(21,63,45,.36) 0%,rgba(21,63,45,.92) 72%),url('assets/gurushala-hero-atmanirbhar.webp') center/cover no-repeat!important;
+  }
+}

@@ -1,0 +1,77 @@
+/* Gurushala launch-day polish */
+
+/* Knowledge spotlight: prevent status/title collisions */
+.spotlight-copy{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  min-width:0!important;
+}
+.spotlight-copy>.overline{order:1!important;margin:0 0 10px!important}
+.spotlight-copy>.status{
+  order:2!important;
+  position:static!important;
+  inset:auto!important;
+  transform:none!important;
+  float:none!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  width:auto!important;
+  max-width:100%!important;
+  margin:0 0 16px!important;
+  padding:7px 11px!important;
+  line-height:1.2!important;
+  border-radius:999px!important;
+  white-space:normal!important;
+  z-index:auto!important;
+}
+.spotlight-copy>.status::before{display:block!important;line-height:1.2!important}
+.spotlight-copy>h2{
+  order:3!important;
+  display:block!important;
+  position:static!important;
+  width:100%!important;
+  margin:0 0 14px!important;
+  padding:0!important;
+  max-width:17ch!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+.spotlight-copy>p{order:4!important;margin:0 0 14px!important;max-width:62ch!important}
+.spotlight-copy>.card-link{order:5!important;display:inline-block!important;margin-top:2px!important}
+
+/* Remove legacy text layers over the real cover */
+.book-cover>*{display:none!important}
+
+/* Consistent visual-card sizing */
+.work-card .visual,.initiative-card .visual{
+  min-height:210px!important;
+  image-rendering:auto!important;
+}
+
+/* This is now a live public website, not a soft-launch placeholder. */
+.footer-bottom>span{font-size:0!important}
+.footer-bottom>span::after{
+  content:'Gurushala · Valmiki Gurushala Trust · Gujarat, Bharat';
+  font-size:.78rem;
+  letter-spacing:.02em;
+}
+
+@media(max-width:900px){
+  .spotlight-copy>h2{max-width:20ch!important}
+}
+
+@media(max-width:620px){
+  .spotlight-panel{
+    grid-template-columns:112px minmax(0,1fr)!important;
+    gap:14px!important;
+    align-items:start!important;
+  }
+  .book-cover{width:112px!important;max-width:112px!important}
+  .spotlight-copy>.status{font-size:.68rem!important;margin-bottom:10px!important;padding:6px 8px!important}
+  .spotlight-copy>h2{max-width:100%!important;margin-bottom:10px!important}
+  .spotlight-copy h2::before{font-size:1.24rem!important;line-height:1.12!important}
+  .spotlight-copy>p::before{font-size:.76rem!important;line-height:1.45!important}
+  .work-card .visual,.initiative-card .visual{min-height:170px!important}
+  .footer-bottom>span::after{font-size:.7rem}
+}

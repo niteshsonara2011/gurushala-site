@@ -1,0 +1,1 @@
+For the public launch homepage, use only local Gurushala-controlled visual assets. Do not use Wikimedia, Unsplash, remote redirect URLs, or low-resolution placeholder sprites.

@@ -1,0 +1,1 @@
+Launch rule: local photographic assets only. This file exists to prevent future regression to remote redirects or illustration fallbacks.

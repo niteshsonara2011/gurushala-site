@@ -1,0 +1,7 @@
+@import url('brand-system.css');
+
+/* Homepage-only compatibility helpers retained from earlier QA work. */
+.centered{justify-content:center}
+.centered-copy{margin-inline:auto}
+.construction-label{color:#F4D88A}
+.table-scroll{overflow-x:auto}
