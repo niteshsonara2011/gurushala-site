@@ -83,3 +83,24 @@ input,select{width:100%;min-height:46px;border:1px solid rgba(21,63,45,.2);borde
   .tool-header,.pathway-hero,.boundary-band,#pathwayForm,.official-section,.closing-section,.site-footer,.decision-actions,.tool-title,.progress,.progress-copy{display:none!important}
   body{background:#fff}.tool-section{padding:0}.decision-card{background:#fff!important;color:#111!important;padding:0;margin:0}.decision-card>div:first-child{display:none}.summary-output{border:0;padding:0}.summary-grid{grid-template-columns:1fr 1fr}.summary-output h4{font-size:20pt}
 }
+
+.australia-estimator{margin:0 0 18px;padding:18px;border:1px solid rgba(78,166,166,.35);border-radius:14px;background:linear-gradient(180deg,#f7fbfb,#fff)}
+.australia-estimator[hidden]{display:none}
+.australia-estimator-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:8px}
+.australia-estimator h4{margin:.35rem 0 0;color:var(--deep);font-size:1.25rem}
+.estimate-date{font-size:.72rem;color:var(--muted);white-space:nowrap}
+.australia-estimator>p{color:var(--muted);font-size:.9rem}
+.australia-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.australia-controls>label{display:grid;gap:7px;font-weight:600;font-size:.9rem;color:#33453b}
+.australia-controls .check-row{display:flex}
+.australia-estimator-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.australia-estimate-result{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:16px}
+.australia-estimate-result>div{padding:12px;border:1px solid var(--line);border-radius:9px;background:#fff}
+.australia-estimate-result span{display:block;color:var(--muted);font-size:.75rem}
+.australia-estimate-result strong{display:block;color:var(--deep);font-size:1.05rem;margin-top:3px}
+.australia-estimate-result small{display:block;color:#67776e;margin-top:2px}
+.estimate-inr,.estimate-warning{grid-column:1/-1;margin:0;padding:10px 12px;border-radius:8px}
+.estimate-inr{background:#eef4ef;color:#315b46}
+.estimate-warning{background:#fff1ec;color:#71382d;border-left:4px solid var(--danger)}
+@media(max-width:900px){.australia-estimate-result{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.australia-controls,.australia-estimate-result{grid-template-columns:1fr}.australia-estimator-head{display:grid}.australia-estimator-actions{display:grid}.australia-estimator-actions .button,.australia-estimator-actions .source-link{width:100%}}
