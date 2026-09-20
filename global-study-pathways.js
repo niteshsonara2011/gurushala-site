@@ -82,7 +82,7 @@
   }
 
   function syncAustraliaPanel(){
-    if($('australiaEstimator')) $('australiaEstimator').hidden=$('destination')?.value!=='Australia';
+    if($('australiaEstimator')) $('australiaEstimator').hidden=false;
     if($('australiaCustomLivingWrap')) $('australiaCustomLivingWrap').hidden=$('australiaBasis')?.value!=='custom';
     if($('australiaCustomHousingWrap')) $('australiaCustomHousingWrap').hidden=$('australiaHousing')?.value!=='custom';
   }
