@@ -8,7 +8,7 @@
   <title>Global Study Pathways | Gurushala</title>
   <link rel="icon" href="assets/gurushala-master-logo.png" type="image/png">
   <link rel="stylesheet" href="pages.css">
-  <link rel="stylesheet" href="global-study-pathways.css?v=20260920-costs2">
+  <link rel="stylesheet" href="global-study-pathways.css?v=20260920-globalcosts1">
 </head>
 <body>
 <a class="skip" href="#main"><span class="lang-copy gu">મુખ્ય સામગ્રી પર જાઓ</span><span class="lang-copy en">Skip to content</span><span class="lang-copy hi">मुख्य सामग्री पर जाएँ</span></a>
@@ -103,54 +103,59 @@
         <section class="tool-card" data-tool-step="2">
           <div class="step-heading"><span>02</span><div><h3><span class="lang-copy gu">સાચો ખર્ચ ગણો</span><span class="lang-copy en">Calculate the real cost</span><span class="lang-copy hi">वास्तविक लागत की गणना</span></h3><p><span class="lang-copy gu">ફક્ત પ્રથમ વર્ષની ફી નહીં. આખા અભ્યાસનો અંદાજ જુઓ.</span><span class="lang-copy en">Not just first-year tuition. Estimate the whole study plan.</span><span class="lang-copy hi">केवल पहले वर्ष की फीस नहीं। पूरे अध्ययन की लागत देखें।</span></p></div></div>
 
-          <aside class="australia-estimator" id="australiaEstimator">
+          <aside class="australia-estimator country-estimator" id="countryEstimator">
             <div class="australia-estimator-head">
               <div>
-                <span class="source-tag">Australia · guided estimate presets</span>
-                <h4><span class="lang-copy gu">Australia માટે અંદાજ પસંદ કરો</span><span class="lang-copy en">Choose an Australia estimate</span><span class="lang-copy hi">Australia के लिए estimate चुनें</span></h4>
+                <span class="source-tag">Country-specific planning presets</span>
+                <h4><span class="lang-copy gu">દેશ પ્રમાણે અંદાજ પસંદ કરો</span><span class="lang-copy en">Choose a country estimate</span><span class="lang-copy hi">देश के अनुसार estimate चुनें</span></h4>
               </div>
               <span class="estimate-date">Checked 20 Sep 2026</span>
             </div>
-            <p><span class="lang-copy gu"><strong>Australia પસંદ કર્યું હોય તો અહીંથી અંદાજ શરૂ કરો.</strong> Home Affairs financial-capacity rules માટે Study Australia હાલમાં એક વિદ્યાર્થી માટે ઓછામાં ઓછું <strong>AUD 29,710</strong> દર્શાવે છે. આ actual living cost નથી; Study Australia સ્પષ્ટ કહે છે કે વાસ્તવિક ખર્ચ વધુ હોઈ શકે છે.</span><span class="lang-copy en"><strong>If you are considering Australia, start with these dropdowns.</strong> For Student visa financial capacity, Study Australia currently states a minimum of <strong>AUD 29,710</strong> for an international student. This is not an actual-cost promise; Study Australia warns real living costs can be higher.</span><span class="lang-copy hi"><strong>यदि आप Australia पर विचार कर रहे हैं, तो इन dropdowns से शुरुआत करें।</strong> Student visa financial capacity के लिए Study Australia वर्तमान में एक विद्यार्थी हेतु न्यूनतम <strong>AUD 29,710</strong> बताता है। यह वास्तविक खर्च की गारंटी नहीं है; वास्तविक living costs अधिक हो सकते हैं।</span></p>
+            <p id="countryGuidance"></p>
 
             <div class="australia-controls">
-              <label><span class="lang-copy gu">વાર્ષિક living-cost planning basis</span><span class="lang-copy en">Annual living-cost planning basis</span><span class="lang-copy hi">वार्षिक living-cost planning basis</span>
-                <select id="australiaBasis">
-                  <option value="29710">AUD 29,710 — official visa financial-capacity benchmark</option>
-                  <option value="34167">AUD 34,167 — benchmark + 15% Gurushala buffer</option>
-                  <option value="38623">AUD 38,623 — benchmark + 30% Gurushala buffer</option>
-                  <option value="custom">Custom annual estimate</option>
+              <label><span class="lang-copy gu">Estimate country</span><span class="lang-copy en">Estimate country</span><span class="lang-copy hi">Estimate country</span>
+                <select id="estimateCountry">
+                  <option value="Australia">Australia</option>
+                  <option value="Canada">Canada</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="United States">United States</option>
+                  <option value="New Zealand">New Zealand</option>
                 </select>
               </label>
-              <label id="australiaCustomLivingWrap" hidden><span class="lang-copy gu">Custom annual living cost (AUD)</span><span class="lang-copy en">Custom annual living cost (AUD)</span><span class="lang-copy hi">Custom annual living cost (AUD)</span>
-                <input id="australiaCustomLiving" type="number" min="0" step="100" placeholder="35000">
+
+              <label><span class="lang-copy gu">Living-cost planning basis</span><span class="lang-copy en">Living-cost planning basis</span><span class="lang-copy hi">Living-cost planning basis</span>
+                <select id="countryBasis"></select>
               </label>
+
+              <label id="countryCustomLivingWrap" hidden><span id="countryCustomLivingLabel">Custom annual living cost</span>
+                <input id="countryCustomLiving" type="number" min="0" step="100">
+              </label>
+
               <label><span class="lang-copy gu">Accommodation planning preset</span><span class="lang-copy en">Accommodation planning preset</span><span class="lang-copy hi">Accommodation planning preset</span>
-                <select id="australiaHousing">
-                  <option value="200">AUD 200/week — lower-cost shared planning point</option>
-                  <option value="300" selected>AUD 300/week — moderate shared planning point</option>
-                  <option value="400">AUD 400/week — higher shared / managed / homestay planning point</option>
-                  <option value="500">AUD 500/week — higher-cost / private planning point</option>
-                  <option value="custom">Custom weekly accommodation</option>
-                </select>
+                <select id="countryHousing"></select>
               </label>
-              <label id="australiaCustomHousingWrap" hidden><span class="lang-copy gu">Custom accommodation (AUD/week)</span><span class="lang-copy en">Custom accommodation (AUD/week)</span><span class="lang-copy hi">Custom accommodation (AUD/week)</span>
-                <input id="australiaCustomHousing" type="number" min="0" step="10" placeholder="350">
+
+              <label id="countryCustomHousingWrap" hidden><span id="countryCustomHousingLabel">Custom accommodation</span>
+                <input id="countryCustomHousing" type="number" min="0" step="10">
               </label>
-              <label><span class="lang-copy gu">AUD → INR reference rate</span><span class="lang-copy en">AUD → INR reference rate</span><span class="lang-copy hi">AUD → INR reference rate</span>
-                <input id="audInrRate" type="number" min="0" step="0.01" value="68.25">
-                <small><span class="lang-copy gu">RBA 18 Sep 2026 reference: 1 AUD = ₹68.25. આ planning reference માત્ર છે, transaction rate નથી; અરજી સમયે તાજો rate તપાસો.</span><span class="lang-copy en">RBA reference on 18 Sep 2026: 1 AUD = ₹68.25. Planning reference only, not a transaction rate; check a current rate when planning.</span><span class="lang-copy hi">RBA reference 18 Sep 2026: 1 AUD = ₹68.25. यह केवल planning reference है, transaction rate नहीं; योजना बनाते समय नया rate जाँचें।</span></small>
+
+              <label><span id="countryFxLabel">Currency → INR reference rate</span>
+                <input id="countryInrRate" type="number" min="0" step="0.01">
+                <small id="countryFxNote"></small>
               </label>
-              <label class="check-row"><input id="includeAustraliaVisaFee" type="checkbox" checked><span><span class="lang-copy gu">હાલનો standard primary Student visa application charge AUD 2,500 setup costમાં ઉમેરો (જ્યાં exemption/concession લાગુ ન પડે).</span><span class="lang-copy en">Include the current standard primary Student visa application charge of AUD 2,500 as a setup cost (where no exemption/concession applies).</span><span class="lang-copy hi">वर्तमान standard primary Student visa application charge AUD 2,500 को setup cost में जोड़ें (जहाँ exemption/concession लागू न हो)।</span></span></label>
+
+              <label class="check-row"><input id="includeCountryVisaFee" type="checkbox" checked><span id="countryVisaFeeLabel"></span></label>
             </div>
 
-            <div class="australia-estimate-result" id="australiaEstimateResult" aria-live="polite"></div>
+            <div class="australia-estimate-result" id="countryEstimateResult" aria-live="polite"></div>
+
             <div class="australia-estimator-actions">
-              <button class="button secondary" type="button" id="previewAustraliaEstimate"><span class="lang-copy gu">Estimate જુઓ</span><span class="lang-copy en">Preview estimate</span><span class="lang-copy hi">Estimate देखें</span></button>
-              <button class="button primary" type="button" id="applyAustraliaEstimate"><span class="lang-copy gu">આ values calculatorમાં મૂકો</span><span class="lang-copy en">Apply values to calculator</span><span class="lang-copy hi">Values calculator में डालें</span></button>
-              <a class="source-link" href="https://costofliving.studyaustralia.gov.au/" target="_blank" rel="noopener"><span class="lang-copy gu">Study Australia official calculator ખોલો</span><span class="lang-copy en">Open Study Australia cost calculator</span><span class="lang-copy hi">Study Australia cost calculator खोलें</span> ↗</a>
+              <button class="button secondary" type="button" id="previewCountryEstimate"><span class="lang-copy gu">Estimate જુઓ</span><span class="lang-copy en">Preview estimate</span><span class="lang-copy hi">Estimate देखें</span></button>
+              <button class="button primary" type="button" id="applyCountryEstimate"><span class="lang-copy gu">આ values calculatorમાં મૂકો</span><span class="lang-copy en">Apply values to calculator</span><span class="lang-copy hi">Values calculator में डालें</span></button>
+              <a class="source-link" id="countrySourceLink" href="#" target="_blank" rel="noopener"><span class="lang-copy gu">સત્તાવાર સ્ત્રોત ખોલો</span><span class="lang-copy en">Open official source</span><span class="lang-copy hi">आधिकारिक स्रोत खोलें</span> ↗</a>
             </div>
-            <p class="source-date"><span class="lang-copy gu">Accommodation presets Gurushala planning points છે, government-set amounts નથી. Study Australia's current calculator city, suburb અને accommodation type પ્રમાણે market data વાપરે છે. Tuition, OSHC, travel અને course-specific costs અલગથી ઉમેરો.</span><span class="lang-copy en">Accommodation presets are Gurushala planning points, not government-set amounts. Study Australia's current calculator varies by city, location and accommodation type. Add tuition, OSHC, travel and course-specific costs separately.</span><span class="lang-copy hi">Accommodation presets Gurushala planning points हैं, सरकारी निर्धारित राशि नहीं। Study Australia का current calculator शहर, location और accommodation type के अनुसार बदलता है। Tuition, OSHC, travel और course-specific costs अलग जोड़ें।</span></p>
+            <p class="source-date" id="countrySourceNote"></p>
           </aside>
 
           <div class="budget-grid">
@@ -295,6 +300,6 @@
   <div class="shell tool-footer-note"><span>© 2026 Valmiki Gurushala Trust.</span><span><span class="lang-copy gu">માહિતી કાર્યક્રમ · કોઈ legal/immigration advice નહીં</span><span class="lang-copy en">Educational information · No legal/immigration advice</span><span class="lang-copy hi">शैक्षिक जानकारी · कोई legal/immigration advice नहीं</span></span></div>
 </footer>
 
-<script src="global-study-pathways.js?v=20260920-costs2"></script>
+<script src="global-study-pathways.js?v=20260920-globalcosts1"></script>
 </body>
 </html>
